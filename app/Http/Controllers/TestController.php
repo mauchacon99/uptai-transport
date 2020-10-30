@@ -10,8 +10,8 @@ class TestController extends Controller
     public function index()
     {
         $test = CarsExits::find(1);
-      
-        dd($test->CarsExitsDetails);
+
+    
        
     }
 }
