@@ -1,4 +1,23 @@
-@extends('layouts.layout')
+@extends('admin.layout')
+
+@section('pageTitle', 'UPTAI')
+
+
+@section('breadcrumb')
+
+		<div class="row page-header no-background no-shadow margin-b-0">
+				<div class="col-lg-6 align-self-center ">
+				  <h2>Conductor</h2>
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a href="#">Home</a></li>
+						<li class="breadcrumb-item active">Editar</li>
+					</ol>
+				</div>
+				<div class="col-lg-6 align-self-center text-right">
+					<a href="#" class="btn btn-primary box-shadow btn-icon btn-rounded"><i class="fa fa-plus"></i> Create New</a>
+				</div>
+		</div>
+@endsection
 
 @section('content')
 <div class="row">

@@ -2,7 +2,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> @hasSection ('pageTitle')  @yield('pageTitle') @else FixedPlus - Laravel Admin Dashboard Template @endif </title>
+    <title> @hasSection ('pageTitle')  @yield('pageTitle') @else UPTAI @endif </title>
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -10,7 +10,6 @@
     <link href="{{ asset('admin/lib/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('admin/lib/toastr/jquery.toastr.min.css') }}" rel="stylesheet">
 
-    @yield('head-assets')
 
     <!-- Custom Css-->
     <link href="{{ asset('admin/css/style.css') }}" rel="stylesheet">

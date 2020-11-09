@@ -1,4 +1,11 @@
-@extends('ducor::layouts.app')
+@extends('admin.layout')
+
+@component('shared._breadcrumb')
+      @slot('title', 'Conductores')
+      @slot('description', 'Crear')
+      @slot('State', 'Form')
+@endcomponent 
+ 
 
 @section('content')
 <div class="row">

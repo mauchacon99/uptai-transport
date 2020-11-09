@@ -21,6 +21,8 @@ class CreateCarsExitsTable extends Migration
             $table->foreign('routes_id')->references('id')->on('routes');
 
             $table->unsignedSmallInteger('drivers_id')->nullable();
+
+            
             $table->foreign('drivers_id')->references('id')->on('drivers');
 
             $table->unsignedSmallInteger('cars_id')->nullable();
