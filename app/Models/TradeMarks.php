@@ -7,7 +7,9 @@ use App\Models\{Cars,Models};
 
 class TradeMarks extends Model
 {
-    public function cars()
+	protected $fillable = ['trade_marks_id'];
+   
+   public function cars()
     {
         return $this->hasMany(Cars::class);
     }

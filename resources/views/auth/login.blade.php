@@ -1,4 +1,4 @@
-@extends('ducor::layouts.auth')
+@extends('admin.auth')
 
 @section('content')
 
@@ -8,8 +8,8 @@
             <div class="row justify-content-center">
                 <div class="col-md-5 col-sm-12">
                     <div class="misc-header text-center">
-                        <img alt="{{ __('Login') }}" src="{{ du_asset('layout-1/img/icon.png') }}" class="logo-icon margin-r-10">
-                        <img alt="{{ __('Login') }}" src="{{ du_asset('layout-1/img/logo-dark.png') }}" class="toggle-none hidden-xs">
+                        <img alt="{{ __('Login') }}" src="{{ asset('admin/img/icon.png') }}" class="logo-icon margin-r-10">
+                        <img alt="{{ __('Login') }}" src="{{ asset('admin/img/logo-dark.png') }}" class="toggle-none hidden-xs">
                     </div>
                     <div class="misc-box">   
                         <form role="form" method="post" action="{{ route('login') }}">
@@ -48,11 +48,6 @@
                                     <button type="submit" class="btn btn-block btn-primary btn-rounded box-shadow">{{ __('Login') }}</button>
                                 </div>
                             </div>
-                            @if (Route::has('password.request'))
-                            <hr>
-                            <p class="text-center">Need Help?</p>
-                            <a href="{{ route('password.request') }}" class="btn btn-block btn-success btn-rounded box-shadow">{{ __('Forgot Your Password?') }}</a>
-                            @endif
                         </form>
                     </div>
                     <div class="text-center misc-footer">

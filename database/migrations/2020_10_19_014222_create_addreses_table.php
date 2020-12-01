@@ -15,7 +15,8 @@ class CreateAddresesTable extends Migration
     {
         Schema::create('addreses', function (Blueprint $table) {
             $table->smallIncrements('id');
-            $table->string('name', 100);  
+            $table->string('name', 100);
+            $table->string('starting_point', 100);  
             $table->unsignedSmallInteger('states_id')->nullable();
             $table->foreign('states_id')->references('id')->on('states');        
             $table->unsignedSmallInteger('municipalities_id')->nullable();

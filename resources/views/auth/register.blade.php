@@ -1,4 +1,4 @@
-@extends('ducor::layouts.auth')
+@extends('admin.auth')
 
 @section('content')
 
@@ -8,8 +8,8 @@
             <div class="row justify-content-center">
                 <div class="col-md-5 col-sm-12">
                     <div class="misc-header text-center">
-                        <img alt="{{ __('Register') }}" src="{{ du_asset('layout-1/img/icon.png') }}" class="logo-icon margin-r-10">
-                        <img alt="{{ __('Register') }}" src="{{ du_asset('layout-1/img/logo-dark.png') }}" class="toggle-none hidden-xs">
+                        <img alt="{{ __('Register') }}" src="{{ asset('admin/img/icon.png') }}" class="logo-icon margin-r-10">
+                        <img alt="{{ __('Register') }}" src="{{ asset('admin/img/logo-dark.png') }}" class="toggle-none hidden-xs">
                     </div>
                     <div class="misc-box">   
                             <p class="text-center">Sign up to get instant access.</p>

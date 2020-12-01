@@ -172,17 +172,21 @@ $(function () {
 $(function() {
 
     var data = [{
-        label: "Sales 1",
-        data: 30,
+        label: "Vehiculo Nro 2",
+        data: 23,
         color: "#f4516c"
     }, {
-        label: "Sales 2",
+        label: "Vehiculo Nro 56",
         data: 18,
         color: "#ffb822"
     }, {
-        label: "Sales 3",
-        data: 52,
+        label: "Vehiculo Nro 12",
+        data: 12,
         color: "#36a3f7"
+    }, {
+        label: "Vehiculo Nro 17",
+        data: 8,
+        color: "#ff2422"
     }];
 
     var plotObj = $.plot($("#flot-pie-chart"), data, {
@@ -198,7 +202,7 @@ $(function() {
         tooltipOpts: {
             content: "%p.0%, %s", // show percentages, rounding to 2 decimal places
             shifts: {
-                x: 20,
+                x: 100,
                 y: 0
             },
             defaultTheme: false
@@ -206,6 +210,7 @@ $(function() {
     });
 
 });
+
 //flot moving chart
 $(function() {
     var container = $("#flot-line-chart-moving");

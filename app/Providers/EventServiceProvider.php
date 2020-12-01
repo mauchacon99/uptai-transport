@@ -3,9 +3,16 @@
 namespace App\Providers;
 
 use Illuminate\Auth\Events\Registered;
-use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
+
+  
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Event;
+use App\Models\{Activity,Drivers,Cars};
+use App\observers\{carsObserver, driversObserver};
+
+use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
+
+
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -15,9 +22,7 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        Registered::class => [
-            SendEmailVerificationNotification::class,
-        ],
+    
     ];
 
     /**
@@ -29,6 +34,8 @@ class EventServiceProvider extends ServiceProvider
     {
         parent::boot();
 
-        //
+        Cars::observe(carsObserver::class);
+        Drivers::observe(driversObserver::class);
+
     }
 }

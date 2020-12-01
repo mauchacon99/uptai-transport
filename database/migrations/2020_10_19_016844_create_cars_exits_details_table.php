@@ -14,14 +14,16 @@ class CreateCarsExitsDetailsTable extends Migration
     public function up()
     {
         Schema::create('cars_exits_details', function (Blueprint $table) {
-            
             $table->mediumIncrements('id');
-
+            $table->string('description',100);
+            $table->time('time_exit');
+            $table->time('time_entry');
+            $table->time('time_public');
+            $table->date('date_exit');
+            $table->date('date_public');
+            $table->smallInteger('status_public');
             $table->unsignedMediumInteger('cars_exits_id')->nullable();
             $table->foreign('cars_exits_id')->references('id')->on('cars_exits');
-            $table->date('time_exit');
-            $table->date('time_entry');
-
 
             $table->timestamps();
         });

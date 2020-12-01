@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Database\Schema\Builder;
 
 use Illuminate\Support\ServiceProvider;
+use Blade;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -26,6 +27,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Blade::directive('upper', function($expression) {
+            return "<?php echo strtoupper($expression); ?>";
+        });
     }
 }

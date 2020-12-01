@@ -19,7 +19,7 @@ class CreateCarsTable extends Migration
             $table->smallInteger('number')->unique();
             $table->string('plate', 10)->unique();
             $table->string('color', 25);
-            $table->date('year', 25);
+            $table->year('year', 25);
 
             $table->unsignedSmallInteger('trade_marks_id')->nullable();
             $table->foreign('trade_marks_id')->references('id')->on('trade_marks');

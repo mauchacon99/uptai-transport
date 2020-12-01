@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Models\{CarsExits};
+use App\Models\{CarsExits, Cars};
 
 class Drivers extends Model
 {
@@ -15,11 +15,19 @@ class Drivers extends Model
         'phone'    ,
         'sex'      ,
         'birthdate',
-        'status'
+        'status',
    ];
 
     public function CarsExits()
     {
-        return $this->hasMany(ExitCarsExits::class);
+        return $this->hasMany(CarsExits::class);
     }
+
+    public function cars()
+    {
+        return $this->hasManyThrough(cars::class, CarsExits::class);
+    }
+ 
+    
+
 }

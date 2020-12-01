@@ -5,7 +5,7 @@
                 <a class="admin-logo dark-logo" href="/layouts-5/">
                     <h1>
                         <img alt="" src="{{ asset('/admin/img/icon.png') }}" class="logo-icon margin-r-10">
-                        <img alt="" src="{{ asset('/admin/img/logo-default.png') }}" class="toggle-none hidden-xs">
+                        <img alt="" src="{{ asset('/admin/img/logo-dark.png') }}" class="toggle-none hidden-xs">
                     </h1>
                 </a>
                 <div class="left-nav-toggle">

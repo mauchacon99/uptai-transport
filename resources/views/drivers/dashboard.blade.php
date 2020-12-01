@@ -1,107 +1,113 @@
-@extends('admin.layout')
+@extends('ducor::layouts.admin')
 
 
-@section('pageTitle', 'UPTAI')
+@section('pageTitle', 'FixedPlus - Laravel Admin Dashboard Template')
 
 
 @section('breadcrumb')
 
-		<div class="row page-header no-background no-shadow margin-b-0">
-				<div class="col-lg-6 align-self-center ">
-				  <h2>Conductor</h2>
-					<ol class="breadcrumb">
-						<li class="breadcrumb-item"><a href="#">Home</a></li>
-						<li class="breadcrumb-item active">Editar</li>
-					</ol>
-				</div>
-				<div class="col-lg-6 align-self-center text-right">
-					<a href="#" class="btn btn-primary box-shadow btn-icon btn-rounded"><i class="fa fa-plus"></i> Create New</a>
-				</div>
-		</div>
+        <div class="row page-header no-background no-shadow margin-b-0">
+                <div class="col-lg-6 align-self-center ">
+                  <h2>Dashboard</h2>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Dashboard</li>
+                    </ol>
+                </div>
+                <div class="col-lg-6 align-self-center text-right">
+                    <a href="#" class="btn btn-success box-shadow btn-icon btn-rounded"><i class="fa fa-plus"></i> Create New</a>
+                </div>
+        </div>
 @endsection
 
 
 @section('content')
 
-		
+
+        
+        <!-- ============================================================== -->
+        <!--                        Content Start                           -->
+        <!-- ============================================================== -->
+
+        
         
             <div class="row w-no-padding margin-b-30">
-			
-				<div class="col-md-3">
-                    <div class="widget  bg-light">
-                        <div class="row row-table ">
-                            <div class="margin-b-30">
-								<h2 class="margin-b-5">Product</h2>
-								<p class="text-muted">Total Product</p>
-								<span class="float-right text-primary widget-r-m">37859</span>
-							</div>
-							<div class="progress margin-b-10  progress-mini">
-								<div style="width:50%;" class="progress-bar bg-primary"></div>
-							</div>
-							<p class="text-muted float-left margin-b-0">Change</p>
-							<p class="text-muted float-right margin-b-0">50%</p>
-                        </div>
-                    </div>
-                </div>
-				
+            
                 <div class="col-md-3">
                     <div class="widget  bg-light">
                         <div class="row row-table ">
                             <div class="margin-b-30">
-								<h2 class="margin-b-5">Sales</h2>
-								<p class="text-muted">Total Sales</p>
-								<span class="float-right text-indigo widget-r-m">1758</span>
-							</div>
-							<div class="progress margin-b-10 progress-mini">
-								<div style="width:45%;" class="progress-bar bg-indigo"></div>
-							</div>
-							<p class="text-muted float-left margin-b-0">Change</p>
-							<p class="text-muted float-right margin-b-0">450%</p>
+                                <h2 class="margin-b-5">Product</h2>
+                                <p class="text-muted">Total Product</p>
+                                <span class="float-right text-primary widget-r-m">37859</span>
+                            </div>
+                            <div class="progress margin-b-10  progress-mini">
+                                <div style="width:50%;" class="progress-bar bg-primary"></div>
+                            </div>
+                            <p class="text-muted float-left margin-b-0">Change</p>
+                            <p class="text-muted float-right margin-b-0">50%</p>
                         </div>
                     </div>
                 </div>
-				
-				<div class="col-md-3">
+                
+                <div class="col-md-3">
                     <div class="widget  bg-light">
                         <div class="row row-table ">
                             <div class="margin-b-30">
-								<h2 class="margin-b-5">Orders</h2>
-								<p class="text-muted">Total Orders</p>
-								<span class="float-right text-success widget-r-m">1385</span>
-							</div>
-							<div class="progress margin-b-10 progress-mini">
-								<div style="width:85%;" class="progress-bar bg-success"></div>
-							</div>
-							<p class="text-muted float-left margin-b-0">Change</p>
-							<p class="text-muted float-right margin-b-0">85%</p>
+                                <h2 class="margin-b-5">Sales</h2>
+                                <p class="text-muted">Total Sales</p>
+                                <span class="float-right text-indigo widget-r-m">1758</span>
+                            </div>
+                            <div class="progress margin-b-10 progress-mini">
+                                <div style="width:45%;" class="progress-bar bg-indigo"></div>
+                            </div>
+                            <p class="text-muted float-left margin-b-0">Change</p>
+                            <p class="text-muted float-right margin-b-0">450%</p>
                         </div>
                     </div>
                 </div>
-				
-				<div class="col-md-3">
+                
+                <div class="col-md-3">
                     <div class="widget  bg-light">
                         <div class="row row-table ">
                             <div class="margin-b-30">
-								<h2 class="margin-b-5">Visitors</h2>
-								<p class="text-muted">Total Visitors</p>
-								<span class="float-right text-warning widget-r-m">98421</span>
-							</div>
-							<div class="progress margin-b-10 progress-mini">
-								<div style="width:38%;" class="progress-bar bg-warning"></div>
-							</div>
-							<p class="text-muted float-left margin-b-0">Change</p>
-							<p class="text-muted float-right margin-b-0">38%</p>
+                                <h2 class="margin-b-5">Orders</h2>
+                                <p class="text-muted">Total Orders</p>
+                                <span class="float-right text-success widget-r-m">1385</span>
+                            </div>
+                            <div class="progress margin-b-10 progress-mini">
+                                <div style="width:85%;" class="progress-bar bg-success"></div>
+                            </div>
+                            <p class="text-muted float-left margin-b-0">Change</p>
+                            <p class="text-muted float-right margin-b-0">85%</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-3">
+                    <div class="widget  bg-light">
+                        <div class="row row-table ">
+                            <div class="margin-b-30">
+                                <h2 class="margin-b-5">Visitors</h2>
+                                <p class="text-muted">Total Visitors</p>
+                                <span class="float-right text-warning widget-r-m">98421</span>
+                            </div>
+                            <div class="progress margin-b-10 progress-mini">
+                                <div style="width:38%;" class="progress-bar bg-warning"></div>
+                            </div>
+                            <p class="text-muted float-left margin-b-0">Change</p>
+                            <p class="text-muted float-right margin-b-0">38%</p>
                         </div>
                     </div>
                 </div>
             </div>
-			
-			<div class="row">
+            
+            <div class="row">
                 <div class="col-md-12">
                   <div class="card bg-chart ">
                         <div class="card-header text-white anime">
-                            Sales Overview			
-							<p class="text-white">Lorem Ipsum is simply dummy text of the printing</p>
+                            Sales Overview          
+                            <p class="text-white">Lorem Ipsum is simply dummy text of the printing</p>
                         </div>
                         <div class="card-body">
                             <div>
@@ -111,200 +117,200 @@
                     </div>
                 </div>
             </div>
-			
+            
             <div class="row">
                 <div class="col-md-8">
-				  <div class="card">
+                  <div class="card">
                         <div class="card-header">
                              Current Visitors
-							<p class="text-muted">Different Devices Used to Visit</p>
+                            <p class="text-muted">Different Devices Used to Visit</p>
                         </div>
                         <div class="card-body">
 
                              <div id="world-map-markers" style="height: 472px"></div>
 
-						</div>
+                        </div>
                     </div>
                 </div>
-				
-				<div class="col-md-4">
-				  <div class="card">
+                
+                <div class="col-md-4">
+                  <div class="card">
                         <div class="card-header">
                             Our Visitors
-							<p class="text-muted">Different Devices Used to Visit</p>
+                            <p class="text-muted">Different Devices Used to Visit</p>
                         </div>
                         <div class="card-body">
-							<div id="donut"></div>
-							<ul class="list-1 list-group">
-							  <li class="list-group-item">Desktop <span class="float-right text-indigo"><i class="fa fa-arrow-up"></i> 45.0%</span></li>
-							  <li class="list-group-item">Mobile <span class="float-right text-primary"><i class="fa fa-minus"></i> 25.0%</span></li>
-							  <li class="list-group-item">Tablet <span class="float-right text-teal"><i class="fa fa-arrow-down"></i> 15.0%</span></li>
-							  <li class="list-group-item">Other <span class="float-right text-muted"><i class="fa fa-arrow-up"></i> 15.0%</span></li>
-							</ul>
-						</div>
+                            <div id="donut"></div>
+                            <ul class="list-1 list-group">
+                              <li class="list-group-item">Desktop <span class="float-right text-indigo"><i class="fa fa-arrow-up"></i> 45.0%</span></li>
+                              <li class="list-group-item">Mobile <span class="float-right text-primary"><i class="fa fa-minus"></i> 25.0%</span></li>
+                              <li class="list-group-item">Tablet <span class="float-right text-teal"><i class="fa fa-arrow-down"></i> 15.0%</span></li>
+                              <li class="list-group-item">Other <span class="float-right text-muted"><i class="fa fa-arrow-up"></i> 15.0%</span></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-			</div>
-			
-			<div class="row">
+            </div>
+            
+            <div class="row">
                   <div class="col-md-6">
-					<div class="card">
-					  <div class="card-header">
-						Recent Comments
-						<p class="text-muted">Latest Comments on users</p>
-					  </div>
-						<div class="comment-widgets">
-						  <div class="d-flex flex-row comment-row">
-							<div class="mr-2"><img alt="user" class="rounded-circle" src="{{ asset( 'admin/img/avtar-1.png' ) }}" width="50"></div>
-							<div class="comment-text w-100">
-							  <h5>John Doe</h5>
-							  <p class="m-b-5">Lorem Ipsum is simply dummy text of the printing and type setting industry.</p>
-							  <div class="comment-footer">
-								<span class="text-muted pull-right">April 8, 2018</span> 
-								<span class="label label-info">Pending</span> 
-								<span class="action-icons">
-									<a href="javascript:void(0)"><i class="ti-pencil-alt"></i></a> 
-									<a href="javascript:void(0)"><i class="ti-check"></i></a>
-									<a href="javascript:void(0)"><i class="ti-heart"></i></a>
-								</span>
-							  </div>
-							</div>
-						  </div>
-						  <div class="d-flex flex-row comment-row active">
-							<div class="mr-2">
-							  <span class="round"><img alt="user" src="{{ asset( 'admin/img/avtar-2.png' ) }}" width="50"></span>
-							</div>
-							<div class="comment-text active w-100">
-							  <h5>John Doe</h5>
-							  <p class="m-b-5">Lorem Ipsum is simply dummy text of the printing and type setting industry.</p>
-							  <div class="comment-footer">
-								<span class="text-muted pull-right">April 7, 2018</span> 
-								<span class="label label-success">Approved</span> 
-								<span class="action-icons">
-									<a href="javascript:void(0)"><i class="ti-pencil-alt"></i></a> 
-									<a href="javascript:void(0)"><i class="ti-check"></i></a>
-									<a href="javascript:void(0)"><i class="ti-heart"></i></a>
-								</span>
-							  </div>
-							</div>
-						  </div><!-- Comment Row -->
-						  <div class="d-flex flex-row comment-row">
-							<div class="mr-2">
-							  <span class="round"><img alt="user" src="{{ asset( 'admin/img/avtar-3.png' ) }}" width="50"></span>
-							</div>
-							<div class="comment-text w-100">
-							  <h5>John Doe</h5>
-							  <p class="m-b-5">Lorem Ipsum has beenorem Ipsum is simply dummy text of the printing and type setting industry.</p>
-							  <div class="comment-footer">
-								<span class="text-muted pull-right">April 6, 2018</span> <span class="label label-danger">Rejected</span> <span class="action-icons"><a href="javascript:void(0)"><i class="ti-pencil-alt"></i></a> <a href="javascript:void(0)"><i class="ti-check"></i></a> <a href="javascript:void(0)"><i class="ti-heart"></i></a></span>
-							  </div>
-							</div>
-						  </div><!-- Comment Row -->
-						  <div class="d-flex flex-row comment-row">
-							<div class="mr-2">
-							  <span class="round"><img alt="user" src="{{ asset( 'admin/img/avtar-4.png' ) }}" width="50"></span>
-							</div>
-							<div class="comment-text w-100">
-							  <h5>John Doe</h5>
-							  <p class="m-b-5">Lorem Ipsum is simply dummy text of the printing and type setting industry.</p>
-							  <div class="comment-footer">
-								<span class="text-muted pull-right">April 5, 2018</span> <span class="label label-info">Pending</span> <span class="action-icons"><a href="javascript:void(0)"><i class="ti-pencil-alt"></i></a> <a href="javascript:void(0)"><i class="ti-check"></i></a> <a href="javascript:void(0)"><i class="ti-heart"></i></a></span>
-							  </div>
-							</div>
-						  </div>
-						  <div class="d-flex flex-row comment-row">
-							<div class="mr-2">
-							  <span class="round"><img alt="user" src="{{ asset( 'admin/img/avtar-2.png' ) }}" width="50"></span>
-							</div>
-							<div class="comment-text active w-100">
-							  <h5>John Doe</h5>
-							  <p class="m-b-5">Lorem Ipsum is simply dummy text of the printing and type setting industry.</p>
-							  <div class="comment-footer">
-								<span class="text-muted pull-right">April 7, 2018</span> 
-								<span class="label label-success">Approved</span> 
-								<span class="action-icons">
-									<a href="javascript:void(0)"><i class="ti-pencil-alt"></i></a> 
-									<a href="javascript:void(0)"><i class="ti-check"></i></a>
-									<a href="javascript:void(0)"><i class="ti-heart"></i></a>
-								</span>
-							  </div>
-							</div>
-						  </div>
-						</div>
-			
-					</div>
-				</div>
-				
-				<div class="col-md-6">
+                    <div class="card">
+                      <div class="card-header">
+                        Recent Comments
+                        <p class="text-muted">Latest Comments on users</p>
+                      </div>
+                        <div class="comment-widgets">
+                          <div class="d-flex flex-row comment-row">
+                            <div class="mr-2"><img alt="user" class="rounded-circle" src="{{ asset( 'admin/img/avtar-1.png' ) }}" width="50"></div>
+                            <div class="comment-text w-100">
+                              <h5>John Doe</h5>
+                              <p class="m-b-5">Lorem Ipsum is simply dummy text of the printing and type setting industry.</p>
+                              <div class="comment-footer">
+                                <span class="text-muted pull-right">April 8, 2018</span> 
+                                <span class="label label-info">Pending</span> 
+                                <span class="action-icons">
+                                    <a href="javascript:void(0)"><i class="ti-pencil-alt"></i></a> 
+                                    <a href="javascript:void(0)"><i class="ti-check"></i></a>
+                                    <a href="javascript:void(0)"><i class="ti-heart"></i></a>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="d-flex flex-row comment-row active">
+                            <div class="mr-2">
+                              <span class="round"><img alt="user" src="{{ asset( 'admin/img/avtar-2.png' ) }}" width="50"></span>
+                            </div>
+                            <div class="comment-text active w-100">
+                              <h5>John Doe</h5>
+                              <p class="m-b-5">Lorem Ipsum is simply dummy text of the printing and type setting industry.</p>
+                              <div class="comment-footer">
+                                <span class="text-muted pull-right">April 7, 2018</span> 
+                                <span class="label label-success">Approved</span> 
+                                <span class="action-icons">
+                                    <a href="javascript:void(0)"><i class="ti-pencil-alt"></i></a> 
+                                    <a href="javascript:void(0)"><i class="ti-check"></i></a>
+                                    <a href="javascript:void(0)"><i class="ti-heart"></i></a>
+                                </span>
+                              </div>
+                            </div>
+                          </div><!-- Comment Row -->
+                          <div class="d-flex flex-row comment-row">
+                            <div class="mr-2">
+                              <span class="round"><img alt="user" src="{{ asset( 'admin/img/avtar-3.png' ) }}" width="50"></span>
+                            </div>
+                            <div class="comment-text w-100">
+                              <h5>John Doe</h5>
+                              <p class="m-b-5">Lorem Ipsum has beenorem Ipsum is simply dummy text of the printing and type setting industry.</p>
+                              <div class="comment-footer">
+                                <span class="text-muted pull-right">April 6, 2018</span> <span class="label label-danger">Rejected</span> <span class="action-icons"><a href="javascript:void(0)"><i class="ti-pencil-alt"></i></a> <a href="javascript:void(0)"><i class="ti-check"></i></a> <a href="javascript:void(0)"><i class="ti-heart"></i></a></span>
+                              </div>
+                            </div>
+                          </div><!-- Comment Row -->
+                          <div class="d-flex flex-row comment-row">
+                            <div class="mr-2">
+                              <span class="round"><img alt="user" src="{{ asset( 'admin/img/avtar-4.png' ) }}" width="50"></span>
+                            </div>
+                            <div class="comment-text w-100">
+                              <h5>John Doe</h5>
+                              <p class="m-b-5">Lorem Ipsum is simply dummy text of the printing and type setting industry.</p>
+                              <div class="comment-footer">
+                                <span class="text-muted pull-right">April 5, 2018</span> <span class="label label-info">Pending</span> <span class="action-icons"><a href="javascript:void(0)"><i class="ti-pencil-alt"></i></a> <a href="javascript:void(0)"><i class="ti-check"></i></a> <a href="javascript:void(0)"><i class="ti-heart"></i></a></span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="d-flex flex-row comment-row">
+                            <div class="mr-2">
+                              <span class="round"><img alt="user" src="{{ asset( 'admin/img/avtar-2.png' ) }}" width="50"></span>
+                            </div>
+                            <div class="comment-text active w-100">
+                              <h5>John Doe</h5>
+                              <p class="m-b-5">Lorem Ipsum is simply dummy text of the printing and type setting industry.</p>
+                              <div class="comment-footer">
+                                <span class="text-muted pull-right">April 7, 2018</span> 
+                                <span class="label label-success">Approved</span> 
+                                <span class="action-icons">
+                                    <a href="javascript:void(0)"><i class="ti-pencil-alt"></i></a> 
+                                    <a href="javascript:void(0)"><i class="ti-check"></i></a>
+                                    <a href="javascript:void(0)"><i class="ti-heart"></i></a>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+            
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
                     <div class="card">
                         <div class="card-header">
-							<div class="row">
+                            <div class="row">
                             <div class="col-md-6">
                                 Todo List
-								<p class="text-muted">Lorem ipsum dolor sit amet</p>
+                                <p class="text-muted">Lorem ipsum dolor sit amet</p>
                             </div>
                             <div class="col-md-6">
-								<a href="javascript: void(0);" class="btn btn-success btn-border box-shadow btn-circle pull-right"><i class="fa fa-plus"></i></a>
+                                <a href="javascript: void(0);" class="btn btn-success btn-border box-shadow btn-circle pull-right"><i class="fa fa-plus"></i></a>
                             </div>
-							 </div>
+                             </div>
                         </div>
                         <div class="card-body">
                             <div class="scrollDiv">
                                 <ul class="todo-list">
                                   <li>
                                        <div class="checkbox checkbox-primary margin-r-5">
-											<input id="checkbox1" type="checkbox">
-											<label for="checkbox1">Lorem Ipsum is simply dummy text of the printing <small class="label label-info">Today</small></label>
-										</div>
-                                    </li>
-									<li>
-                                       <div class="checkbox checkbox-primary margin-r-5">
-											<input id="checkbox2" type="checkbox">
-											<label for="checkbox2"> Lorem Ipsum is simply dummy text of the printing  dummy text of the printing and typesetting industry. <small class="label label-danger">Yesterday</small></label>
-										</div>
-                                    </li>
-									<li>
-                                       <div class="checkbox checkbox-primary margin-r-5">
-											<input id="checkbox3" type="checkbox">
-											<label for="checkbox3"> Lorem Ipsum is simply dummy text of the printing  dummy text of the <small class="label label-info">1 Week</small></label>
-										</div>
-                                    </li>
-									<li>
-                                       <div class="checkbox checkbox-primary margin-r-5">
-											<input id="checkbox1" type="checkbox" >
-											<label for="checkbox1"> Lorem Ipsum is simply dummy text of the 	<small class="label label-primary"><i class="fa fa-clock-o"></i> 3 Mins</small></label>
-										
-										</div>
-                                    </li>
-									<li>
-                                       <div class="checkbox checkbox-primary margin-r-5">
-											<input id="checkbox4" type="checkbox">
-											<label for="checkbox4"> Lorem Ipsum is simply dummy text of the printing  dummy text of the printing<small class="label label-warning">2 Week</small></label>
-										</div>
+                                            <input id="checkbox1" type="checkbox">
+                                            <label for="checkbox1">Lorem Ipsum is simply dummy text of the printing <small class="label label-info">Today</small></label>
+                                        </div>
                                     </li>
                                     <li>
                                        <div class="checkbox checkbox-primary margin-r-5">
-											<input id="checkbox5" type="checkbox">
-											<label for="checkbox5"> Lorem Ipsum is simply dummy text of the<small class="label label-info">Today</small></label>
-										</div>
+                                            <input id="checkbox2" type="checkbox">
+                                            <label for="checkbox2"> Lorem Ipsum is simply dummy text of the printing  dummy text of the printing and typesetting industry. <small class="label label-danger">Yesterday</small></label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                       <div class="checkbox checkbox-primary margin-r-5">
+                                            <input id="checkbox3" type="checkbox">
+                                            <label for="checkbox3"> Lorem Ipsum is simply dummy text of the printing  dummy text of the <small class="label label-info">1 Week</small></label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                       <div class="checkbox checkbox-primary margin-r-5">
+                                            <input id="checkbox1" type="checkbox" >
+                                            <label for="checkbox1"> Lorem Ipsum is simply dummy text of the     <small class="label label-primary"><i class="fa fa-clock-o"></i> 3 Mins</small></label>
+                                        
+                                        </div>
+                                    </li>
+                                    <li>
+                                       <div class="checkbox checkbox-primary margin-r-5">
+                                            <input id="checkbox4" type="checkbox">
+                                            <label for="checkbox4"> Lorem Ipsum is simply dummy text of the printing  dummy text of the printing<small class="label label-warning">2 Week</small></label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                       <div class="checkbox checkbox-primary margin-r-5">
+                                            <input id="checkbox5" type="checkbox">
+                                            <label for="checkbox5"> Lorem Ipsum is simply dummy text of the<small class="label label-info">Today</small></label>
+                                        </div>
                                     </li>
                                    <li>
                                        <div class="checkbox checkbox-primary margin-r-5">
-											<input id="checkbox1" type="checkbox">
-											<label for="checkbox1"> Lorem Ipsum is simply dummy text of the printing  dummy text of<small class="label label-danger">Yesterdat</small></label>
-										</div>
-                                    </li>
-									<li>
-                                       <div class="checkbox checkbox-primary margin-r-5">
-											<input id="checkbox4" type="checkbox" >
-											<label for="checkbox4"> Lorem Ipsum is simply dummy text of the printing  dummy text of the printing<small class="label label-info"><i class="fa fa-clock-o"></i> 3 Mins</small></label>
-										</div>
+                                            <input id="checkbox1" type="checkbox">
+                                            <label for="checkbox1"> Lorem Ipsum is simply dummy text of the printing  dummy text of<small class="label label-danger">Yesterdat</small></label>
+                                        </div>
                                     </li>
                                     <li>
                                        <div class="checkbox checkbox-primary margin-r-5">
-											<input id="checkbox5" type="checkbox" >
-											<label for="checkbox5"> Lorem Ipsum is simply dummy text of the<small class="label label-danger"><i class="fa fa-clock-o"></i> 1 Week</small></label>
-										</div>
+                                            <input id="checkbox4" type="checkbox" >
+                                            <label for="checkbox4"> Lorem Ipsum is simply dummy text of the printing  dummy text of the printing<small class="label label-info"><i class="fa fa-clock-o"></i> 3 Mins</small></label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                       <div class="checkbox checkbox-primary margin-r-5">
+                                            <input id="checkbox5" type="checkbox" >
+                                            <label for="checkbox5"> Lorem Ipsum is simply dummy text of the<small class="label label-danger"><i class="fa fa-clock-o"></i> 1 Week</small></label>
+                                        </div>
                                     </li>
                                 </ul>
                             </div>
@@ -320,12 +326,12 @@
                             </div>
                         </div>
                     </div>
-					<div class="card">
+                    <div class="card">
                         <div class="card-header card-default">
                             Chat
-							<p class="text-muted">Lorem ipsum dolor sit amet</p>
+                            <p class="text-muted">Lorem ipsum dolor sit amet</p>
                         </div>
-						
+                        
                         <div class="card-body">
                             <div class="scrollDiv">
                                 <ul class="chat-list list-unstyled">
@@ -349,14 +355,14 @@
                                         <div class="media-body text-right float-left">
                                             <div class="speech-box">
                                                 <strong class="float-left">John Doe</strong>
-												<small class="text-right text-primary">1m ago</small>
+                                                <small class="text-right text-primary">1m ago</small>
                                                 <p class="margin-b-0 text-left">
                                                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
                                                 </p>
                                                 <small class="text-info">Today 12:31 pm - 10.08.2018</small>
                                             </div>
                                         </div>
-										<a href='javascript: void(0);' class="float-right">
+                                        <a href='javascript: void(0);' class="float-right">
                                             <img src="{{ asset( 'admin/img/avtar-2.png' ) }}" alt="" class="rounded-circle">
                                         </a>
                                     </li>
@@ -375,7 +381,7 @@
                                             </div>
                                         </div>
                                     </li>
-									 <li class="clearfix chat-element media">
+                                     <li class="clearfix chat-element media">
                                         <a href='javascript: void(0);' class="float-left">
                                             <img src="{{ asset( 'admin/img/avtar-2.png' ) }}" alt="" class="rounded-circle">
                                         </a>
@@ -405,15 +411,15 @@
                 </div>
 
             </div>
-			
-							
-				<div class="row">
-					<div class="col-lg-8 col-xlg-9">
+            
+                            
+                <div class="row">
+                    <div class="col-lg-8 col-xlg-9">
                         <div class="card">
-							<div class="card-header card-default">
+                            <div class="card-header card-default">
                             Activity Timeline
-							<p class="text-muted">Lorem ipsum dolor sit amet</p>
-							</div>
+                            <p class="text-muted">Lorem ipsum dolor sit amet</p>
+                            </div>
                             <div class="card-body">
 
                                 <div class="profiletimeline">
@@ -429,9 +435,9 @@
                                                     <div class="col-lg-3 col-md-6 mb-2"><img src="{{ asset( 'admin/img/gallery/4s.jpg' ) }}" alt="user" class="img-fluid rounded"></div>
                                                 </div>
                                                 <div class="like-comm">
-													<a href="javascript:void(0)" class="link mr-2">385 comment</a> 
-													<a href="javascript:void(0)" class="link mr-2"><i class="fa fa-heart text-danger"></i> 174 Love</a> 
-												</div>
+                                                    <a href="javascript:void(0)" class="link mr-2">385 comment</a> 
+                                                    <a href="javascript:void(0)" class="link mr-2"><i class="fa fa-heart text-danger"></i> 174 Love</a> 
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -446,9 +452,9 @@
                                                     <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. </p> </div>
                                                 </div>
                                                 <div class="like-comm mt-2"> 
-												<a href="javascript:void(0)" class="link mr-2">248 comment</a> 
-												<a href="javascript:void(0)" class="link mr-2"><i class="fa fa-heart text-danger"></i> 84 Love</a> 
-												</div>
+                                                <a href="javascript:void(0)" class="link mr-2">248 comment</a> 
+                                                <a href="javascript:void(0)" class="link mr-2"><i class="fa fa-heart text-danger"></i> 84 Love</a> 
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -460,9 +466,9 @@
                                                 <p class="mt-1"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper </p>
                                             </div>
                                             <div class="like-comm mt-2"> 
-											<a href="javascript:void(0)" class="link mr-2">68 comment</a> 
-											<a href="javascript:void(0)" class="link mr-2"><i class="fa fa-heart text-danger"></i> 36 Love</a> 
-											</div>
+                                            <a href="javascript:void(0)" class="link mr-2">68 comment</a> 
+                                            <a href="javascript:void(0)" class="link mr-2"><i class="fa fa-heart text-danger"></i> 36 Love</a> 
+                                            </div>
                                         </div>
                                     </div>
                                     <hr>
@@ -480,58 +486,58 @@
                             </div>
                         </div>
                     </div>
-					
-					<div class="col-md-4">
-					<div class="card weather">
-							<div class="city-selected">
-								<div class="weather-box">
-									<div class="info">
-										<div class="city">Ankara</div>
-										<div class="night">Night - 22:07 PM</div>
-										<div class="temp text-primary">3°</div>
-										<div class="wind">
-											<i class="wi wi-windy"></i>
-											<span>25 km/h</span>
-										</div>
-									</div>
-									<div class="icon text-primary">
-										<i class="wi wi-night-alt-hail"></i>
-									</div>
-								</div>
-							</div>
+                    
+                    <div class="col-md-4">
+                    <div class="card weather">
+                            <div class="city-selected">
+                                <div class="weather-box">
+                                    <div class="info">
+                                        <div class="city">Ankara</div>
+                                        <div class="night">Night - 22:07 PM</div>
+                                        <div class="temp text-primary">3°</div>
+                                        <div class="wind">
+                                            <i class="wi wi-windy"></i>
+                                            <span>25 km/h</span>
+                                        </div>
+                                    </div>
+                                    <div class="icon text-primary">
+                                        <i class="wi wi-night-alt-hail"></i>
+                                    </div>
+                                </div>
+                            </div>
 
-							<div class="days">
-								<div class="row row-no-gutter">
-									<div class="col-md-4">
-										<div class="day">
-											<h1>Monday</h1>
-											<i class="wi wi-day-rain"></i>
-										</div>
-									</div>
+                            <div class="days">
+                                <div class="row row-no-gutter">
+                                    <div class="col-md-4">
+                                        <div class="day">
+                                            <h1>Monday</h1>
+                                            <i class="wi wi-day-rain"></i>
+                                        </div>
+                                    </div>
 
-									<div class="col-md-4">
-										<div class="day">
-											<h1>Tuesday</h1>
-											<i class="wi wi-day-storm-showers"></i>
-										</div>
-									</div>
+                                    <div class="col-md-4">
+                                        <div class="day">
+                                            <h1>Tuesday</h1>
+                                            <i class="wi wi-day-storm-showers"></i>
+                                        </div>
+                                    </div>
 
-									<div class="col-md-4">
-										<div class="day">
-											<h1>Wednesday</h1>
-											<i class="wi wi-solar-eclipse"></i>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+                                    <div class="col-md-4">
+                                        <div class="day">
+                                            <h1>Wednesday</h1>
+                                            <i class="wi wi-solar-eclipse"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-				
+                
                         <div class="card">
-							<div class="card-header card-default">
+                            <div class="card-header card-default">
                             Browser Stats
-							<p class="text-muted">Lorem ipsum dolor sit amet</p>
-							</div>
+                            <p class="text-muted">Lorem ipsum dolor sit amet</p>
+                            </div>
                             <div class="card-body">
                                 <table class="table browser no-border">
                                     <tbody>
@@ -570,21 +576,64 @@
                             </div>
                         </div>
            
-					
-					</div>
-					
-				</div>
+                    
+                    </div>
+                    
+                </div>
 
-				
+                
   
 
         </section>
-      
+        <!-- ============================================================== -->
+        <!--                        Content End                             -->
+        <!-- ============================================================== -->
 
-		
-		
+        
+        
 
 @endsection
 
 
+@section('head-assets')
 
+        <!-- Vector Map Css-->
+        <link href="{{ asset( 'admin/lib/vectormap/jquery-jvectormap-2.0.2.css' ) }}" rel="stylesheet" />
+        
+        <!-- Chart C3 -->
+        <link href="{{ asset( 'admin/lib/chart-c3/c3.min.css' ) }}" rel="stylesheet">
+        <link href="{{ asset( 'admin/lib/chartjs/chartjs-sass-default.css' ) }}" rel="stylesheet">
+
+        <!-- DataTables -->
+        <link href="{{ asset( 'admin/lib/datatables/jquery.dataTables.min.css' ) }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset( 'admin/lib/datatables/responsive.bootstrap.min.css' ) }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset( 'admin/lib/toast/jquery.toast.min.css' ) }}" rel="stylesheet">
+        
+        
+@endsection
+
+
+@section('footer-assets')
+
+            
+        <!--Chart Script-->
+        <script src="{{ asset( 'admin/lib/chartjs/chart.min.js' ) }}"></script>
+        <script src="{{ du_asset( 'admin/lib/chartjs/chartjs-sass.js' ) }}"></script>
+
+        <!--Vetor Map Script-->
+        <script src="{{ asset( 'admin/lib/vectormap/jquery-jvectormap-2.0.2.min.js' ) }}"></script>
+        <script src="{{ asset( 'admin/lib/vectormap/jquery-jvectormap-us-aea-en.js' ) }}"></script>
+        
+        <!-- Chart C3 -->
+        <script src="{{ asset( 'admin/lib/chart-c3/d3.min.js' ) }}"></script>
+        <script src="{{ asset( 'admin/lib/chart-c3/c3.min.js' ) }}"></script>
+    
+        <!-- Datatables-->
+        <script src="{{ asset( 'admin/lib/datatables/jquery.dataTables.min.js' ) }}"></script>
+        <script src="{{ asset( 'admin/lib/datatables/dataTables.responsive.min.js' ) }}"></script>
+        <script src="{{ asset( 'admin/lib/toast/jquery.toast.min.js' ) }}"></script>
+        <script src="{{ asset( 'admin/js/dashboard.js' ) }}"></script>
+        
+
+
+@endsection

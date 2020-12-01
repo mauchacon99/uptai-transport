@@ -30,6 +30,6 @@
     <body class="bg-light">
     @yield('content')
 
-    @include('ducor::layouts.partials.layout-1.scripts')
+    @include('admin.partials.layout.scripts')
     </body>
 </html>

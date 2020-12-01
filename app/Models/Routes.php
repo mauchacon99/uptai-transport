@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Models\{Addreses};
+use App\Models\{Addreses, CarsExits};
 
 class Routes extends Model
 {
@@ -22,4 +22,8 @@ class Routes extends Model
         return $this->belongsTo(Addreses::class, 'addreses_destination_id');
     }
 
+    public function CarsExits()
+    {
+        return $this->hasMany(CarsExits::class);
+    }
 }

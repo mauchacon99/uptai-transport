@@ -3,17 +3,47 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\{Drivers};
+use App\Models\{Drivers,TradeMarks, Routes, Cars, CarsExits};
 use App\Http\Requests\Drivers\{CreateRequest,UpdateRequest};
+use Illuminate\Support\Facades\DB;
+use Illuminate\Auth\Middleware\Authenticate;
+use App\Events\DeleteAudit;
+use Barryvdh\DomPDF\Facade as PDF;
+
+
 
 class DriversController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
     	return view('drivers.index',[
-    		'drivers' => Drivers::all()
-    	]);
+    		'drivers'=> Drivers::all(),
+            'routes' => Routes::all(),
+            'cars'   => Cars::all()
+        ]);
     }
+
+    public function showCars(Drivers $driver)
+    {
+        return view('drivers.show-cars',[
+            'exits'  =>  $driver->CarsExits,
+            'driver' =>  $driver
+        ]);
+    }
+
+    public function showRoutes(Drivers $driver)
+    {
+        return view('drivers.show-routes',[
+            'exits'  =>  $driver->CarsExits,
+            'driver' =>  $driver
+        ]);
+    }
+
 
     public function create()
     {
@@ -50,10 +80,11 @@ class DriversController extends Controller
       public function destroy(Drivers $driver)
     {
 
-    	$driver->delete();
+        $driver->delete();
         return redirect()->route('drivers.index',[
             'drivers' => Drivers::all()
         ]);
+
     }
 
 }

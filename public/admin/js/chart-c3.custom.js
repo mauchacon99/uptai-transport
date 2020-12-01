@@ -97,14 +97,16 @@ $(function () {
         bindto: '#pieChart',
         data: {
             columns: [
-                ['data1', 30],
-                ['data2', 120],
-				['data3', 20]
+                ['Jose', 30],
+                ['Mauricio', 13],
+				['Luis', 30],
+                ['Pillo', 5],
             ],
             colors: {
-                data1: '#F6BB42',
-                data2: '#36a3f7',
+                hola1: '#F65B42',
+                data2: '#f45tff',
 				data3: '#37BC9B',
+                data4: '#283SFG',
             },
             type: 'pie'
         }

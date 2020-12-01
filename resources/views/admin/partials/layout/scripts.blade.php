@@ -9,6 +9,7 @@
 <script src="{{ asset('/admin/lib/metisMenu/metisMenu.min.js') }}"></script>
 <script src="{{ asset('/admin/js/custom.js') }}"></script>
 <script src="{{ asset('/admin/lib/toastr/jquery.toastr.min.js') }}"></script>
+
 @notify_render
 
 {{-- othere  --}}
