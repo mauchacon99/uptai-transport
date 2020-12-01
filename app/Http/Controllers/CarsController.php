@@ -93,7 +93,7 @@ class CarsController extends Controller
     public function showExits(Cars $car)
     {
         
-         return view('carsExits.index',[
+         return view('cars.show-exits',[
             'exits'  => $car->Exits,
         ]);
     }
