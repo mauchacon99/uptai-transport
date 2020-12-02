@@ -95,6 +95,14 @@ class CarsController extends Controller
         
          return view('cars.show-exits',[
             'exits'  => $car->Exits,
+            'cars' => $car
+        ]);
+    }
+
+    public function showDrivers(Cars $car){
+        return view('cars.show-drivers',[
+            'exits'  => $car->Exits,
+            'cars'   => $car,
         ]);
     }
 }

@@ -46,14 +46,17 @@ Route::put('/autobus/{cars}/editar','CarsController@update')->name('cars.update'
 Route::get('/autobus/{car}/editar','CarsController@show')->name('cars.show');
 Route::get('/autobus/{car}/status','CarsController@statusToogle')->name('cars.status');
 Route::get('/autobus/{car}/salidas-autobus','CarsController@showExits')->name('cars.exits');
+Route::get('/autobus/{car}/conductores','CarsController@showDrivers')->name('cars.drivers');
 
- 
 
-// address
+// address and stop
 
 Route::get('/ciudades', 'AddressController@index')->name('address.index');
 Route::get('/ciudades/create', 'AddressController@create')->name('address.create');
-Route::get('/ciudades/stops/{address}', 'StopsController@index')->name('stops.index');
+Route::get('/ciudades/paradas/{address}', 'StopsController@index')->name('stops.index');
+ 
+Route::get('/paradas/{stop}/status', 'StopsController@toggleStatus')->name('stops.status');
+Route::post('/ciudades/paradas/{address}/guardar', 'StopsController@store')->name('stops.store');
 
 
 //states

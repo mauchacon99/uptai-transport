@@ -22,6 +22,7 @@
                 <table class="table">
                 <thead>
                 <tr>
+                    <th> NRO Control </th>
                     <th> Circuito o Ruta </th>
                     <th> Fecha de Salida</th>
                     <th> Autobus </th>

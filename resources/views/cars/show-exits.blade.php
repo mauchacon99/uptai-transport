@@ -8,10 +8,7 @@
     <div class="card">
         <div class="card-header card-default">
             
-            <div class="float-right mt-10">
-                <a href="" class="btn btn-primary btn-rounded box-shadow btn-icon"><i class="fa fa-plus"></i> Publicar Salida </a>
-            </div>
-            Salida de vehiculos 
+            Salida del autobus con numero de control <strong>#{{ $cars->number }} </strong> con placa {{ $cars->plate}}
             <p class="text-muted"> Listado de salidas de vehiculo del departamento de transporte UPTAI</p>
 
     <div>
@@ -19,19 +16,33 @@
     </div>
         </div>
             <div class="card-body">
-                <table class="table">
+                <table class="table display table-striped table-bordered cellspacing="0" width="100%">
                 <thead>
                 <tr>
-                    <th> Circuito o Ruta </th>
-                    <th> Fecha de Salida</th>
-                    <th> Autobus </th>
+                    <th> km</th>
+                    <th> Ruta</th>
                     <th> Conductor</th>
-                    <th> Detalles</th>
-                     <th>Accion</th>
+                    <th> Fecha</th>
                 </tr>
                 </thead>
                 <tbody>
-                    @each('carsExits._row', $exits, 'exit')
+                     @foreach ($exits as $exit)
+                        <tr>
+                         <td> {{ $exit->routes->km   }} Km  </td>
+				         <td> 
+				         	{{ $exit->routes->addresesExit->name}}
+							{{ $exit->routes->addresesIntermediate->name }}       	
+							{{ $exit->routes->addresesDestination->name}}
+				          </td>
+				          <td>
+				          	{{ $exit->drivers->name}}
+				          	{{ $exit->drivers->surname}}
+				          </td>
+				          <td>
+				          	{{$exit->details->date_exit}}
+				          </td>
+                        </tr>
+               		 @endforeach
                 </tbody>
              </table>
             </div>
@@ -52,21 +63,22 @@
     <script src="{{ asset( 'admin/lib/datatables/pdfmake.min.js' ) }}"></script>
     <script src="{{ asset( 'admin/lib/datatables/vfs_fonts.js' ) }}"></script>
     <script src="{{ asset( 'admin/lib/datatables/buttons.html5.min.js' ) }}"></script>
-    <script>
+     <script>
            
      $('.table').DataTable( {
          ordering: true,
         "scrollCollapse": true,
         "paging":         true,
-        dom: '<B>frtipl',
+        dom: 'Bfrtip',
         keys: true,
         buttons: [
             {
-                extend: 'pdfHtml5',
+                extend: 'pdf',
                 text: '<span class="fas fa-file-pdf fa-2x"></span>',
                 titleAttr: 'Exportar a pdf',
                 className: 'btn btn-primary',
-                "sPdfMessage": "Conductores del Sistema de transporte"
+                title: "Salida del autobus con numero de control #{{ $cars->number }} con placa {{ $cars->plate}} ",
+                footer:true
             },
             {
                 extend: 'excelHtml5',

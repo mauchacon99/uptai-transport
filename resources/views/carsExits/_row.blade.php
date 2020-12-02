@@ -1,12 +1,15 @@
 
     <tr>
+      <td>
+        {{$exit->cars->number}}
+      </td>
 		     <td> 
            	{{ $exit->routes->addresesExit->name}} -
       			{{ $exit->routes->addresesIntermediate->name }}  -       	
       			{{ $exit->routes->addresesDestination->name}}
          </td>
          <td>
-            {{ $exit->details->time_exit}}
+            {{ $exit->details->date_exit}}
          </td>
          <td>
   	        <a data-toggle="modal" data-target="#modalCars_{{$exit->cars->id}}" class="">

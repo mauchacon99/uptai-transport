@@ -10,9 +10,6 @@ class AddressController extends Controller
 {
      public function index()
      {
-
-     	$test  = Addreses::first();
-     	dd($test);
  		return view('address.index',[
  			'Addreses' => Addreses::all(),
  		]);

@@ -19,7 +19,7 @@ class CreateStopsTable extends Migration
             
             $table->unsignedSmallInteger('addreses_id')->nullable();
             $table->foreign('addreses_id')->references('id')->on('addreses');
-            $table->smallInteger('status');
+            $table->smallInteger('status')->default('1');;
         });
     }
 

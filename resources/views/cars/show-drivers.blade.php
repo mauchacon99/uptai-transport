@@ -1,53 +1,49 @@
-
 @extends('admin.layout')
 
 @component('shared._breadcrumb')
-      @slot('title', 'Autobuses')
+      @slot('title', 'Conductores-Rutas')
 @endcomponent 
       
 @section('content')
     <div class="card">
         <div class="card-header card-default">
-            <div class="float-right mt-10">
-                <a href="{{ route('cars.create') }}" class="btn btn-primary btn-rounded box-shadow btn-icon"><i class="fa fa-plus"></i> Nuevo Autobuses</a>
-            </div>
-                Vehiculos
-            <p class="text-muted"> Listado de autobuses del departamento de transporte</p>
+             
+            <p class="text-muted"> Listado de conductores que han trabajado o circulado en la ruta actual en el Autobus control {{ $cars->number}} con placa {{$cars->plate}}</p>
+    <div>
+     </div>
         </div>
             <div class="card-body">
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th>Nro Control </th>
-                        <th>Placa</th>
-                        <th>Color</th>
-                        <th>Año</th>
-                        <th>Marca</th>
-                        <th>Modelo</th>
-                        <th>Detalles</th>
-                        <th>Salidas</th>
-                        <th> Choferes </th>
-                        <th>Action</th>
-                         @if(Auth::user()->roleUser->role->id == 2)
-                            <th>Status</th>
-                         @endif
-                    </tr>
-                    </thead>
+                <table class="table datatables" data-page-length='5' >
+                <thead>
+                <tr>
+                    <th data-class-name="priority">C.I</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Placa Bus</th>
+                    <th>Fecha salida</th>
+                </tr>
+                </thead>
                 <tbody>
-                    @each('cars._row', $cars, 'car')
+                    @foreach ($exits as $exit)
+                        <tr>
+		                    <td> {{ $exit->drivers->identity }} </td>
+		                    <td> {{ $exit->drivers->name   }} </td>
+					        <td> {{ $exit->drivers->surname}} </td>
+					        <td> @upper($exit->cars->plate)	  </td>
+				            <td> {{ $exit->details->date_exit}} </td>
+                        </tr>
+                @endforeach
                 </tbody>
-                </table>
+             </table>
             </div>
     </div>
 @endsection
-@section('head-assets')
 
+@section('head-assets')
         <!-- DataTables -->
         <link href="{{ asset( 'admin/lib/datatables/jquery.dataTables.min.css' ) }}" rel="stylesheet" type="text/css">
         <link href="{{ asset( 'admin/lib/datatables/responsive.bootstrap.min.css' ) }}" rel="stylesheet" type="text/css">
          <link href="{{ asset( 'admin/lib/datatables/buttons.dataTables.css' ) }}" rel="stylesheet" type="text/css">
-         
-     
 @endsection
 
 
