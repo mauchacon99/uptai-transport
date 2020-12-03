@@ -17,16 +17,17 @@ class CreateRoutesTable extends Migration
             $table->smallIncrements('id');
             $table->smallInteger('km');
          
-            $table->unsignedSmallInteger('addreses_exit_id')->nullable();
+            $table->unsignedSmallInteger('addreses_exit_id');
             $table->foreign('addreses_exit_id')->references('id')->on('addreses');
 
-            $table->unsignedSmallInteger('addreses_intermediate_id');
+            $table->unsignedSmallInteger('addreses_intermediate_id')->nullable();
             $table->foreign('addreses_intermediate_id')->references('id')->on('addreses');
 
-            $table->unsignedSmallInteger('addreses_destination_id')->nullable();
-            $table->foreign('addreses_destination_id')->references('id')->on('addreses');
+            $table->unsignedSmallInteger('addreses_destination_id');
+            $table->foreign('addreses_destination_id')->nullable()->references('id')->on('addreses');
 
-            $table->smallInteger('status');
+            $table->smallInteger('status')->default(1);
+            $table->softDeletes();
         });
     }
 

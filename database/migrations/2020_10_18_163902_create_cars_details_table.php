@@ -18,9 +18,9 @@ class CreateCarsDetailsTable extends Migration
             $table->string('gasoline', 25);
             $table->string('observation', 25);
 
-            $table->unsignedSmallInteger('cars_id')->nullable();
+            $table->unsignedSmallInteger('cars_id');
             $table->foreign('cars_id')->references('id')->on('cars');
-        });
+         });
     }
 
     /**

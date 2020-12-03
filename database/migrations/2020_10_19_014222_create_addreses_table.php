@@ -17,13 +17,14 @@ class CreateAddresesTable extends Migration
             $table->smallIncrements('id');
             $table->string('name', 100);
             $table->string('starting_point', 100);  
-            $table->unsignedSmallInteger('states_id')->nullable();
+            $table->unsignedSmallInteger('states_id');
             $table->foreign('states_id')->references('id')->on('states');        
-            $table->unsignedSmallInteger('municipalities_id')->nullable();
+            $table->unsignedSmallInteger('municipalities_id');
             $table->foreign('municipalities_id')->references('id')->on('municipalities');
-            $table->unsignedSmallInteger('parishes_id')->nullable();
+            $table->unsignedSmallInteger('parishes_id');
             $table->foreign('parishes_id')->references('id')->on('parishes');
-            $table->smallInteger('status');
+            $table->smallInteger('status')->default(1);
+             $table->softDeletes();
         });
     }
 

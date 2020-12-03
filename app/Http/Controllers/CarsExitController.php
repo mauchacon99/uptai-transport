@@ -14,4 +14,11 @@ class CarsExitController extends Controller
     		'exits'  => CarsExits::all(),
     	]);
     }
+
+    public function create()
+    {
+    	return view('carsExits.create',[
+    		'exits'  => CarsExits::all(),
+    	]);
+    }
 }

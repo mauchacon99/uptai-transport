@@ -7,6 +7,14 @@ use App\Models\{Addreses, CarsExits};
 
 class Routes extends Model
 {
+    public $timestamps = false;
+
+    protected $fillable = [
+            'km',
+            'addreses_exit_id',         
+            'addreses_intermediate_id',
+            'addreses_destination_id',
+    ];
     public function addresesExit()
     {
         return $this->belongsTo(Addreses::class, 'addreses_exit_id');
@@ -14,7 +22,9 @@ class Routes extends Model
 
     public function addresesIntermediate()
     {
-        return $this->belongsTo(Addreses::class, 'addreses_intermediate_id');
+        return $this->belongsTo(Addreses::class, 'addreses_intermediate_id')->withDefault([
+            'name' => ''
+        ]);;
     }
 
     public function addresesDestination()

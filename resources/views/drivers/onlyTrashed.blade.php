@@ -1,47 +1,49 @@
-
 @extends('admin.layout')
 
 @component('shared._breadcrumb')
-      @slot('title', 'Autobuses')
+      @slot('title', 'Conductores')
 @endcomponent 
       
 @section('content')
     <div class="card">
         <div class="card-header card-default">
-            <div class="float-right mt-10">
-                <a href="{{ route('cars.create') }}" class="btn btn-primary btn-rounded box-shadow btn-icon"><i class="fa fa-plus"></i> Nuevo Autobuses</a>
+            Conductores
+            <div class="pdf">
             </div>
-                Vehiculos
-            <p class="text-muted"> Listado de autobuses del departamento de transporte</p>
+            <p class="text-muted"> Listado de conductores del departamento de transporte</p>
+    <div>
+     </div>
         </div>
             <div class="card-body">
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th>Nro Control </th>
-                        <th>Placa</th>
-                        <th>Color</th>
-                        <th>Año</th>
-                        <th>Marca</th>
-                        <th>Modelo</th>
-                        <th>Detalles</th>
-                        <th>Salidas</th>
-                        <th> Choferes </th>
-                        @if(Auth::user()->roleUser->role->id == 2 || Auth::user()->roleUser->role->id == 1)
-                        <th>Action</th>
-                        @endif
-                         @if(Auth::user()->roleUser->role->id == 2)
-                            <th>Status</th>
-                         @endif
-                    </tr>
-                    </thead>
+                <table class="table datatables" data-page-length='5' >
+                <thead>
+                <tr>
+                    <th data-class-name="priority">C.I</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                </tr>
+                </thead>
                 <tbody>
-                    @each('cars._row', $cars, 'car')
+                     @foreach ($drivers as $driver)
+
+                        <tr>
+                            <td>{{ $driver->identity}}</td>
+                            <td>{{ $driver->name }} {{ $driver->surname }}</td>
+                            <td>  
+                                <form action="{{ route('drivers.restore')}}" method="POST">
+                                    {!! @csrf_field() !!}
+                                    <input type="hidden" name="id" value="{{$driver->id}}">
+                                       <button type="submit" class="btn btn-danger btn-circle"><span class="fas fa-refresh"></span></button>
+                                </form>
+                 			</td>
+                        </tr>
+                	@endforeach
                 </tbody>
-                </table>
+             </table>
             </div>
     </div>
 @endsection
+
 @section('head-assets')
 
         <!-- DataTables -->
@@ -119,3 +121,5 @@
 
 
 @endsection
+
+

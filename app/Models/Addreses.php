@@ -7,6 +7,16 @@ use App\Models\{States, Municipalities, Parishes, Stops};
 
 class Addreses extends Model
 {   
+        public $timestamps = false;
+
+       protected $fillable = [
+            'name',
+            'starting_point',
+            'states_id'        ,
+            'parishes_id'      ,
+            'municipalities_id',
+            'status'
+        ];
         public function States()
         {
             return $this->belongsTo(States::class);

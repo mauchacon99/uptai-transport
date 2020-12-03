@@ -69,10 +69,18 @@ class CarsController extends Controller
         ]);
     }
 
-      public function destroy(Cars $car)
+      public function delete(Cars $car)
     {
-
         $car->delete();
+
+        return redirect()->route('cars.index',[
+            'cars' => Cars::all()
+        ]);
+    }
+
+    public function destroy(Cars $car)
+    {
+        $car->forceDelete();
 
         return redirect()->route('cars.index',[
             'cars' => Cars::all()
@@ -107,7 +115,7 @@ class CarsController extends Controller
     }
     public function onlyTrashed()
     {
-        return view('cars.index-soft',[
+        return view('cars.onlyTrashed',[
             'cars' => Cars::onlyTrashed()->get()
         ]);
     }
@@ -116,6 +124,7 @@ class CarsController extends Controller
     {   
        $car = Cars::onlyTrashed()->findOrFail($request->id);
        $car->restore();
+
        return redirect()->route('cars.index',[
             'cars' => Cars::all()
         ]);

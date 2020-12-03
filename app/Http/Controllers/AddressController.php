@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\{Addreses, States};
+use App\Http\Requests\Addreses\{CreateRequest};
+
  
 
 class AddressController extends Controller
@@ -21,5 +23,15 @@ class AddressController extends Controller
  			'states' => States::all(),
  			'address' => new Addreses 
  		]);
+     }
+
+     public function store(CreateRequest $request)
+     {
+     	$address = $request->createAddress();
+
+     	return redirect()->route('stops.index',[
+    		'address' => $address,
+    		'stops'   => $address->stops
+    	]);
      }
 }

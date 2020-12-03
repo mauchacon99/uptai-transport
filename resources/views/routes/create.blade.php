@@ -15,7 +15,7 @@
                 Seleccione las diferente Ciudades que conforman la Ruta 
             </div>
             <div class="card-body">
-                <form action="{{ route('drivers.store') }}" method="POST" class="user">
+                <form action="{{ route('routes.store') }}" method="POST" class="user">
                       @include('routes._fields')
                     <br>
                     <div clas="form-group">

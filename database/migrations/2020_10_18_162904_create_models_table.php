@@ -16,7 +16,7 @@ class CreateModelsTable extends Migration
         Schema::create('models', function (Blueprint $table) {
             $table->smallIncrements('id');
             $table->string('description', 50);
-            $table->unsignedSmallInteger('trade_marks_id')->nullable();
+            $table->unsignedSmallInteger('trade_marks_id');
             $table->foreign('trade_marks_id')->references('id')->on('trade_marks');
             $table->timestamps();
         });

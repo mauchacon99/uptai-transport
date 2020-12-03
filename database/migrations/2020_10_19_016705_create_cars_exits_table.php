@@ -17,20 +17,16 @@ class CreateCarsExitsTable extends Migration
            
             $table->mediumIncrements('id');
 
-            $table->unsignedSmallInteger('routes_id')->nullable();
-            $table->foreign('routes_id')->references('id')->on('routes');
-
-            $table->unsignedSmallInteger('drivers_id')->nullable();
-
-            
-            $table->foreign('drivers_id')->references('id')->on('drivers');
-
-            $table->unsignedSmallInteger('cars_id')->nullable();
-            $table->foreign('cars_id')->references('id')->on('cars');
-
-            $table->smallInteger('status');
-            
+            $table->unsignedSmallInteger('routes_id');
+            $table->foreign('routes_id')->references('id')->on('routes')->onDelete('cascade');
+            $table->unsignedSmallInteger('drivers_id');
+            $table->foreign('drivers_id')->references('id')->on('drivers')->onDelete('cascade');
+            $table->unsignedSmallInteger('cars_id');
+            $table->foreign('cars_id')->references('id')->on('cars')->onDelete('cascade');
+            $table->smallInteger('status')->default('1');
             $table->timestamps();
+            $table->softDeletes();
+
         });
     }
 

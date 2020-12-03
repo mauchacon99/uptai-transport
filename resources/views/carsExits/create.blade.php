@@ -1,7 +1,7 @@
- @extends('admin.layout')
+@extends('admin.layout')
 
 @component('shared._breadcrumb')
-      @slot('title', 'Direcciones')
+      @slot('title', 'Conductores')
       @slot('description', 'Crear')
       @slot('state', 'Form')
 @endcomponent 
@@ -12,11 +12,11 @@
     <div class="col-sm-12">
         <div class="card">
             <div class="card-header card-default">
-                Ingrese datos de nueva ciudad para conformar tus rutas
+                Ingrese la informacion del nuevo conductor
             </div>
             <div class="card-body">
-                <form action="{{ route('address.store')}}" method="POST" class="user">
-                      @include('address._fields')
+                <form action="{{ route('drivers.store') }}" method="POST" class="user">
+                      @include('carsExits._field')
                     <br>
                     <div clas="form-group">
                         <div class="row">
@@ -35,4 +35,6 @@
         </div>
     </div>
 </div>
+
+
 @endsection

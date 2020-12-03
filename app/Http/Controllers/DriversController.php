@@ -14,6 +14,7 @@ use Barryvdh\DomPDF\Facade as PDF;
 
 class DriversController extends Controller
 {
+ 
 
     public function __construct()
     {
@@ -23,8 +24,6 @@ class DriversController extends Controller
     {
     	return view('drivers.index',[
     		'drivers'=> Drivers::all(),
-            'routes' => Routes::all(),
-            'cars'   => Cars::all()
         ]);
     }
 
@@ -77,14 +76,38 @@ class DriversController extends Controller
         ]);
     }
 
-      public function destroy(Drivers $driver)
+      public function delete(Drivers $driver)
     {
-
         $driver->delete();
+
         return redirect()->route('drivers.index',[
             'drivers' => Drivers::all()
         ]);
+    }
 
+    public function restore(Request $request)
+    {
+       $driver = Drivers::onlyTrashed()->findOrFail($request->id);
+       $driver->restore();
+
+       return redirect()->route('drivers.index',[
+            'Drivers' => Drivers::all()
+        ]);
+    }
+
+    public function onlyTrashed()
+    {
+        return view('drivers.onlyTrashed',[
+            'drivers' => Drivers::onlyTrashed()->get()
+        ]);
+    }
+     public function destroy(Drivers $driver)
+    {
+        $driver->forceDelete();
+
+         return redirect()->route('drivers.index',[
+            'drivers'=> Drivers::all(),
+        ]);
     }
 
 }

@@ -16,10 +16,10 @@ class CreateStopsTable extends Migration
         Schema::create('stops', function (Blueprint $table) {
             $table->smallIncrements('id');
             $table->string('name', 100);
-            
             $table->unsignedSmallInteger('addreses_id')->nullable();
             $table->foreign('addreses_id')->references('id')->on('addreses');
-            $table->smallInteger('status')->default('1');;
+            $table->smallInteger('status')->default('1');
+            $table->softDeletes();
         });
     }
 

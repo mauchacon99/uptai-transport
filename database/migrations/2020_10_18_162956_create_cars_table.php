@@ -21,12 +21,12 @@ class CreateCarsTable extends Migration
             $table->string('color', 25);
             $table->year('year', 25);
 
-            $table->unsignedSmallInteger('trade_marks_id')->nullable();
+            $table->unsignedSmallInteger('trade_marks_id');
             $table->foreign('trade_marks_id')->references('id')->on('trade_marks');
 
-            $table->unsignedSmallInteger('models_id')->nullable();
+            $table->unsignedSmallInteger('models_id');
             $table->foreign('models_id')->references('id')->on('models');
-            $table->smallInteger('status');           
+            $table->smallInteger('status')->default(1);           
             $table->smallInteger('chairs');
 
             $table->softDeletes();

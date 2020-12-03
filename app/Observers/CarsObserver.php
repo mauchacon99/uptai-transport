@@ -48,7 +48,7 @@ class CarsObserver
     public function deleted(Cars $cars)
     {
         $data = [
-            'description' => 'elimino el vehiculo con la Placa  '.$cars->plate,
+            'description' => 'elimino logicamente el vehiculo con la Placa  '.$cars->plate,
             'action'      => 'deleted',
             'name_model'  => 'cars',
         ];
@@ -62,9 +62,15 @@ class CarsObserver
      * @param  \App\Cars  $cars
      * @return void
      */
-    public function restored(Cars $cars)
+       public function restored(Cars $cars)
     {
-        //
+         
+        $data = [
+            'description' => ' restauro el vehiculo con la Placa  '.$cars->plate,
+            'action'      => 'restore',
+            'name_model'  => 'cars',
+        ];
+        Bitacoras::record($cars, $data);
     }
 
     /**
@@ -75,6 +81,11 @@ class CarsObserver
      */
     public function forceDeleted(Cars $cars)
     {
-        //
+        $data = [
+            'description' => ' elimino fisicamente  el vehiculo con la Placa  '.$cars->plate,
+            'action'      => 'deleteForce',
+            'name_model'  => 'cars',
+        ];
+        Bitacoras::record($cars, $data);
     }
 }

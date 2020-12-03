@@ -3,9 +3,9 @@
             {{ $route->km }} Km  
         </td>
         <td> 
-         	{{ $route->addresesExit->name}} -
-  			{{ $route->addresesIntermediate->name }} -       	
-  			{{ $route->addresesDestination->name}}
+         	{{ $route->addresesExit->name}} 
+    			-{{ $route->addresesIntermediate->name }}-       	
+    			{{ $route->addresesDestination->name}}
         </td>
         <td>
             <a data-toggle="modal" data-target="#modalreference_{{$route->id}}" class="">

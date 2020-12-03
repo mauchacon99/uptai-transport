@@ -7,8 +7,11 @@ use Illuminate\Auth\Events\Registered;
   
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Event;
-use App\Models\{Activity,Drivers,Cars};
-use App\observers\{carsObserver, driversObserver};
+
+use App\Models\{Activity,Drivers,Cars, Addreses,ExitsCars, Routes, Stops, User};
+
+use App\observers\{carsObserver, driversObserver, AddressObserver,ExistCarsObserver, RoutesObserver, StopsObserver, UserObserver };
+
 
 use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
 
@@ -36,6 +39,11 @@ class EventServiceProvider extends ServiceProvider
 
         Cars::observe(carsObserver::class);
         Drivers::observe(driversObserver::class);
+        Addreses::observe(AddressObserver::class);
+        /*ExitsCars::observe(ExistCarsObserver::class);
+        Routes::observe(RoutesObserver::class);
+        Stops::observe(StopsObserver::class);
+        User::observe(UserObserver::class);*/
 
     }
 }

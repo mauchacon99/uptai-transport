@@ -16,7 +16,7 @@ class CreateParishesTable extends Migration
         Schema::create('parishes', function (Blueprint $table) {
             $table->smallIncrements('id');
             $table->string('name', 100);          
-            $table->unsignedSmallInteger('municipalities_id')->nullable();
+            $table->unsignedSmallInteger('municipalities_id');
             $table->foreign('municipalities_id')->references('id')->on('municipalities');
          });
     }

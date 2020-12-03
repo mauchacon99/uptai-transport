@@ -17,10 +17,10 @@ class CreateBitacorasTable extends Migration
             $table->smallIncrements('id');
             $table->string('action', 15);
             $table->string('description', 100);
-            $table->string('name_model')->nullable();
-            $table->string('model_id')->nullable();
+            $table->string('name_model');
+            $table->string('model_id');
             $table->ipAddress('ip_address');
-            $table->unsignedBigInteger('users_id')->nullable();
+            $table->unsignedBigInteger('users_id');
             $table->foreign('users_id')->references('id')->on('users');
             $table->timestamps();
         });

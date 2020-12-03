@@ -8,6 +8,4 @@
                 <i class="fa fa-hand-paper-o" aria-hidden="true"></i>
             </a>
         </td>
-
-        
     </tr>
