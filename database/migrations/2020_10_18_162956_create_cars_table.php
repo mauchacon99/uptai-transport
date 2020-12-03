@@ -26,7 +26,10 @@ class CreateCarsTable extends Migration
 
             $table->unsignedSmallInteger('models_id')->nullable();
             $table->foreign('models_id')->references('id')->on('models');
-            $table->smallInteger('status');
+            $table->smallInteger('status');           
+            $table->smallInteger('chairs');
+
+            $table->softDeletes();
         });
     }
 

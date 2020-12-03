@@ -1,42 +1,45 @@
-
-
 @extends('admin.layout')
 
 @component('shared._breadcrumb')
-     @slot('title', 'Usuarios')
-     @slot('description', 'home')
-     @slot('state', 'table')@endcomponent 
+      @slot('title', 'Autobuses')
+@endcomponent 
       
 @section('content')
     <div class="card">
         <div class="card-header card-default">
-            <div class="float-right mt-10">
-                <a href="{{ route('users.create')}}" class="btn btn-primary btn-rounded box-shadow btn-icon"><i class="fa fa-plus"></i> Nuevo Usuario</a>
-            </div>
-            Usuarios
-            <p class="text-muted"> Listado de usuarios con acceso al sistema de transporte del  UPTAI</p>
+                Vehiculos
+            <p class="text-muted"> Listado de autobuses del departamento de transporte</p>
         </div>
             <div class="card-body">
                 <table class="table">
                     <thead>
                     <tr>
-                        <th>Nombre</th>
-                        <th>Correo</th>
-                        <th> Rol </th>
-                        <th>auditar</th>
-                        <th>acciones</th>  
-                        <th>status</th>                  
+                        <th>Nro Control </th>
+                        <th>Placa</th>
+                        <th>reciclar</th>
+                         
                     </tr>
                     </thead>
                 <tbody>
-					 @each('users._row', $users, 'user') 
+                     @foreach ($cars as $car)
+
+                        <tr>
+                            <td>{{ $car->number}}</td>
+                            <td>{{ $car->plate }}</td>
+                            <td>  
+                                <form action="{{ route('cars.test')}}" method="POST">
+                                    {!! @csrf_field() !!}
+                                    <input type="hidden" name="id" value="{{$car->id}}">
+                                       <button type="submit" class="btn btn-danger btn-circle"><span class="fas fa-refresh"></span></button>
+                                </form>
+                 			</td>
+                        </tr>
+                	@endforeach
                 </tbody>
-             </table>
+                </table>
             </div>
     </div>
 @endsection
-
-
 @section('head-assets')
 
         <!-- DataTables -->

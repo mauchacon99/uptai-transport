@@ -35,11 +35,18 @@ Route::get('/conductor/{driver}/reporte-rutas-ejecutas','DriversController@showR
 
 //drivers
 
+
+
+// cars
+
+Route::get('/respaldo/autobuses', 'CarsController@onlyTrashed')->name('cars.onlyTrashed');
+
+Route::post('/autobuses/licencia', 'CarsController@test')->name('cars.test');
+
+
 Route::get('/autobuses', 'CarsController@index')->name('cars.index');
 Route::get('/autobus/crear', 'CarsController@create')->name('cars.create');
 Route::get('/autobus/modelos/{model}', 'CarsController@toggleModel')->name('cars.toggleModel');
-
-// cars
 Route::post('/autobus/crear', 'CarsController@store')->name('cars.store');
 Route::delete('/autobus/{car}','CarsController@destroy')->name('cars.destroy');
 Route::put('/autobus/{cars}/editar','CarsController@update')->name('cars.update');

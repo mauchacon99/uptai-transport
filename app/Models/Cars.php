@@ -3,10 +3,14 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\{CarsDetails, Models,TradeMarks,Bitacoras, CarsExits };
 
 class Cars extends Model
 {
+
+    use SoftDeletes;
+
     protected $fillable = [
     'color','chairs','year' , 'plate','number','status','models_id','trade_marks_id'
     ];

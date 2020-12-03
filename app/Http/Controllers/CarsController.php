@@ -72,7 +72,7 @@ class CarsController extends Controller
       public function destroy(Cars $car)
     {
 
-    	$car->delete();
+        $car->delete();
 
         return redirect()->route('cars.index',[
             'cars' => Cars::all()
@@ -103,6 +103,21 @@ class CarsController extends Controller
         return view('cars.show-drivers',[
             'exits'  => $car->Exits,
             'cars'   => $car,
+        ]);
+    }
+    public function onlyTrashed()
+    {
+        return view('cars.index-soft',[
+            'cars' => Cars::onlyTrashed()->get()
+        ]);
+    }
+
+    public function test(Request $request)
+    {   
+       $car = Cars::onlyTrashed()->findOrFail($request->id);
+       $car->restore();
+       return redirect()->route('cars.index',[
+            'cars' => Cars::all()
         ]);
     }
 }

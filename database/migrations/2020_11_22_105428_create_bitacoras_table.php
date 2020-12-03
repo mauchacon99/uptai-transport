@@ -16,7 +16,7 @@ class CreateBitacorasTable extends Migration
         Schema::create('bitacoras', function (Blueprint $table) {
             $table->smallIncrements('id');
             $table->string('action', 15);
-            $table->string('description', 50);
+            $table->string('description', 100);
             $table->string('name_model')->nullable();
             $table->string('model_id')->nullable();
             $table->ipAddress('ip_address');

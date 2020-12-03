@@ -71,17 +71,17 @@
                     "scrollCollapse": true,
                     "paging":         true,
                     dom: 'Bfrtilp',
-                    responsive:true
+                    responsive:true,
                     buttons: [
                         {
                             extend: 'pdfHtml5',
                             text: '<span class="fas fa-file-pdf"></span>',
                             titleAttr: 'Exportar a pdf',
-                            className: 'btn btn-sucess'
+                            className: 'btn btn-success'
                         },
                         {
                             extend: 'excelHtml5',
-                            text: '<span class="fas fa-file-pdf"></span>',
+                            text: '<span class="fas fa-file-excel"></span>',
                             titleAttr: 'Exportar a excel',
                             className: 'btn btn-danger'
                         }
