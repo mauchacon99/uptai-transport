@@ -1,70 +1,36 @@
 {!! @csrf_field() !!}
  <div class="form-group">
     <div class="row">
-        <div class="col-md-6 @if($errors->has('name')) has-error ?? has-success  @endif">
-            <input 
-                type="name" 
-                name="name" 
-                id="name" 
-                placeholder=" Nombre de la ciudad" 
-                class="
-                form-control
-                "
-                value="{{ old('name', $address->name) }}"
-            >
-            @if($errors->has('name'))
-                 <div class="text-danger">{{ $errors->first('name')}}</div>
-            @endif    
-        </div>
-        <div class="col-md-6 @if($errors->has('starting_point')) has-error ?? has-success  @endif">
-            <input 
-                type="name" 
-                name="starting_point" 
-                id="starting_point" 
-                placeholder="Sitios de entrada y salida - referencia" 
-                class="
-                form-control
-                "
-                value="{{ old('name', $address->starting_point) }}"
-            >
-            @if($errors->has('starting_point'))
-                 <div class="text-danger">{{ $errors->first('starting_point')}}</div>
-            @endif    
-        </div>
-    </div>
-</div>
-
-<div clas="form-group">
-    <div class="row">
-        <div class="col-md-4 @if($errors->has('states_id')) has-error ?? has-success  @endif">
-            <select name="states_id" class="form-control"  id="states_id">
-                  <option value=""> Selecione Estado</option>
-              @foreach($states as $state)
-                  <option value="{{ $state->id }}"{{ old('states_id') == $state->id ? ' selected' : ''}}> {{ $state->name }}</option>
-                
+       
+        <div class="col-md-4 @if($errors->has('drivers_id')) has-error ?? has-success  @endif">
+            <select name="drivers_id" class="form-control"  id="drivers_id">
+                  <option value=""> Seleccione Conductor</option>
+              @foreach($drivers as $driver)
+                  <option value="{{ $driver->id }}"{{ old('drivers_id') == $driver->id ? ' selected' : ''}}> {{ $driver->name }} {{ $driver->surname }}</option>
               @endforeach
        		</select>  
         </div>
-        @if($errors->has('states_id'))
-            <div class="text-danger">{{ $errors->first('states_id')}}</div>
-        @endif
-        <div class="col-md-4 @if($errors->has('municipalities_id')) has-error ?? has-success  @endif">
-                <select name="municipalities_id" id="municipalities_id"class="form-control">
-                    <option value=""> Selecione un Municipio</option>
-                 
-                </select>
+        <div class="col-md-4 @if($errors->has('routes_id')) has-error ?? has-success  @endif">
+            <select name="routes_id" class="form-control"  id="routes_id">
+                  <option value=""> Seleccione Ruta</option>
+              @foreach($routes as $route)
+                  <option value="{{ $route->id }}"{{ old('route_id') == $route->id ? ' selected' : ''}}> 	{{ $route->addresesExit->name}} 
+    				-{{ $route->addresesIntermediate->name }}-       	
+    				 {{ $route->addresesDestination->name}}
+    			   </option>
+              @endforeach
+       		</select>  
         </div>
-        @if($errors->has('municipalities_id'))
-            <div class="text-danger">{{ $errors->first('municipalities_id')}}</div>
-        @endif
-        <div class="col-md-4 @if($errors->has('parishes_id')) has-error ?? has-success  @endif">
-                <select name="parishes_id" id="parishes_id"class="form-control">
-                    <option value=""> Selecione un Parroquia</option>
-                </select>
+        <div class="col-md-4 @if($errors->has('cars_id')) has-error ?? has-success  @endif">
+            <select name="cars_id" class="form-control"  id="cars_id">
+                  <option value=""> Seleccione Autobus</option>
+              @foreach($cars as $car)
+                  <option value="{{ $car->id }}"{{ old('cars_id') == $cars->id ? ' selected' : ''}}> 	NRO CONTROL {{ $car->number }}  - PLACA {{ $car->plate }} 
+    			   </option>
+              @endforeach
+       		</select>  
         </div>
-        @if($errors->has('models'))
-            <div class="text-danger">{{ $errors->first('parishes_id')}}</div>
-        @endif
+
     </div>
 </div>
 

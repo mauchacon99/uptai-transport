@@ -9,7 +9,7 @@
         <div class="card-header card-default">
             
             <div class="float-right mt-10">
-                <a href="" class="btn btn-primary btn-rounded box-shadow btn-icon"><i class="fa fa-plus"></i> Publicar Salida </a>
+                <a href="{{ route('carsexit.create') }}" class="btn btn-primary btn-rounded box-shadow btn-icon"><i class="fa fa-plus"></i> Publicar Salida </a>
             </div>
             Salida de vehiculos 
             <p class="text-muted"> Listado de salidas de vehiculo del departamento de transporte UPTAI</p>
