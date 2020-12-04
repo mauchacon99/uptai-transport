@@ -40,8 +40,21 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('bitacoras.index')}}" aria-expanded="false"><i class="fa fa-exchange-alt"></i> <span class="toggle-none"> Actividades </a>
                 </li>
+                <li class="nav-heading"><span> RESPALDOS </span></li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('bitacoras.index')}}" aria-expanded="false"><i class="fa fa-database"></i> <span class="toggle-none"> Respaldo </a>
+                    <a class="nav-link" href="{{ route('drivers.onlyTrashed')}}" aria-expanded="false"><i class="fa fa-database"></i> <span class="toggle-none">  Autobuses </a>
+                </li>
+                 <li class="nav-item">
+                    <a class="nav-link" href="{{ route('cars.onlyTrashed')}}" aria-expanded="false"><i class="fa fa-database"></i> <span class="toggle-none">  Drivers </a>
+                </li>
+                 <li class="nav-item">
+                    <a class="nav-link" href="{{ route('cars.onlyTrashed')}}" aria-expanded="false"><i class="fa fa-database"></i> <span class="toggle-none">  Conductores </a>
+                </li>
+                 <li class="nav-item">
+                    <a class="nav-link" href="{{ route('cars.onlyTrashed')}}" aria-expanded="false"><i class="fa fa-database"></i> <span class="toggle-none">  Rutas </a>
+                </li>
+                 <li class="nav-item">
+                    <a class="nav-link" href="{{ route('cars.onlyTrashed')}}" aria-expanded="false"><i class="fa fa-database"></i> <span class="toggle-none">  Paradas </a>
                 </li>
                 @endif
             </ul>

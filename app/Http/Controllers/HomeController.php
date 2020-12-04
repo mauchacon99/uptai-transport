@@ -25,8 +25,6 @@ class HomeController extends Controller
    public function index(Request $request)
     {
 
-        $request->user()->authorizeRoles(['Editor', 'Administrador','Autor']);
-        
         return view('home',[
             'drivers' => Drivers::all()->count(),
             'cars'    => Cars::all()->count(),

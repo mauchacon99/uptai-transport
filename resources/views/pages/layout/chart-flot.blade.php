@@ -31,7 +31,7 @@
 		<div class="col-md-7">
 			<div class="card">
 				<div class="card-header card-default">
-					Line type chart
+					Km de Rutas
 				</div>
 				<div class="card-body">
 					<div class="flot-chart">

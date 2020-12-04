@@ -16,9 +16,9 @@
                         <form role="form" method="POST" action="{{ route('register') }}">
                             @csrf
                             <div class="form-group  @error('name') has-error @enderror">
-                                <label for="name">{{ __('Name') }}</label>
+                                <label for="name">{{ __('Nombres y Apellidos') }}</label>
                                 <div class="group-icon">
-                                    <input id="name" placeholder="Example: Jon Do" class="form-control" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                    <input id="name"  class="form-control" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
                                     <span class="icon-envelope text-muted icon-input"></span>
                                     @error('name')
                                         <em id="name-error" class="error help-block">{{ $message }}</em>
@@ -29,7 +29,7 @@
                             <div class="form-group  @error('email') has-error @enderror">
                                 <label for="email">{{ __('E-Mail Address') }}</label>
                                 <div class="group-icon">
-                                    <input id="email" placeholder="Example: Jon Do" class="form-control" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                    <input id="email"  class="form-control" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                                     <span class="icon-envelope text-muted icon-input"></span>
                                     @error('email')
                                         <em id="email-error" class="error help-block">{{ $message }}</em>
@@ -41,7 +41,7 @@
                             <div class="form-group group-icon  @error('password') has-error @enderror">
                                 <label for="password">{{ __('Password') }}</label>
                                 <div class="group-icon">
-                                    <input id="password" type="password" placeholder="Password" class="form-control"  name="password" required autocomplete="new-password">
+                                    <input id="password" type="password"  class="form-control"  name="password" required autocomplete="new-password">
                                     <span class="icon-lock text-muted icon-input"></span>
                                     @error('password')
                                         <em id="password-error" class="error help-block">{{ $message }}</em>
@@ -51,7 +51,7 @@
                                 <div class="form-group group-icon @error('password') has-error @enderror">
                                     <label for="password-confirm">{{ __('Confirm Password') }}</label>
                                     <div class="group-icon">
-                                    <input id="password-confirm" type="password" placeholder="Confirm Password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                    <input id="password-confirm" type="password"  class="form-control" name="password_confirmation" required autocomplete="new-password">
                                     <span class="icon-lock text-muted icon-input"></span>
                                 </div>
                             </div>

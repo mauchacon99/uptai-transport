@@ -15,9 +15,9 @@
                         <form role="form" method="post" action="{{ route('login') }}">
                          @csrf
                             <div class="form-group @error('email') has-error @enderror">                                      
-                                <label  for="email">{{ __('E-Mail Address') }}</label>
+                                <label  for="email">{{ __('Correo Electronico') }}</label>
                                 <div class="group-icon">
-                                <input id="email" type="email" placeholder="Username" class="form-control" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <input id="email" type="email" placeholder="Correo Electronico" class="form-control" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                                 <span class="icon-user text-muted icon-input"></span>
                                 
                                 @error('email')
@@ -27,9 +27,9 @@
                                 </div>
                             </div>
                             <div class="form-group @error('password') has-error @enderror">
-                                <label for="password">{{ __('Password') }}</label>
+                                <label for="password">{{ __('Contraseña') }}</label>
                                 <div class="group-icon">
-                                    <input id="password" type="password" placeholder="password" class="form-control " name="password" required autocomplete="current-password">
+                                    <input id="password" type="password" placeholder="Contraseña" class="form-control " name="password" required autocomplete="current-password">
                                     <span class="icon-lock text-muted icon-input"></span>
                                     @error('password')
                                         <em id="password-error" class="error help-block">{{ $message }}</em>
@@ -41,17 +41,17 @@
                                 <div class="float-left">
                                     <div class="checkbox checkbox-primary margin-r-5">
                                         <input id="remember" type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}>
-                                        <label for="remember"> {{ __('Remember Me') }} </label>
+                                        <label for="remember"> {{ __('Recordar Contraseña') }} </label>
                                     </div>
                                 </div>
                                 <div class="float-right">
-                                    <button type="submit" class="btn btn-block btn-primary btn-rounded box-shadow">{{ __('Login') }}</button>
+                                    <button type="submit" class="btn btn-block btn-primary btn-rounded box-shadow">{{ __('INICIAR SESION') }}</button>
                                 </div>
                             </div>
                         </form>
                     </div>
                     <div class="text-center misc-footer">
-                        <p>Copyright &copy; 2018 FixedPlus</p>
+                        <p>Copyright &copy; </p>
                     </div>
                 </div>
             </div>

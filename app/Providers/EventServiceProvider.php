@@ -41,9 +41,10 @@ class EventServiceProvider extends ServiceProvider
         Drivers::observe(driversObserver::class);
         Addreses::observe(AddressObserver::class);
         /*ExitsCars::observe(ExistCarsObserver::class);
-        Routes::observe(RoutesObserver::class);
+        */Routes::observe(RoutesObserver::class);
+
         Stops::observe(StopsObserver::class);
-        User::observe(UserObserver::class);*/
+        User::observe(UserObserver::class);
 
     }
 }

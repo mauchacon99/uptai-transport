@@ -10,7 +10,7 @@ class BitacorasController extends Controller
  	public function index()
  	{
 
- 		$bitacora = Bitacoras::all();
+ 		$bitacora = Bitacoras::orderBy('id', 'desc')->get();
 
  		return view('bitacora.index',[
  			'activities' => $bitacora

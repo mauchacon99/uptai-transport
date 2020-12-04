@@ -14,7 +14,7 @@ class RoutesObserver
     public function created(routes $route)
     {
         $data = [
-            'description' => ' publico la salida #'.$route->id
+            'description' => ' publico la salida #'.$route->id,
             'action'      => 'created',
             'name_model'  => 'routes',
         ];
@@ -30,7 +30,7 @@ class RoutesObserver
     public function updated(routes $route)
     {
         $data = [
-            'description' => ' modifico la salida #'.$route->id
+            'description' => ' modifico la salida #'.$route->id,
             'action'      => 'update',
             'name_model'  => 'routes',
         ];

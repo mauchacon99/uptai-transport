@@ -14,7 +14,7 @@ class StopsObserver
     public function created(Stops $stop)
     {
         $data = [
-            'description' => ' creo la parada #'.$stop->name.' a la ciudad'.$stop->address->name
+            'description' => ' creo la parada '.$stop->name.' a la ciudad'.$stop->Addreses->name,
             'action'      => 'created',
             'name_model'  => 'Stops',
         ];
@@ -30,7 +30,7 @@ class StopsObserver
     public function updated(Stops $stop)
     {
         $data = [
-            'description' => ' modifico la parada '.$stop->name.' a la ciudad'.$stop->address->name,
+            'description' => ' modifico la parada '.$stop->name.' a la ciudad '.$stop->Addreses->name,
             'action'      => 'update',
             'name_model'  => 'Stops',
         ];
@@ -46,7 +46,7 @@ class StopsObserver
     public function deleted(Stops $stop)
     {
         $data = [
-            'description' => 'elimino logicamente la parada'.$stop->name.' de la ciudad '.$stop->address->name,
+            'description' => 'elimino logicamente la parada'.$stop->name.' de la ciudad '.$stop->Addreses->name,
             'action'      => 'deleted',
             'name_model'  => 'stops',
         ];
