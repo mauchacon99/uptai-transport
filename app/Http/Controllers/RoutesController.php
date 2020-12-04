@@ -40,9 +40,9 @@ class RoutesController extends Controller
 
     public function showCars(Routes $route)
     {   
-        return redirect()->route('routes.show-cars',[
-            'exits'  =>  $route->CarsExits,
-            'route'  =>  $route
+         return view('routes.show-cars',[
+            'exits'=> $route->CarsExits,
+            'route'=> $route
         ]);
     }
     public function showDrivers(Routes $route)

@@ -7,8 +7,6 @@
                 <p class="lead margin-b-0 toggle-none">
                 @if( Auth::check() )
                     {{ auth()->user()->name }}
-                @else
-                    John Doe
                 @endif
                 </p>
                 <p class="text-muted mv-0 toggle-none"> Bienvenido</p>
@@ -19,6 +17,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('carsexit.index')}}" aria-expanded="false"><i class="fa fa-sign-out-alt"></i> <span class="toggle-none"> Salidas </a>
                 </li>
+                @if(Auth::user()->roleUser->role->id == 2 || Auth::user()->roleUser->role->id == 1)
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('cars.index')}}" aria-expanded="false"><i class="fa fa-bus-alt"></i> <span class="toggle-none"> Autobuses </a>
                 </li>
@@ -31,15 +30,20 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('address.index')}}" aria-expanded="false"><i class="fa fa-map-marker"></i> <span class="toggle-none">Ciudades </a>
                 </li>
+                @endif
+                @if(Auth::user()->roleUser->role->id == 2)
 
                 <li class="nav-heading"><span> SEGURIDAD </span></li>
-              
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('users.index')}}" aria-expanded="false"><i class="fa fa-user"></i> <span class="toggle-none"> Usuarios </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('bitacoras.index')}}" aria-expanded="false"><i class="fa fa-exchange-alt"></i> <span class="toggle-none"> Actividades </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('bitacoras.index')}}" aria-expanded="false"><i class="fa fa-database"></i> <span class="toggle-none"> Respaldo </a>
+                </li>
+                @endif
             </ul>
         </div>
     </div>

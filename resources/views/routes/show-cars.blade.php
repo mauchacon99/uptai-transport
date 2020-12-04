@@ -11,7 +11,6 @@
         <div class="card-header card-default">
             <em> Ruta:   
             {{ $route->addresesExit->name}} -
-            {{ $route->addresesIntermediate->name }} -          
             {{ $route->addresesDestination->name}}
             </em>
             <p class="text-muted"> Listado de autobuses, el cual han asistido la ruta actual</p>

@@ -19,7 +19,7 @@
                     <div class="misc-box">   
                             <p class="text-center">Registre Nuevo Usuario</p>
                         <form role="form" method="POST" action="{{ route('register') }}">
-                            @csrf
+                            {!! @csrf_field() !!}
                             <div class="form-group  @error('name') has-error @enderror">
                                 <label for="name">{{ __('Name') }}</label>
                                 <div class="group-icon">

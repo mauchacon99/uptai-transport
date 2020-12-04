@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\{Drivers, Routes, Cars, CarsExits};
 
 class HomeController extends Controller
 {
@@ -23,8 +24,14 @@ class HomeController extends Controller
      */
    public function index(Request $request)
     {
-        $request->user()->authorizeRoles(['user', 'admin']);
+
+        $request->user()->authorizeRoles(['Editor', 'Administrador','Autor']);
         
-        return view('welcome');
+        return view('home',[
+            'drivers' => Drivers::all()->count(),
+            'cars'    => Cars::all()->count(),
+            'routes'  => Routes::all()->count(),
+            'exits'   => CarsExits::all()->count(),
+        ]);
     }
 }
