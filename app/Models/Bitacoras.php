@@ -17,14 +17,19 @@ class Bitacoras extends Model
     {
     	$bitacora = new Bitacoras;
 
-    	$bitacora->action      = $data['action'];
-    	$bitacora->name_model  = $data['name_model'];
-    	$bitacora->description = auth()->user()->name.' '.$data['description'];
-     	$bitacora->model_id    = $model->id;
-    	$bitacora->users_id    = auth()->user()->id;
-    	$bitacora->ip_address  = Request::ip();
+		if(auth()->user()){
 
-    	$bitacora->save();
+			$bitacora->action      = $data['action'];
+			$bitacora->name_model  = $data['name_model'];
+			$bitacora->description = auth()->user()->name .' '.$data['description'];
+			$bitacora->model_id    = $model->id;
+			$bitacora->users_id    = auth()->user()->id;
+			$bitacora->ip_address  = Request::ip();
+			$bitacora->save();
+		}
+    	
+
+    
     }
 
 }

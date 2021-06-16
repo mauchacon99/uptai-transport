@@ -4,6 +4,7 @@ use Illuminate\Database\Seeder;
 use Faker\Factory as faker;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
+use App\Models\User;
 
 class UsersSeeder extends Seeder
 {
@@ -14,20 +15,12 @@ class UsersSeeder extends Seeder
      */
     public function run()
     {
-        $faker =  Faker::create();
-
-		$arrays = range(0,20);
-		foreach ($arrays as $valor) {
-			DB::table('cars')->insert([
-				'name'   => $faker->firstName(),
-				'surname'=>$faker->LastName(),
-				'color'  => Str::random(5),
-				'chairs' => rand(1, 99),
-				'year'   => date('Y'),
-				'trade_marks_id' => '1',
-				'models_id'      => '1',
-				'status'		 => '1'
-			]);
-		}
+         User::create([
+			 'name' => "Mauricio",
+			 'email' => "mauchacon99@gmail.com",
+			 'status' => true,
+			 'password'  => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+			 'remember_token' => Str::random(10),
+		 ]);
     }
 }
