@@ -17,7 +17,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('carsexit.index')}}" aria-expanded="false"><i class="fa fa-sign-out-alt"></i> <span class="toggle-none"> Salidas </a>
                 </li>
-                @if(Auth::user()->roleUser->role->id == 2 || Auth::user()->roleUser->role->id == 1)
+                
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('cars.index')}}" aria-expanded="false"><i class="fa fa-bus-alt"></i> <span class="toggle-none"> Autobuses </a>
                 </li>
@@ -30,8 +30,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('address.index')}}" aria-expanded="false"><i class="fa fa-map-marker"></i> <span class="toggle-none">Ciudades </a>
                 </li>
-                @endif
-                @if(Auth::user()->roleUser->role->id == 2)
+            
 
                 <li class="nav-heading"><span> SEGURIDAD </span></li>
                 <li class="nav-item">
@@ -56,7 +55,7 @@
                  <li class="nav-item">
                     <a class="nav-link" href="{{ route('cars.onlyTrashed')}}" aria-expanded="false"><i class="fa fa-database"></i> <span class="toggle-none">  Paradas </a>
                 </li>
-                @endif
+             
             </ul>
         </div>
     </div>

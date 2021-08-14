@@ -19,7 +19,7 @@ class UsersSeeder extends Seeder
 			 'name' => "Mauricio",
 			 'email' => "mauchacon99@gmail.com",
 			 'status' => true,
-			 'password'  => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+			 'password'  => '123456', // password
 			 'remember_token' => Str::random(10),
 		 ]);
     }

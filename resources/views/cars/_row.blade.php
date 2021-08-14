@@ -21,8 +21,7 @@
             <i class="fas fa-user-circle fa-2x" style="color: #A349A4" ></i>
           </a>
         </td>
-        @if(Auth::user()->roleUser->role->id == 2 || Auth::user()->roleUser->role->id == 1)
-        <td>
+         <td>
             <form action="{{ (Auth::user()->roleUser->role->id == 1)? route('cars.delete', $car) : route('cars.destroy', $car)}}" method="POST">
             {{ csrf_field() }}
             {{ method_field('DELETE')}}
@@ -35,13 +34,13 @@
                <button type="submit" class="btn btn-danger btn-circle"><span class="fas fa-trash-alt"></span></button>
             </form>
         </td>
-        @endif
-         @if(Auth::user()->roleUser->role->id == 2)
+       
+     
            <td>
                 <a  href="{{ route('cars.status', $car) }}">
                 <i class="fa fa-toggle-{{ ($car->status)? 'on' : 'off'}} fa-2x" style="color: {{ ($car->status)? 'green' : 'red' }}" aria-hidden="true"></i>
                 </a>
             </td>
-        @endif  
+       
         
  </tr>

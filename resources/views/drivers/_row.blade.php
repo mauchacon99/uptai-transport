@@ -24,9 +24,8 @@
                     <i class="fas fa-user-edit "></i>
                 </a>
 	               
-               @if(Auth::user()->roleUser->role->id == 2 || Auth::user()->roleUser->role->id == 1)
-                    <button type="submit" class="btn btn-danger btn-circle"><span class="fas fa-trash-alt "></span></button>
-                @endif
+                     <button type="submit" class="btn btn-danger btn-circle"><span class="fas fa-trash-alt "></span></button>
+               
 	    	</form>
          </td>
     </tr>

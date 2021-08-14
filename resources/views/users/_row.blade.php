@@ -2,7 +2,7 @@
         <td> {{ $user->name   }}   </td>
         <td> {{ $user->email}} </td>
         <td>
-        	{{  $user->roleUser->role->name }} 
+        	{{-- {{  $user->roleUser->role->name }}  --}}
     	</td>
     	<td>
             <a href="{{ route('users.bitacora', $user) }}">

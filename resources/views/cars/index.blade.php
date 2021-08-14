@@ -27,12 +27,11 @@
                         <th>Detalles</th>
                         <th>Salidas</th>
                         <th> Choferes </th>
-                        @if(Auth::user()->roleUser->role->id == 2 || Auth::user()->roleUser->role->id == 1)
+                     
                         <th>Action</th>
-                        @endif
-                         @if(Auth::user()->roleUser->role->id == 2)
-                            <th>Status</th>
-                         @endif
+                     
+                             <th>Status</th>
+                       
                     </tr>
                     </thead>
                 <tbody>
