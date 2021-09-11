@@ -8,7 +8,7 @@
         <td>{{ $driver->phone }}</td>
         <td> 
 
-        	<form action="{{ (Auth::user()->roleUser->role->id == 1)? route('drivers.delete', $driver) : route('drivers.destroy', $driver)}}" method="POST">
+        	<form action="{{  route('drivers.delete', $driver)  }}" method="POST">
 
 	        {{ csrf_field() }}
 	        {{ method_field('DELETE')}}

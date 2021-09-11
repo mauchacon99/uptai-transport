@@ -22,7 +22,7 @@
           </a>
         </td>
          <td>
-            <form action="{{ (Auth::user()->roleUser->role->id == 1)? route('cars.delete', $car) : route('cars.destroy', $car)}}" method="POST">
+            <form action="{{  route('cars.delete', $car)  }}" method="POST">
             {{ csrf_field() }}
             {{ method_field('DELETE')}}
             
