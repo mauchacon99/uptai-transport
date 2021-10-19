@@ -23,9 +23,9 @@
                 <tr>
                     <th data-class-name="priority">Nombre</th>
                     <th> Accion</th>
-                    @if(Auth::user()->roleUser->role->id == 1)
+                    {{-- @if(Auth::user()->roleUser->role->id == 1) --}}
 					<th>Estatus</th>
-					@endif
+					{{-- @endif --}}
                 </tr>
                 </thead>
                 <tbody>
