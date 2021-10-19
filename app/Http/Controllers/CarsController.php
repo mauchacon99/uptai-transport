@@ -59,10 +59,9 @@ class CarsController extends Controller
         ]);
     }
 
-    public function update(UpdateRequest $request, Cars $car)
+    public function update(UpdateRequest $request, Cars $cars)
     {
-        $request->carsUpdate($car);
-
+        $request->carsUpdate($cars);
         return redirect()->route('cars.index',[
             'cars' => Cars::all()
         ]);

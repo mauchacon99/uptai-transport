@@ -22,6 +22,7 @@
                     <th>Municipio</th>
                     <th>Estado</th>
                     <th>Ver Paradas</th>
+                    <th> Acciones </th>
                 </tr>
                 </thead>
                 <tbody>
@@ -33,19 +34,12 @@
 @endsection
 
 @section('head-assets')
-
         <!-- DataTables -->
         <link href="{{ asset( 'admin/lib/datatables/jquery.dataTables.min.css' ) }}" rel="stylesheet" type="text/css">
         <link href="{{ asset( 'admin/lib/datatables/responsive.bootstrap.min.css' ) }}" rel="stylesheet" type="text/css">
-         <link href="{{ asset( 'admin/lib/datatables/buttons.dataTables.css' ) }}" rel="stylesheet" type="text/css">
-         
-     
+        <link href="{{ asset( 'admin/lib/datatables/buttons.dataTables.css' ) }}" rel="stylesheet" type="text/css">
 @endsection
-
-
 @section('footer-assets')
-
-
     <!-- Datatables-->
     <script src="{{ asset( 'admin/lib/datatables/jquery.dataTables.min.js' ) }}"></script>
     <script src="{{ asset( 'admin/lib/datatables/dataTables.responsive.min.js' ) }}"></script>
@@ -56,8 +50,7 @@
     <script src="{{ asset( 'admin/lib/datatables/vfs_fonts.js' ) }}"></script>
     <script src="{{ asset( 'admin/lib/datatables/buttons.html5.min.js' ) }}"></script>
     <script>
-           
-     $('.table').DataTable( {
+    $('.table').DataTable( {
          ordering: true,
         "scrollCollapse": true,
         "paging":         true,

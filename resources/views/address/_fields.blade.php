@@ -25,7 +25,7 @@
                 class="
                 form-control
                 "
-                value="{{ old('name', $address->starting_point) }}"
+                value="{{ old('starting_point', $address->starting_point) }}"
             >
             @if($errors->has('starting_point'))
                  <div class="text-danger">{{ $errors->first('starting_point')}}</div>
@@ -39,10 +39,9 @@
         <div class="col-md-4 @if($errors->has('states_id')) has-error ?? has-success  @endif">
             <select name="states_id" class="form-control"  id="states_id">
                   <option value=""> Selecione Estado</option>
-              @foreach($states as $state)
-                  <option value="{{ $state->id }}"{{ old('states_id') == $state->id ? ' selected' : ''}}> {{ $state->name }}</option>
-                
-              @endforeach
+                        @foreach($states as $state)
+                            <option value="{{ $state->id }}"{{ old('states_id', $address->states_id) == $state->id ? ' selected' : ''}}> {{ $state->name }}</option>
+                        @endforeach
        		</select>  
         </div>
         @if($errors->has('states_id'))
@@ -78,32 +77,25 @@
 
   
 $(document).ready(function () {
-
      $('body').on('change', '#states_id', function (event) {
             $.ajax({
                 type: "get",
                 url: 'municipios/'+ $(this).val(),
                 success:function(data) {
-
-                    console.log(data);
-
-                     $('#municipalities_id').empty();
-                     
-                     $.each(data, function() {
-                          $('#municipalities_id').append("<option value='" + this.id + "'>" + this.name + "</option>");
-                     });
+                    $('#municipalities_id').empty();
+                    $('#parishes_id').empty();
+                    $.each(data, function() {
+                        $('#municipalities_id').append("<option value='" + this.id + "'>" + this.name + "</option>");
+                    });
                 } 
         });   
     });
-
-     $('body').on('click', '#municipalities_id', function (event) {
+     $('body').on('change', '#municipalities_id', function (event) {
             $.ajax({
                 type: "get",
                 url: 'parroquias/'+ $(this).val(),
-                success:function(data) {
-
+                success(data) {
                      $('#parishes_id').empty();
-                     
                      $.each(data, function() {
                           $('#parishes_id').append("<option value='" + this.id + "'>" + this.name + "</option>");
                      });

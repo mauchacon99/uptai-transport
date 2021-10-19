@@ -39,10 +39,10 @@ class UsersController extends Controller
 
     public function statusToogle(User $user)
     {
-         
-        $user->status = ($user->status == 0)? 1 : 0;
+       
+        $user->status = ($user->status == 0) ? 1 : 0;
         $user->update();
-
+        $user->save();
         return redirect()->route('users.index',[
             'users' => User::all()
         ]);

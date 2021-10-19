@@ -15,23 +15,22 @@ class UpdateRequest extends FormRequest
      * @return bool
      */
      public function rules()
-    {
+    {       
+         
         return [
             'color' => ['present','required'],
             'chairs'=> ['present','numeric','required'],
             'year'  => ['present','required','numeric'],
-            'plate' => ['present','required', Rule::unique('cars')->ignore($this->car->id)],
-            'number'=> ['present','required', Rule::unique('cars')->ignore($this->car->id],
+            'plate' => ['present','required', Rule::unique('cars')->ignore($this->plate, 'plate')],
+            'number'=> ['present','required', Rule::unique('cars')->ignore($this->number,'number')],
             'models_id'      => ['present','required','numeric'],
             'trade_marks_id' => ['present','required','numeric'],
-
         ];
 
     }
 
     public function carsUpdate(Cars $car)
-    {
-        die('maa');
+    {   
         $car->update([
             'color' => $this->color,
             'chairs'=> $this->chairs,
