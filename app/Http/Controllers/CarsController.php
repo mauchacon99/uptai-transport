@@ -30,7 +30,6 @@ class CarsController extends Controller
             'cars' 		=> new Cars,
     		'tradeMarks'=> TradeMarks::all(),
             'Models'    => Models::all()
-
         ]);
     }
 
