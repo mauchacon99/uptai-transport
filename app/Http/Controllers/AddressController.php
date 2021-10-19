@@ -34,4 +34,13 @@ class AddressController extends Controller
     		'stops'   => $address->stops
     	]);
      }
+
+	 public function edit(Addreses $address)
+	 {
+		return view('address.edit',[
+			'address'=> $address,
+			'states' => States::all(),
+			 
+		]);
+	 }
 }

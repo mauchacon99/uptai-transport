@@ -10,9 +10,9 @@ class StatesController extends Controller
     
     public function toggleMunicipalities($id)
     {
-
+      
     	$Response = States::find($id)->municipalities;
-
+        
     	return \Response::json($Response, 200);
     }
 }

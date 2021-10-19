@@ -7,6 +7,8 @@ use App\Models\{Municipalities, Parishes,Addreses};
 
 class States extends Model
 {
+    public $timestamps = false;
+
     public function municipalities()
     {
         return $this->hasMany(Municipalities::class);

@@ -7,6 +7,7 @@ use App\Models\{States, Parishes, Addreses, Stops};
 
 class Municipalities extends Model
 {
+    public $timestamps = false;
     public function states()
     {
         return $this->belongsTo(States::class);

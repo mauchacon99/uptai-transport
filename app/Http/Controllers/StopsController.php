@@ -38,4 +38,14 @@ class StopsController extends Controller
     		'stops'   => $address->stops
         ]);
     }
+
+    public function destroy(Stops $stop)
+    {
+        $address = $stop->Addreses;
+        $stop->delete();
+        return view('stops.index',[
+    		'address' => $address,
+    		'stops'   => $address->stops
+    	]);
+    }
 }

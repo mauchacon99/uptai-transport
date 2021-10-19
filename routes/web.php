@@ -72,12 +72,14 @@ Route::get('/ciudades', 'AddressController@index')->name('address.index');
 Route::get('/ciudades/crear', 'AddressController@create')->name('address.create');
 
 Route::post('/ciudades/store', 'AddressController@store')->name('address.store');
+Route::get('/ciudades/editar/{address}', 'AddressController@edit')->name('address.edit');
 
 Route::post('/ciudades/crear', 'AddressController@create')->name('address.create');
 Route::get('/ciudades/paradas/{address}', 'StopsController@index')->name('stops.index');
  
 Route::get('/paradas/{stop}/status', 'StopsController@toggleStatus')->name('stops.status');
 Route::post('/ciudades/paradas/{address}/guardar', 'StopsController@store')->name('stops.store');
+Route::delete('/paradas/{stop}', 'StopsController@destroy')->name('stops.delete');
 
 
 //states

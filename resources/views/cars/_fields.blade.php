@@ -33,9 +33,6 @@
                  <div class="text-danger">{{ $errors->first('chairs')}}</div>
             @endif    
         </div>
-
-        
-        
         <div class="col-md-4 @if($errors->has('color')) has-error ?? has-success  @endif">
             <input 
             type="text"
@@ -86,7 +83,7 @@
 
               @foreach($tradeMarks as $trade)
 
-                  <option value="{{ $trade->id }}"{{ old('trade_marks_id') == $trade->id ? ' selected' : ''}}> {{ $trade->description }}</option>
+                  <option value="{{ $trade->id }}"{{ old('trade_marks_id', $cars->trade_marks_id ) == $trade->id ? ' selected' : ''}}> {{ $trade->description }}</option>
                 
               @endforeach
         </select>  
@@ -100,7 +97,7 @@
                 <select name="models_id" id="models_id"class="form-control">
                     <option value=""> Selecione un Modelo</option>
                 @foreach($Models as $model)
-                  <option value="{{ $model->id }}"{{ old('models_id') == $model->id ? ' selected' : ''}}> {{ $model->description }}</option>
+                  <option value="{{ $model->id }}"{{ old('models_id', $cars->models_id) == $model->id ? ' selected' : ''}}> {{ $model->description }}</option>
                 @endforeach
                 </select>
         </div>

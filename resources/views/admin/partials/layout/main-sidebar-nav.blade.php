@@ -13,9 +13,9 @@
             </div>
             <ul class="metisMenu nav flex-column" id="menu">
                 <li class="nav-heading"><span>TRABAJO</span></li>
-                <li class="nav-item"><a class="nav-link" href=""><i class="fa fa-home"></i> <span class="toggle-none">Dashboard</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="/home"><i class="fa fa-home"></i> <span class="toggle-none">Dashboard</span></a></li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('carsexit.index')}}" aria-expanded="false"><i class="fa fa-sign-out-alt"></i> <span class="toggle-none"> Salidas </a>
+                    <a class="nav-link" href="{{ route('carsexit.index') }}" aria-expanded="false"><i class="fa fa-sign-out-alt"></i> <span class="toggle-none"> Salidas </a>
                 </li>
                 
                 <li class="nav-item">
@@ -39,15 +39,15 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('bitacoras.index')}}" aria-expanded="false"><i class="fa fa-exchange-alt"></i> <span class="toggle-none"> Actividades </a>
                 </li>
-                <li class="nav-heading"><span> RESPALDOS </span></li>
+                <li class="nav-heading"><span> RESPALDO </span></li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('drivers.onlyTrashed')}}" aria-expanded="false"><i class="fa fa-database"></i> <span class="toggle-none">  Autobuses </a>
+                    <a class="nav-link" href="{{ route('drivers.onlyTrashed')}}" aria-expanded="false"><i class="fa fa-database"></i> <span class="toggle-none"> Conductores   </a>
                 </li>
                  <li class="nav-item">
                     <a class="nav-link" href="{{ route('cars.onlyTrashed')}}" aria-expanded="false"><i class="fa fa-database"></i> <span class="toggle-none">  Drivers </a>
                 </li>
                  <li class="nav-item">
-                    <a class="nav-link" href="{{ route('cars.onlyTrashed')}}" aria-expanded="false"><i class="fa fa-database"></i> <span class="toggle-none">  Conductores </a>
+                    <a class="nav-link" href="{{ route('cars.onlyTrashed')}}" aria-expanded="false"><i class="fa fa-database"></i> <span class="toggle-none">  Autobuses </a>
                 </li>
                  <li class="nav-item">
                     <a class="nav-link" href="{{ route('cars.onlyTrashed')}}" aria-expanded="false"><i class="fa fa-database"></i> <span class="toggle-none">  Rutas </a>
