@@ -15,7 +15,7 @@
                 Ingrese la informacion del nuevo conductor
             </div>
             <div class="card-body">
-                <form action="{{ route('drivers.store') }}" method="POST" class="user">
+                <form action="{{ route('carsexit.store') }}" method="POST" class="user">
                       @include('carsExits._field')
                     <br>
                     <div clas="form-group">

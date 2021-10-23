@@ -37,9 +37,7 @@ class CreateRequest extends FormRequest
 
     public function createAddress()
     { 
-        
-        $Addreses = new Addreses;
-        $addreses = $Addreses->create([
+        $addreses = Addreses::create([
             'name'  => $this->name,
             'starting_point'    => $this->starting_point,
             'states_id'         => $this->states_id,

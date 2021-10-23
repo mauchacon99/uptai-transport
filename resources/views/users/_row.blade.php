@@ -11,13 +11,20 @@
             </a>
     	</td>
         <td>
-       
-            <a href="{{ route('users.edit', $user) }}"   class="btn btn-success btn-circle ">
-                <i class="fas fa-user-edit fa-1x"></i>
-            </a>  
-             <a  class="btn btn-danger btn-circle ">
-                <i class="fas fa-trash-alt fa-1x"></i>
-            </a>  
+            <form action="{{  route('users.delete', $user)  }}" method="POST">
+                {{ csrf_field() }}
+                {{ method_field('DELETE')}}
+                <a  href="{{ route('users.edit', $user) }}"
+                    class="btn btn-success btn-circle "
+                >
+                    <i class="fas fa-user-edit fa-1x"></i>
+                </a>  
+                <button type="submit" class="btn btn-danger btn-circle">
+                    <span 
+                     class="fas fa-trash-alt">
+                    </span>
+                </button>
+            </form>
         </td>
         <td>
             <a href="{{ route('users.status', $user) }}">

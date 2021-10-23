@@ -1,5 +1,7 @@
 {!! @csrf_field() !!}
- <div class="form-group">
+ 
+
+<div class="form-group">
     <div class="row">
         <div class="col-md-4 @if($errors->has('drivers_id')) has-error ?? has-success  @endif">
             <select name="drivers_id" class="form-control"  id="drivers_id">
@@ -13,7 +15,8 @@
             <select name="routes_id" class="form-control"  id="routes_id">
                   <option value=""> Seleccione Ruta</option>
               @foreach($routes as $route)
-                  <option value="{{ $route->id }}"{{ old('route_id') == $route->id ? ' selected' : ''}}> 	{{ $route->addresesExit->name}} 
+                  <option value="{{ $route->id }}"{{ old('route_id') == $route->id ? ' selected' : ''}}> 	
+					 {{ $route->addresesExit->name}} 
     				-{{ $route->addresesIntermediate->name }}-       	
     				 {{ $route->addresesDestination->name}}
     			   </option>
@@ -48,113 +51,108 @@
 	                 <div class="text-danger">{{ $errors->first('description')}}</div>
 	            @endif    
         </div>
-       	<div class="col-md-3 @if($errors->has('description')) has-error ?? has-success  @endif">
+       	<div class="col-md-3 @if($errors->has('date_exit')) has-error ?? has-success  @endif">
             <label> Fecha de Retorno</label>
             <input 
                 type="date" 
-                name="description" 
-                id="description" 
-                placeholder=" Motivo de Salida" 
+                name="date_exit" 
+                id="date_exit" 
                 class="
                 form-control
                 "
-                value="{{ old('description') }}"
+                value="{{ old('date_exit') }}"
             >
-            @if($errors->has('description'))
-                 <div class="text-danger">{{ $errors->first('description')}}</div>
-	            @endif    
+            @if($errors->has('date_exit'))
+                 <div class="text-danger">{{ $errors->first('date_exit')}}</div>
+	    	@endif    
 	    </div>
-	    <div class="col-md-3 @if($errors->has('description')) has-error ?? has-success  @endif">
+	    <div class="col-md-3 @if($errors->has('time_entry')) has-error ?? has-success  @endif">
 	        <label> Hora de Retorno</label>
 	        <input 
 	            type="time" 
-	            name="description" 
-	            id="description" 
+	            name="time_entry" 
+	            id="time_entry" 
 	            placeholder=" Motivo de Salida" 
 	            class="
 	            form-control
 	            "
-	            value="{{ old('description') }}"
+	            value="{{ old('time_entry') }}"
 	        >
-	        @if($errors->has('description'))
-	             <div class="text-danger">{{ $errors->first('description')}}</div>
+	        @if($errors->has('time_entry'))
+	             <div class="text-danger">{{ $errors->first('time_entry')}}</div>
 	        @endif    
 	    </div>
-	    <div class="col-md-3 @if($errors->has('description')) has-error ?? has-success  @endif">
+	    <div class="col-md-3 @if($errors->has('date_exit')) has-error ?? has-success  @endif">
 	        <label> Fecha de Salida</label>
 	        <input 
 	            type="date" 
-	            name="description" 
-	            id="description" 
-	            placeholder=" Motivo de Salida" 
+	            name="date_exit" 
+	            id="date_exit" 
 	            class="
 	            form-control
 	            "
-	            value="{{ old('description') }}"
+	            value="{{ old('date_exit') }}"
 	        >
-	        @if($errors->has('description'))
-	             <div class="text-danger">{{ $errors->first('description')}}</div>
+	        @if($errors->has('date_exit'))
+	             <div class="text-danger">{{ $errors->first('date_exit')}}</div>
 	        @endif    
 	    </div>
-	    <div class="col-md-3 @if($errors->has('description')) has-error ?? has-success  @endif">
+	    <div class="col-md-3 @if($errors->has('time_exit')) has-error ?? has-success  @endif">
 	        <label> Hora de Salida</label>
 	        <input 
 	            type="time" 
-	            name="description" 
-	            id="description" 
+	            name="time_exit" 
+	            id="time_exit" 
 	            placeholder=" Motivo de Salida" 
 	            class="
 	            form-control
 	            "
-	            value="{{ old('description') }}"
+	            value="{{ old('time_exit') }}"
 	        >
-	        @if($errors->has('description'))
-	             <div class="text-danger">{{ $errors->first('description')}}</div>
+	        @if($errors->has('time_exit'))
+	             <div class="text-danger">{{ $errors->first('time_exit')}}</div>
 	        @endif    
 	    </div>
     </div>
  </div>
- 	<h4> Configurar publicacion <a class="btn btn-dark text-white btn-circle ">
-                    <i class="fas fa-gears"></i>
-                </a></h4>
+ 	<h4> Configurar publicacion 
+		 <a class="btn btn-dark text-white btn-circle ">
+            <i class="fas fa-gears">
+			</i>
+        </a>
+	</h4>
  <div class="form-group">
     <div class="row">
-       	<div class="col-md-6 @if($errors->has('description')) has-error ?? has-success  @endif">
+       	<div class="col-md-6 @if($errors->has('date_public')) has-error ?? has-success  @endif">
             <label> Fecha de Publicar</label>
             <input 
                 type="date" 
-                name="description" 
-                id="description" 
-                placeholder=" Motivo de Salida" 
+                name="date_public" 
+                id="date_public" 
                 class="
                 form-control
                 "
-                value="{{ old('description') }}"
+                value="{{ old('date_public') }}"
             >
-            	@if($errors->has('description'))
-                 <div class="text-danger">{{ $errors->first('description')}}</div>
+            	@if($errors->has('date_public'))
+                 <div class="text-danger">{{ $errors->first('date_public')}}</div>
 	            @endif    
 	    </div>
-	    <div class="col-md-6 @if($errors->has('description')) has-error ?? has-success  @endif">
+	    <div class="col-md-6 @if($errors->has('time_public')) has-error ?? has-success  @endif">
 	        <label> Hora de Publicacion</label>
 	        <input 
 	            type="time" 
-	            name="description" 
-	            id="description" 
+	            name="time_public" 
+	            id="time_public" 
 	            placeholder=" Motivo de Salida" 
 	            class="
 	            form-control
 	            "
-	            value="{{ old('description') }}"
+	            value="{{ old('time_public') }}"
 	        >
-	        @if($errors->has('description'))
-	             <div class="text-danger">{{ $errors->first('description')}}</div>
+	        @if($errors->has('time_public'))
+	             <div class="text-danger">{{ $errors->first('time_public')}}</div>
 	        @endif    
 	    </div>
     </div>
  </div>
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
-        crossorigin="anonymous">
-</script>

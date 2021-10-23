@@ -8,6 +8,8 @@ use Carbon;
 
 class CarsExits extends Model
 {
+    protected  $guarded = [];
+
     public function Routes()
     {
         return $this->belongsTo(Routes::class);

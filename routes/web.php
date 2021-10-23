@@ -24,6 +24,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 //drivers
 
 Route::get('/conductores', 'DriversController@index')->name('drivers.index');
+Route::get('/direcciones/{id}', 'AddressController@getAddress');
+
 Route::get('/conductor/crear', 'DriversController@create')->name('drivers.create');
 Route::post('/conductor/crear', 'DriversController@store')->name('drivers.store');
 Route::get('/conductor/{driver}/editar','DriversController@show')->name('drivers.show');
@@ -104,13 +106,16 @@ Route::get('/usuarios/crear', 'UsersController@create')->name('users.create');
 Route::get('/usuarios/{user}/editar', 'UsersController@edit')->name('users.edit');
 Route::put('/usuarios/{user}/update', 'UsersController@update')->name('users.update');
 Route::get('/usuarios/{user}/actividades', 'UsersController@userBitacora')->name('users.bitacora');
+Route::delete('/usuarios/{user}/delete', 'UsersController@delete')->name('users.delete');
 
 Route::get('/usuarios/estatus/{user}', 'UsersController@statusToogle')->name('users.status');
 
-// Exits
+// exits
 
 Route::get('/salida-autobuses', 'CarsExitController@index')->name('carsexit.index');
 Route::get('/salida-autobuses/crear', 'CarsExitController@create')->name('carsexit.create');
+Route::post('/salida-autobuses/insert', 'CarsExitController@store')->name('carsexit.store');
+
 
 //bitacora
 
