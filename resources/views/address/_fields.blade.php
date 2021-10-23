@@ -50,7 +50,6 @@
         <div class="col-md-4 @if($errors->has('municipalities_id')) has-error ?? has-success  @endif">
                 <select name="municipalities_id" id="municipalities_id"class="form-control">
                     <option value=""> Selecione un Municipio</option>
-                 
                 </select>
         </div>
         @if($errors->has('municipalities_id'))
@@ -67,42 +66,4 @@
     </div>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
-        crossorigin="anonymous">
-</script>
-
-<script type="text/javascript">
-
-
-  
-$(document).ready(function () {
-     $('body').on('change', '#states_id', function (event) {
-            $.ajax({
-                type: "get",
-                url: 'municipios/'+ $(this).val(),
-                success:function(data) {
-                    $('#municipalities_id').empty();
-                    $('#parishes_id').empty();
-                    $.each(data, function() {
-                        $('#municipalities_id').append("<option value='" + this.id + "'>" + this.name + "</option>");
-                    });
-                } 
-        });   
-    });
-     $('body').on('change', '#municipalities_id', function (event) {
-            $.ajax({
-                type: "get",
-                url: 'parroquias/'+ $(this).val(),
-                success(data) {
-                     $('#parishes_id').empty();
-                     $.each(data, function() {
-                          $('#parishes_id').append("<option value='" + this.id + "'>" + this.name + "</option>");
-                     });
-                } 
-        });   
-    });                 
-
-});
-</script>
-
+ 
