@@ -18,9 +18,9 @@ class CreateCarsExitsDetailsTable extends Migration
             $table->string('description',100);
             $table->time('time_exit');
             $table->time('time_entry');
-            $table->time('time_public');
+            $table->time('time_public')->nullable();
             $table->date('date_exit');
-            $table->date('date_public');
+            $table->date('date_public')->nullable();
             $table->smallInteger('status_public');
             $table->unsignedMediumInteger('cars_exits_id');
             $table->foreign('cars_exits_id')->references('id')->on('cars_exits')->onDelete('cascade');

@@ -5,9 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\{Addreses, States};
 use App\Http\Requests\Addreses\{CreateRequest};
-
  
-
 class AddressController extends Controller
 {
      public function index()
@@ -41,5 +39,12 @@ class AddressController extends Controller
 			'address'=> $address,
 			'states' => States::all(),
 		]);
+	 }
+
+	 
+	 function getAddress($id)
+	 {
+		   $address = Addreses::where('id', '<>', $id)->get();
+		   return response()->json($address);
 	 }
 }
