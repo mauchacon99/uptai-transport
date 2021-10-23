@@ -101,6 +101,8 @@ Route::post('/rutas/store', 'RoutesController@store')->name('routes.store');
 
 Route::get('/usuarios', 'UsersController@index')->name('users.index');
 Route::get('/usuarios/crear', 'UsersController@create')->name('users.create');
+Route::get('/usuarios/{user}/editar', 'UsersController@edit')->name('users.edit');
+Route::put('/usuarios/{user}/update', 'UsersController@update')->name('users.update');
 Route::get('/usuarios/{user}/actividades', 'UsersController@userBitacora')->name('users.bitacora');
 
 Route::get('/usuarios/estatus/{user}', 'UsersController@statusToogle')->name('users.status');

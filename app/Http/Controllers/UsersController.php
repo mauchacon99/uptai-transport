@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UserEditRequest;
 use Illuminate\Http\Request;
 use App\Models\{User,Role, RoleUser};
 
@@ -16,15 +17,14 @@ class UsersController extends Controller
     public function index()
     {
     	return view('users.index',[
-    		'users' => User::all(),
-
+    		'users' => User::with('roles')->get(),
     	]);
     }
 
     public function create()
     {
     	return view('users.create',['
-    		users' => User::all(),
+    		users' => User::with('roles')->get(),
     	   'roles' => Role::all(),
     	]);
     }
@@ -35,6 +35,22 @@ class UsersController extends Controller
             'activity' => $user->activity,
             'user'     => $user
          ]);
+    }
+    public function edit(User $user)        
+    {
+   
+         return view('users.edit',[
+            'user'  => $user,
+            'roles' => Role::all(),
+         ]);
+    }
+    public function update(UserEditRequest $request, User $user)        
+    {
+         $request->createUser($user);
+
+         return view('users.index',[
+    		'users' => User::with('roles')->get(),
+    	]);
     }
 
     public function statusToogle(User $user)

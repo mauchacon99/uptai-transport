@@ -1,7 +1,9 @@
+
 <tr>
         <td> {{ $user->name   }}   </td>
         <td> {{ $user->email}} </td>
         <td>
+           {{ $user->roles->first()->name }}
     	</td>
     	<td>
             <a href="{{ route('users.bitacora', $user) }}">
@@ -9,7 +11,8 @@
             </a>
     	</td>
         <td>
-            <a  class="btn btn-success btn-circle ">
+       
+            <a href="{{ route('users.edit', $user) }}"   class="btn btn-success btn-circle ">
                 <i class="fas fa-user-edit fa-1x"></i>
             </a>  
              <a  class="btn btn-danger btn-circle ">
