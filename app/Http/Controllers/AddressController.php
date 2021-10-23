@@ -40,7 +40,6 @@ class AddressController extends Controller
 		return view('address.edit',[
 			'address'=> $address,
 			'states' => States::all(),
-			 
 		]);
 	 }
 }

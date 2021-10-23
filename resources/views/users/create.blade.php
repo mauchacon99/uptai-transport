@@ -16,7 +16,7 @@
             <div class="row justify-content-center">
                 <div class="col-md-5 col-sm-12">
                     <div class="misc-box">   
-                            <p class="text-center">Registre Nuevo Usuario</p>
+                        <p class="text-center">Registre Nuevo Usuario</p>
                         <form role="form" method="POST" action="{{ route('register') }}">
                             {!! @csrf_field() !!}
                             <div class="form-group  @error('name') has-error @enderror">
@@ -61,7 +61,7 @@
                                     <div class="group-icon">
                                         <select name="role" class="form-control"  id="role">
                                         @foreach($roles as $rol)
-                                          <option value="{{ $rol->id }}"{{ old('rol') == $rol->id ? ' selected' : ''}}> {{ $rol->name }}
+                                          <option value="{{ $rol->name }}"{{ old('rol') == $rol->id ? ' selected' : ''}}> {{ $rol->name }}
                                            <span class="icon-lock text-muted icon-input"></span>
                                           </option>
                                         @endforeach
