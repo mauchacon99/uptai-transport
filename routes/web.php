@@ -122,8 +122,7 @@ Route::post('/salida-autobuses/insert', 'CarsExitController@store')->name('carse
 Route::get('/actividades', 'BitacorasController@index')->name('bitacoras.index');
 
 
-
-
+Route::resource('empleados', 'EmployeesController');
 
 
 

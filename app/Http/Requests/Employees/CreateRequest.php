@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Drivers;
+namespace App\Http\Requests\Employees;
 
+use App\Models\Employee;
 use Illuminate\Foundation\Http\FormRequest;
-use App\Models\{ Drivers };
 use Illuminate\Validation\Rule;
-use Carbon\Carbon;
 
 class CreateRequest extends FormRequest
 {
@@ -14,25 +13,17 @@ class CreateRequest extends FormRequest
      *
      * @return bool
      */
-    public function authorize()
-    {
-        return true;
-    }
-
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array
-     */
     public function rules()
     {
         return [
-            'identity' => ['required','present','numeric', Rule::unique('drivers')],
+            'identity' => ['required','present','numeric', Rule::unique('employee')],
             'name'     => ['required','present'],
             'surname'  => ['required','present'],
             'phone'    => ['required','present','numeric'],
             'sex'      => ['required','present'],
-            'birthdate'=> ['required']
+            'birthdate'=> ['required'],
+            'occupation'  => ['required','present'],
+            'address'  => ['required','present'],
         ];
  
     }
@@ -50,19 +41,18 @@ class CreateRequest extends FormRequest
         ];
     }
 
-    public function driversCreate()
+    public function EmployeeCreate()
     {
 
-         $driver = new Drivers;
-
-         $driver->create([
+        Employee::create([
             'identity' => $this->identity,
             'name'     => $this->name,
             'surname'  => $this->surname,
             'phone'    => $this->phone,
             'sex'      => $this->sex,
             'birthdate'=> $this->birthdate,
-            'status'   => 1
+            'address'  => $this->address,
+            'occupation'=> $this->occupation,
         ]);
      } 
 }
