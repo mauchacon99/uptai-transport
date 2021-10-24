@@ -54,7 +54,7 @@
                             </li>
                             <li class="clearfix">
                                 <a class="media-box" href="#"><span class="float-right"><span class="circle circle-danger circle-lg"></span></span> <span class="float-left">
-                                        <img alt="user" class="media-box-object rounded-circle" src="{{ asset('admin/img/avtar-2.png') }}" width="50"></span>
+                                        <img alt="user" class="media-box-object rounded-circle" src="{{ asset('admin/img/avtar-5.png') }}" width="50"></span>
                                     <span class="media-box-body"><span class="media-box-heading"><strong>Megan Doe</strong><br>
                                             <small class="text-muted">Designer</small></span></span></a>
                             </li>

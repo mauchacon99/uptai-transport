@@ -50,7 +50,7 @@ body.nav-collapsed {
     }
   }
   .dark-navigation .metisMenu.nav ul {
-    background-color: #1a232d;
+    background-color: #0C0C0C;
     margin: 0;
     list-style: none;
   }
@@ -353,7 +353,7 @@ body.nav-collapsed {
 
 
 .dark-navigation {
-  background-color: #1a232d;
+  background-color: #0C0C0C;
   -webkit-box-shadow: $nav-shadow;
   box-shadow: $nav-shadow;
   .border-bottom {
@@ -384,7 +384,7 @@ body.nav-collapsed {
       }
       &.active
         > ul a{
-        background:#1a232d;
+        background:#0C0C0C;
       }
     }
   }

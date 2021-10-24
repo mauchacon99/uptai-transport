@@ -4,8 +4,8 @@
             <div class="col">
                 <a class="admin-logo dark-logo" href="/layouts-5/">
                     <h1>
-                        <img alt="" src="{{ asset('/admin/img/icon.png') }}" class="logo-icon margin-r-10">
-                        <img alt="" src="{{ asset('/admin/img/logo-dark.png') }}" class="toggle-none hidden-xs">
+                    <!--<img alt="" src="{{ asset('/admin/img/logo-nav(1).png') }}" class="logo-icon margin-r-10"> -->
+                     <img alt="" src="{{ asset('/admin/img/logo-nav(1).png') }}" class="toggle-none hidden-xs"> 
                     </h1>
                 </a>
                 <div class="left-nav-toggle">
@@ -35,7 +35,7 @@
                                     <div class="notification-list">
                                         <a class="clearfix" href="javascript:%20void(0);">
                                             <span class="notification-icon">
-                                                <img alt="" class="rounded-circle" src="{{ asset('/admin/img/avtar-2.png') }}" width="50">
+                                                <img alt="" class="rounded-circle" src="{{ asset('/admin/img/avtar-5.png') }}" width="50">
                                             </span>
                                             <span class="notification-title">
                                                 John Doe
@@ -135,7 +135,7 @@
                     </li>
                     <li class="dropdown avtar-dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <img alt="" class="rounded-circle" src="{{  asset('/admin/img/avtar-2.png') }}" width="30">
+                            <img alt="" class="rounded-circle" src="{{  asset('/admin/img/avtar-5.png') }}" width="30">
                         </a>
                         <ul class="dropdown-menu top-dropdown">
                             <li>

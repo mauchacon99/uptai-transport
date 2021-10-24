@@ -36,7 +36,7 @@
     </div>
     <br>
     <div class="row">
-    	 <div class="col-md-12 @if($errors->has('description')) has-error ?? has-success  @endif">
+    	 <div class="col-md-12 mt-3 @if($errors->has('description')) has-error ?? has-success  @endif">
 	            <input 
 	                type="description" 
 	                name="description" 
@@ -51,7 +51,7 @@
 	                 <div class="text-danger">{{ $errors->first('description')}}</div>
 	            @endif    
         </div>
-       	<div class="col-md-3 @if($errors->has('date_exit')) has-error ?? has-success  @endif">
+       	<div class="col-md-3 mt-4 @if($errors->has('date_exit')) has-error ?? has-success  @endif">
             <label> Fecha de Retorno</label>
             <input 
                 type="date" 
@@ -66,7 +66,7 @@
                  <div class="text-danger">{{ $errors->first('date_exit')}}</div>
 	    	@endif    
 	    </div>
-	    <div class="col-md-3 @if($errors->has('time_entry')) has-error ?? has-success  @endif">
+	    <div class="col-md-3 mt-4 @if($errors->has('time_entry')) has-error ?? has-success  @endif">
 	        <label> Hora de Retorno</label>
 	        <input 
 	            type="time" 
@@ -82,7 +82,7 @@
 	             <div class="text-danger">{{ $errors->first('time_entry')}}</div>
 	        @endif    
 	    </div>
-	    <div class="col-md-3 @if($errors->has('date_exit')) has-error ?? has-success  @endif">
+	    <div class="col-md-3 mt-4 @if($errors->has('date_exit')) has-error ?? has-success  @endif">
 	        <label> Fecha de Salida</label>
 	        <input 
 	            type="date" 
@@ -97,7 +97,7 @@
 	             <div class="text-danger">{{ $errors->first('date_exit')}}</div>
 	        @endif    
 	    </div>
-	    <div class="col-md-3 @if($errors->has('time_exit')) has-error ?? has-success  @endif">
+	    <div class="col-md-3 mt-4 @if($errors->has('time_exit')) has-error ?? has-success  @endif">
 	        <label> Hora de Salida</label>
 	        <input 
 	            type="time" 
@@ -115,9 +115,9 @@
 	    </div>
     </div>
  </div>
- 	<h4> Configurar publicacion 
-		 <a class="btn btn-dark text-white btn-circle ">
-            <i class="fas fa-gears">
+ 	<h4 clas="mt-4"> Configurar publicacion 
+		 <a class="btn btn-lg btn-white text-dark">
+            <i class="fas fa-gears fa-lg">
 			</i>
         </a>
 	</h4>

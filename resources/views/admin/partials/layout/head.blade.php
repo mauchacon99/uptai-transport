@@ -18,10 +18,10 @@
     <link href="{{ asset('admin/css/style.css') }}" rel="stylesheet">
 
 
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('admin/favicon/apple-touch-icon.png') }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('admin/favicon/favicon-32x32.png') }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('admin/favicon/favicon-16x16.png') }}">
-    <link rel="manifest" href="{{ asset('admin/favicon/site.webmanifest') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('admin/img/logo-nav.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('admin/img/logo-nav.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('admin/img/logo-nav.png') }}">
+    <link rel="manifest" href="{{ asset('admin/img/logo-nav.png') }}">
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->

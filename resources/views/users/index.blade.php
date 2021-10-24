@@ -12,7 +12,7 @@
     <div class="card">
         <div class="card-header card-default">
             <div class="float-right mt-10">
-                <a href="{{ route('users.create')}}" class="btn btn-primary btn-rounded box-shadow btn-icon"><i class="fa fa-plus"></i> Nuevo Usuario</a>
+                <a href="{{ route('users.create')}}" class="btn btn-primary box-shadow btn-icon"><i class="fa fa-plus"></i> Nuevo Usuario</a>
             </div>
             Usuarios
             <p class="text-muted"> Listado de usuarios con acceso al sistema de transporte del  UPTAI</p>

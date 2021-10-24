@@ -8,7 +8,7 @@
     <div class="card">
         <div class="card-header card-default">
             <div class="float-right mt-10">
-                <a data-toggle="modal" data-target="#ModalCreateStop" class="btn btn-primary btn-rounded box-shadow btn-icon"><i class="fa fa-plus"></i> Nueva Parada</a>
+                <a data-toggle="modal" data-target="#ModalCreateStop" class="btn btn-primary box-shadow btn-icon"><i class="fa fa-plus"></i> Nueva Parada</a>
             </div>
             Parada Ciuda o direccion  {{ $address->name}}
             <div class="pdf">
