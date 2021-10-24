@@ -30,6 +30,10 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('address.index')}}" aria-expanded="false"><i class="fa fa-map-marker"></i> <span class="toggle-none">Ciudades </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('empleados.index')}}" aria-expanded="false"><i class="fa fa-group"></i> <span class="toggle-none"> Empleados </a>
+                </li>
+                
             
 
                 <li class="nav-heading"><span> SEGURIDAD </span></li>
