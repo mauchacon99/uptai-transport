@@ -3,7 +3,7 @@
         <div class="nano-content sidebar-nav">
             <div class="card-body border-bottom text-center nav-profile">
                 <div class="notify setpos"> <span class="heartbit"></span> <span class="point"></span> </div>
-                <img alt="profile" class="margin-b-10  " src="{{ asset('admin/img/avtar-2.png') }}" width="80">
+                <img alt="profile" class="margin-b-10  " src="{{ asset('admin/img/avtar-5.png') }}" width="80">
                 <p class="lead margin-b-0 toggle-none">
                 @if( Auth::check() )
                     {{ auth()->user()->name }}

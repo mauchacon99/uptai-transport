@@ -9,7 +9,7 @@
     <div class="card">
         <div class="card-header card-default">
             <div class="float-right mt-10">
-                <a href="{{ route('drivers.create') }}" class="btn btn-primary btn-rounded box-shadow btn-icon"><i class="fa fa-plus"></i> Nuevo Conductor</a>
+                <a href="{{ route('drivers.create') }}" class="btn btn-primary box-shadow btn-icon"><i class="fa fa-plus"></i> Nuevo Conductor</a>
             </div>
             Conductores
             <div class="pdf">
