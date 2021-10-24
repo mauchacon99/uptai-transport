@@ -24,12 +24,16 @@ class HomeController extends Controller
      */
    public function index(Request $request)
     {
-
         return view('home',[
-            'drivers' => Drivers::all()->count(),
-            'cars'    => Cars::all()->count(),
-            'routes'  => Routes::all()->count(),
-            'exits'   => CarsExits::all()->count(),
+            'drivers' => Drivers::count(),
+            'cars'    => Cars::count(),
+            'routes'  => Routes::count(),
+            'exits'   => CarsExits::count(),
         ]);
+    }
+
+    public function exit()
+    {
+        # code...
     }
 }
