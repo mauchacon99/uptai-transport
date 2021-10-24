@@ -1,3 +1,4 @@
+ 
 @extends('admin.layout')
 
 
@@ -18,10 +19,6 @@
 
 
 @section('content')
-
-
-
-  
             <div class="row w-no-padding margin-b-30">
                 <div class="col-md-3">
                     <div class="widget  bg-light">
@@ -31,11 +28,7 @@
                                 <p class="text-muted">Total Conductores</p>
                                 <span class="float-right text-primary widget-r-m">{{$drivers}}</span>
                             </div>
-                            <div class="progress margin-b-10  progress-mini">
-                                <div style="width:{{$drivers}}%;" class="progress-bar bg-primary"></div>
-                            </div>
-                              <p class="text-muted float-left margin-b-0">Porcentajes</p>
-                            <p class="text-muted float-right margin-b-0">{{$drivers}}%</p>
+                             
                         </div>
                     </div>
                 </div>
@@ -48,11 +41,6 @@
                                 <p class="text-muted">Total Autobuses</p>
                                 <span class="float-right text-indigo widget-r-m">{{$cars}}</span>
                             </div>
-                            <div class="progress margin-b-10 progress-mini">
-                                <div style="width:{{$cars}}%;" class="progress-bar bg-indigo"></div>
-                            </div>
-                              <p class="text-muted float-left margin-b-0">Porcentaje</p>
-                            <p class="text-muted float-right margin-b-0">{{$cars}}%</p>
                         </div>
                     </div>
                 </div>
@@ -65,11 +53,6 @@
                                 <p class="text-muted">Total Salidas</p>
                                 <span class="float-right text-success widget-r-m">{{$exits}}</span>
                             </div>
-                            <div class="progress margin-b-10 progress-mini">
-                                <div style="width:{{$exits}}%;" class="progress-bar bg-success"></div>
-                            </div>
-                            <p class="text-muted float-left margin-b-0">Porcentaje</p>
-                            <p class="text-muted float-right margin-b-0">{{$exits}}%</p>
                         </div>
                     </div>
                 </div>
@@ -82,18 +65,10 @@
                                 <p class="text-muted">Total Rutas</p>
                                 <span class="float-right text-warning widget-r-m">{{ $routes}}</span>
                             </div>
-                            <div class="progress margin-b-10 progress-mini">
-                                <div style="width:38%;" class="progress-bar bg-warning"></div>
-                            </div>
-                            <p class="text-muted float-left margin-b-0">Porcentaje</p>
-                            <p class="text-muted float-right margin-b-0">{{ $routes}}%</p>
                         </div>
                     </div>
                 </div>
             </div>
-
-
-
   <div class="row">
       <div class="col-md-6">
       <div class="card">

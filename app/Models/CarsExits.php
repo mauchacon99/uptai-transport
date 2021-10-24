@@ -22,11 +22,6 @@ class CarsExits extends Model
     {
         return $this->belongsTo(Drivers::class);
     }
-    
-    public function CarsExits()
-    {
-        return $this->belongsTo(Cars::class);
-    }
 
     public function details()
     {
