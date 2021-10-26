@@ -118,13 +118,22 @@ class CarsController extends Controller
         ]);
     }
 
-    public function test(Request $request)
+    public function restore(Request $request)
     {   
        $car = Cars::onlyTrashed()->findOrFail($request->id);
        $car->restore();
 
        return redirect()->route('cars.index',[
             'cars' => Cars::all()
+        ]);
+    }
+
+    public function remove(Request $request)
+    {   
+        Cars::where('id', $request->id)->forceDelete();
+       
+        return redirect()->route('cars.onlyTrashed',[
+            'cars' => Cars::onlyTrashed()->get()
         ]);
     }
 }

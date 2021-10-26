@@ -9,11 +9,14 @@
             </a>
         </td>
         <td>
-            <a href="{{ route('address.edit', $address)}}" class="btn btn-danger btn-circle ">
-                <i class="fa fa-trash" aria-hidden="true"></i>
-            </a>
-            <a  href="{{ route('address.edit', $address)}}" class="btn btn-success btn-circle ">
-                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-            </a>
+            <form action="{{  route('address.destroy', $address)  }}" method="POST">
+                {{ csrf_field() }}
+                {{ method_field('DELETE')}}
+                <a  href="{{ route('address.edit', $address)}}" class="btn btn-success btn-circle ">
+                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                </a>
+                <button type="submit" class="btn btn-danger btn-circle"><span class="fas fa-trash-alt "></span></button>
+	    	</form>
+            
         </td>
     </tr>

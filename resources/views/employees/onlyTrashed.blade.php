@@ -1,3 +1,4 @@
+
 @extends('admin.layout')
 
 @component('shared._breadcrumb')
@@ -14,29 +15,30 @@
                 <table class="table">
                     <thead>
                     <tr>
-                        <th>Nro Control </th>
+                        <th> Nombre </th>
                         <th>Placa</th>
                         <th>reciclar</th>
                         <th>eliminar</th>
                     </tr>
                     </thead>
                 <tbody>
-                     @foreach ($cars as $car)
+                     @foreach ($employees as $employee)
 
                         <tr>
-                            <td>{{ $car->number}}</td>
-                            <td>{{ $car->plate }}</td>
+                            <td> {{ $employee->name }} {{ $employee->surname }} </td>
+                            <td> {{ $employee->identity }}</td>
                             <td>  
-                                <form action="{{ route('cars.restore')}}" method="POST">
+                                <form action="{{ route('empleados.restore')}}" method="POST">
                                     {!! @csrf_field() !!}
-                                    <input type="hidden" name="id" value="{{$car->id}}">
+                                    <input type="hidden" name="id" value="{{$employee->id}}">
                                        <button type="submit" class="btn btn-info btn-circle"><span class="fas fa-refresh"></span></button>
                                 </form>
                  			</td>
                              <td>
-                                <form action="{{  route('cars.remove') }}" method="POST">
+                                <form action="{{  route('empleados.remove') }}" method="POST">
                                     {{ csrf_field() }}
-                                    <input type="hidden" name="id" value="{{$car->id}}">
+                                    <input type="hidden" name="id" value="{{$employee->id}}">
+                                    {{-- {{ method_field('DELETE')}} --}}
                                     <button type="submit" class="btn btn-danger btn-circle"><span class="fas fa-trash-alt "></span></button>
                                 </form>
                              </td>
@@ -47,5 +49,3 @@
             </div>
     </div>
 @endsection
- 
- 

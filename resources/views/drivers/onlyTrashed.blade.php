@@ -20,7 +20,8 @@
                 <tr>
                     <th data-class-name="priority">C.I</th>
                     <th>Nombre</th>
-                    <th>Apellido</th>
+                    <th> Restaurar </th>
+                    <th> Eliminar </th>
                 </tr>
                 </thead>
                 <tbody>
@@ -33,9 +34,18 @@
                                 <form action="{{ route('drivers.restore')}}" method="POST">
                                     {!! @csrf_field() !!}
                                     <input type="hidden" name="id" value="{{$driver->id}}">
-                                       <button type="submit" class="btn btn-danger btn-circle"><span class="fas fa-refresh"></span></button>
+                                    <button type="submit" class="btn btn-info btn-circle"><span class="fas fa-refresh"></span></button>
                                 </form>
+                                
                  			</td>
+                             <td>
+                                <form action="{{  route('drivers.remove') }}" method="POST">
+                                    {{ csrf_field() }}
+                                    <input type="hidden" name="id" value="{{ $driver  }}">
+                                    {{-- {{ method_field('DELETE')}} --}} 
+                                    <button type="submit" class="btn btn-danger btn-circle"><span class="fas fa-trash-alt "></span> </button>
+                                </form>
+                             </td>
                         </tr>
                 	@endforeach
                 </tbody>
