@@ -42,9 +42,44 @@ class AddressController extends Controller
 	 }
 
 	 
-	 function getAddress($id)
-	 {
-		   $address = Addreses::where('id', '<>', $id)->get();
-		   return response()->json($address);
-	 }
+	function getAddress($id)
+	{
+		$address = Addreses::where('id', '<>', $id)->get();
+		return response()->json($address);
+	}
+
+	 public function onlyTrashed()
+    {
+        return view('address.onlyTrashed', [
+            'Addreses' => Addreses::onlyTrashed()->get()
+        ]);
+    }
+
+	public function destroy(Addreses $address)
+	{
+		$address->delete();
+
+		return redirect()->route('address.index',[
+			'address' => $address,
+			'stops'   => $address->stops
+		]);
+	}
+	public function restore(Request $request)
+	{
+		$address = Addreses::onlyTrashed()->findOrFail($request->id);
+		$address->restore();
+
+		return redirect()->route('address.index',[
+			'Addreses' => Addreses::all(),
+		]);
+	}
+
+	public function forceDelete(Request $request)
+	{
+		Addreses::where('id', $request->id)->forceDelete();
+       
+        return redirect()->route('address.onlyTrashed', [
+            'Addreses' => Addreses::onlyTrashed()->get()
+        ]);
+	}
 }

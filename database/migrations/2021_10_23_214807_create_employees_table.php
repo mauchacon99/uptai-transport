@@ -24,6 +24,7 @@ class CreateEmployeesTable extends Migration
             $table->string('occupation');
             $table->string('address', 50);
             $table->smallInteger('status')->default(1);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

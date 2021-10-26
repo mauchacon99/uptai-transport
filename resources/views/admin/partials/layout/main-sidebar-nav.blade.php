@@ -45,19 +45,19 @@
                 </li>
                 <li class="nav-heading"><span> RESPALDO </span></li>
                 <li class="nav-item">
+                    <a class="nav-link" href="{{ route('empleados.onlyTrashed')}}" aria-expanded="false"><i class="fa fa-database"></i> <span class="toggle-none"> Empleados   </a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="{{ route('drivers.onlyTrashed')}}" aria-expanded="false"><i class="fa fa-database"></i> <span class="toggle-none"> Conductores   </a>
                 </li>
                  <li class="nav-item">
-                    <a class="nav-link" href="{{ route('cars.onlyTrashed')}}" aria-expanded="false"><i class="fa fa-database"></i> <span class="toggle-none">  Drivers </a>
+                    <a class="nav-link" href="{{ route('drivers.onlyTrashed')}}" aria-expanded="false"><i class="fa fa-database"></i> <span class="toggle-none">  Drivers </a>
                 </li>
                  <li class="nav-item">
                     <a class="nav-link" href="{{ route('cars.onlyTrashed')}}" aria-expanded="false"><i class="fa fa-database"></i> <span class="toggle-none">  Autobuses </a>
                 </li>
                  <li class="nav-item">
-                    <a class="nav-link" href="{{ route('cars.onlyTrashed')}}" aria-expanded="false"><i class="fa fa-database"></i> <span class="toggle-none">  Rutas </a>
-                </li>
-                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('cars.onlyTrashed')}}" aria-expanded="false"><i class="fa fa-database"></i> <span class="toggle-none">  Paradas </a>
+                    <a class="nav-link" href="{{ route('address.onlyTrashed')}}" aria-expanded="false"><i class="fa fa-database"></i> <span class="toggle-none">  Ciudades </a>
                 </li>
              
             </ul>

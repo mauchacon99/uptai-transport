@@ -101,12 +101,12 @@ class DriversController extends Controller
             'drivers' => Drivers::onlyTrashed()->get()
         ]);
     }
-     public function destroy(Drivers $driver)
+     public function remove(Request $request)
     {
-        $driver->forceDelete();
-
-         return redirect()->route('drivers.index',[
-            'drivers'=> Drivers::all(),
+        Drivers::where('id', $request->id)->forceDelete();
+       
+        return view('drivers.onlyTrashed',[
+            'drivers' => Drivers::onlyTrashed()->get()
         ]);
     }
 
