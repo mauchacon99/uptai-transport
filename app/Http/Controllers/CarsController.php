@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\{Cars,TradeMarks,Models, Bitacoras, user};
 use App\Http\Requests\Cars\{CreateRequest,UpdateRequest};
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\{DB, Gate};
+ 
 
  
 use Response;
@@ -19,6 +20,9 @@ class CarsController extends Controller
 
     public function index()
     {   
+        if (! Gate::allows('cars.index')) {
+            return abort(401);
+        }
     	return view('cars.index',[
     		'cars' => Cars::all()
     	]);
@@ -26,6 +30,10 @@ class CarsController extends Controller
 
     public function create()
     {
+          
+        if (! Gate::allows('cars.create')) {
+            return abort(401);
+        }
     	return view('cars.create',[
             'cars' 		=> new Cars,
     		'tradeMarks'=> TradeMarks::all(),
@@ -35,6 +43,7 @@ class CarsController extends Controller
 
     public function toggleModel($id)
     {
+        
     	$model = TradeMarks::find($id)->models;
 
     	return \Response::json($model, 200);
@@ -42,7 +51,10 @@ class CarsController extends Controller
 
     public function store(CreateRequest $request)
     {
-
+  
+        if (! Gate::allows('cars.create')) {
+            return abort(401);
+        }
     	$request->carsCreate();
 
     	return redirect()->route('cars.index',[
@@ -52,6 +64,10 @@ class CarsController extends Controller
 
     public function show(Cars $car)
     {
+          
+        if (! Gate::allows('cars.edit')) {
+            return abort(401);
+        }
         return view('cars.edit',[
             'cars' => $car,
             'tradeMarks'=> TradeMarks::all(),
@@ -61,6 +77,10 @@ class CarsController extends Controller
 
     public function update(UpdateRequest $request, Cars $cars)
     {
+          
+        if (! Gate::allows('cars.edit')) {
+            return abort(401);
+        }
         $request->carsUpdate($cars);
         return redirect()->route('cars.index',[
             'cars' => Cars::all()
@@ -69,6 +89,10 @@ class CarsController extends Controller
 
       public function delete(Cars $car)
     {
+          
+        if (! Gate::allows('cars.deleteSoft')) {
+            return abort(401);
+        }
         $car->delete();
 
         return redirect()->route('cars.index',[
@@ -78,6 +102,9 @@ class CarsController extends Controller
 
     public function destroy(Cars $car)
     {
+        if (! Gate::allows('cars.destroy')) {
+            return abort(401);
+        }
         $car->forceDelete();
 
         return redirect()->route('cars.index',[
@@ -88,6 +115,9 @@ class CarsController extends Controller
    public function statusToogle(Cars $car)
     {
          
+        if (! Gate::allows('cars.changeStatus')) {
+            return abort(401);
+        }
         $car->status = ($car->status == 0)? 1 : 0;
         $car->update();
 
@@ -98,7 +128,6 @@ class CarsController extends Controller
 
     public function showExits(Cars $car)
     {
-        
          return view('cars.show-exits',[
             'exits'  => $car->Exits,
             'cars' => $car
@@ -113,6 +142,9 @@ class CarsController extends Controller
     }
     public function onlyTrashed()
     {
+        if (! Gate::allows('cars.destroy')) {
+            return abort(401);
+        }
         return view('cars.onlyTrashed',[
             'cars' => Cars::onlyTrashed()->get()
         ]);
@@ -120,8 +152,11 @@ class CarsController extends Controller
 
     public function restore(Request $request)
     {   
-       $car = Cars::onlyTrashed()->findOrFail($request->id);
-       $car->restore();
+        if (! Gate::allows('cars.restore')) {
+            return abort(401);
+        }
+        $car = Cars::onlyTrashed()->findOrFail($request->id);
+        $car->restore();
 
        return redirect()->route('cars.index',[
             'cars' => Cars::all()
@@ -130,6 +165,9 @@ class CarsController extends Controller
 
     public function remove(Request $request)
     {   
+        if (! Gate::allows('cars.destroy')) {
+            return abort(401);
+        }
         Cars::where('id', $request->id)->forceDelete();
        
         return redirect()->route('cars.onlyTrashed',[
