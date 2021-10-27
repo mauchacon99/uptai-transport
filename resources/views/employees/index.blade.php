@@ -9,7 +9,9 @@
     <div class="card">
         <div class="card-header card-default">
             <div class="float-right mt-10">
-                <a href="{{ route('empleados.create') }}" class="btn btn-primary box-shadow btn-icon"><i class="fa fa-plus"></i> Nuevo Empleado</a>
+                @role('admin')
+                    <a href="{{ route('empleados.create') }}" class="btn btn-primary btn-rounded box-shadow btn-icon"><i class="fa fa-plus"></i> Nuevo Empleado</a>
+                @endrole
             </div>
             Empleados
             <div class="pdf">
@@ -30,7 +32,9 @@
                     <th>Telefono</th>
                     <th>Cargo</th>
                     <th> Direccion </th>
-                    <th>Accion</th>
+                    @role('admin')
+                        <th>Accion</th>
+                    @endrole
                 </tr>
                 </thead>
                 <tbody>

@@ -16,7 +16,7 @@
                 <table class="table datatables" data-page-length='5' >
                 <thead>
                 <tr>
-                    <th data-class-name="priority">C.I</th>
+                    <th data-class-name="priority"> C.I </th>
                     <th>Nombre</th>
                     <th>Apellido</th>
                     <th>Placa Bus</th>
@@ -32,7 +32,7 @@
 					        <td> @upper($exit->cars->plate)	  </td>
 				            <td> {{ $exit->details->date_exit}} </td>
                         </tr>
-                @endforeach
+                    @endforeach
                 </tbody>
              </table>
             </div>
