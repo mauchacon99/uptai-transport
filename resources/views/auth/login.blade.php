@@ -8,8 +8,8 @@
             <div class="row justify-content-center">
                 <div class="col-md-5 col-sm-12">
                     <div class="misc-header text-center">
-                        <img alt="{{ __('Login') }}" src="{{ asset('admin/img/icon.png') }}" class="logo-icon margin-r-10">
-                        <img alt="{{ __('Login') }}" src="{{ asset('admin/img/logo-dark.png') }}" class="toggle-none hidden-xs">
+                        <img alt="{{ __('Login') }}" src="{{ asset('admin/img/logo-nav.png') }}" class="logo-icon margin-r-10">
+                        <!-- <img alt="{{ __('Login') }}" src="{{ asset('admin/img/logo-nav(1).png') }}" class="toggle-none hidden-xs"> -->
                     </div>
                     <div class="misc-box">   
                         <form role="form" method="post" action="{{ route('login') }}">
@@ -45,13 +45,13 @@
                                     </div>
                                 </div>
                                 <div class="float-right">
-                                    <button type="submit" class="btn btn-block btn-primary btn-rounded box-shadow">{{ __('INICIAR SESION') }}</button>
+                                    <button type="submit" class="btn btn-block btn-dark opacity-80 box-shadow">{{ __('INICIAR SESION') }}</button>
                                 </div>
                             </div>
                         </form>
                     </div>
                     <div class="text-center misc-footer">
-                        <p>Copyright &copy; </p>
+                        <p>Copyright &copy; by Concequim de Venezuela </p>
                     </div>
                 </div>
             </div>
