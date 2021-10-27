@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\{Routes, ExitsCars, Addreses};
 use App\Http\Requests\Routes\{CreateRequest};
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\{DB, Gate};
 
 class RoutesController extends Controller
 {
@@ -15,6 +16,9 @@ class RoutesController extends Controller
     
     public function index()
     {
+        if (! Gate::allows('routes.index')) {
+            return abort(401);
+        }
     	return view('routes.index',[
     		'routes' => Routes::all(),
     	]);	
@@ -23,6 +27,9 @@ class RoutesController extends Controller
 
     public function store(CreateRequest $request)
     {
+        if (! Gate::allows('routes.create')) {
+            return abort(401);
+        }
         $request->createRoute();
 
         return view('routes.index',[
@@ -32,6 +39,9 @@ class RoutesController extends Controller
 
     public function create()
     {
+        if (! Gate::allows('routes.create')) {
+            return abort(401);
+        }
     	return view('routes.create',[
     		'drivers' => new Routes,
             'Addreses' => Addreses::all()
