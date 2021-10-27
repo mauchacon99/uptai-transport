@@ -13,41 +13,64 @@ class RolesSeeder extends Seeder
      */
     public function run()
     {
-        $admin = Role::create(['name' => 'admin']);
-        $super_admin = Role::create(['name' => 'super_admin']);
-        $write = Role::create(['name' => 'write']);
-        Permission::create(['name' => 'drivers.index'])->syncRoles([$admin, $super_admin]);
-        Permission::create(['name' => 'drivers.edit'])->syncRoles([$admin, $super_admin]);
-        Permission::create(['name' => 'drivers.show'])->syncRoles([$admin, $super_admin]);
-        Permission::create(['name' => 'drivers.create'])->syncRoles([$admin, $super_admin]);
-        Permission::create(['name' => 'drivers.delete'])->syncRoles([$admin, $super_admin]);
-        Permission::create(['name' => 'drivers.destroy'])->syncRoles([$admin, $super_admin]);
-        Permission::create(['name' => 'cars.index'])->syncRoles([$admin, $super_admin]);
-        Permission::create(['name' => 'cars.edit'])->syncRoles([$admin, $super_admin]);
-        Permission::create(['name' => 'cars.show'])->syncRoles([$admin, $super_admin]);
-        Permission::create(['name' => 'cars.create'])->syncRoles([$admin, $super_admin]);
-        Permission::create(['name' => 'cars.destroy'])->syncRoles([$admin, $super_admin]);
-        Permission::create(['name' => 'routes.index'])->syncRoles([$admin, $super_admin]);
-        Permission::create(['name' => 'routes.edit'])->syncRoles([$admin, $super_admin]);
-        Permission::create(['name' => 'routes.show'])->syncRoles([$admin, $super_admin]);
-        Permission::create(['name' => 'routes.create'])->syncRoles([$admin, $super_admin]);
-        Permission::create(['name' => 'routes.destroy'])->syncRoles([$admin, $super_admin]);
-        Permission::create(['name' => 'user.index'])->syncRoles([$admin, $super_admin]);
-        Permission::create(['name' => 'user.edit'])->syncRoles([$admin, $super_admin]);
-        Permission::create(['name' => 'user.show'])->syncRoles([$admin, $super_admin]);
-        Permission::create(['name' => 'user.create'])->syncRoles([$admin, $super_admin]);
-        Permission::create(['name' => 'user.destroy'])->syncRoles([$admin, $super_admin]);
-        Permission::create(['name' => 'exits.update'])->syncRoles([$admin, $super_admin]);
-        Permission::create(['name' => 'exits.create'])->assignRole($admin);
-        Permission::create(['name' => 'exits.softDelete'])->assignRole($admin);
-        Permission::create(['name' => 'exits.show'])->assignRole($admin);
-        Permission::create(['name' => 'exits.delete'])->assignRole($admin);
-        Permission::create(['name' => 'citys.update'])->syncRoles([$admin, $super_admin]);
-        Permission::create(['name' => 'citys.create'])->assignRole($admin);
-        Permission::create(['name' => 'citys.softDelete'])->assignRole($admin);
-        Permission::create(['name' => 'citys.show'])->assignRole($admin);
-        Permission::create(['name' => 'citys.delete'])->assignRole($admin);
-        Permission::create(['name' => 'activities.show'])->assignRole($admin);
+        $author = Role::create(['name' => 'author']);
+        $admin  = Role::create(['name' => 'admin']);
+        $editor = Role::create(['name' => 'editor']);
+
+        Permission::create(['name' => 'dashboard.index'])->assignRole([$author, $admin, $editor]);
+         //cars
+        Permission::create(['name' => 'cars.index'])->syncRoles([$admin, $editor, $author]);
+        Permission::create(['name' => 'cars.create'])->syncRoles([$admin, $editor]);
+        Permission::create(['name' => 'cars.edit'])->syncRoles([$admin, $editor]);
+        Permission::create(['name' => 'cars.deleteSoft'])->assignRole([$admin, $editor]);
+        Permission::create(['name' => 'cars.destroy'])->assignRole($admin);
+        Permission::create(['name' => 'cars.restore'])->assignRole($admin);
+        Permission::create(['name' => 'cars.changeStatus'])->assignRole($admin);
+        // drivers
+        Permission::create(['name' => 'drivers.index'])->syncRoles([$admin, $editor, $author]);
+        Permission::create(['name' => 'drivers.create'])->syncRoles([$admin, $editor]);
+        Permission::create(['name' => 'drivers.edit'])->syncRoles([$admin, $editor]);
+        Permission::create(['name' => 'drivers.deleteSoft'])->syncRoles([$admin, $editor]);
+        Permission::create(['name' => 'drivers.destroy'])->assignRole($admin);
+        Permission::create(['name' => 'drivers.onlyTrashed'])->syncRoles([$admin]);
+
+        // address
+        Permission::create(['name' => 'address.index'])->syncRoles([$author, $editor, $admin]);
+        Permission::create(['name' => 'address.create'])->syncRoles([$admin, $editor]);
+        Permission::create(['name' => 'address.edit'])->syncRoles([ $admin, $editor]);
+        Permission::create(['name' => 'address.deleteSoft'])->syncRoles([ $admin, $editor]);;
+        Permission::create(['name' => 'address.destroy'])->assignRole($admin);
+        Permission::create(['name' => 'address.restore'])->assignRole($admin);
+        Permission::create(['name' => 'address.changeStatus'])->assignRole($admin);
+
+        // employees
+        Permission::create(['name' => 'employees.index'])->syncRoles([$editor, $admin]);
+        Permission::create(['name' => 'employees.create'])->syncRoles([$admin]);
+        Permission::create(['name' => 'employees.edit'])->syncRoles([$admin]);
+        Permission::create(['name' => 'employees.softDelete'])->syncRoles([$admin]);
+        Permission::create(['name' => 'employees.destroy'])->assignRole($admin);
+
+        // exits
+        Permission::create(['name' => 'exits.index'])->syncRoles([ $admin, $editor, $author]);
+        Permission::create(['name' => 'exits.create'])->syncRoles([ $admin, $editor, $author]);
+        Permission::create(['name' => 'exits.softDelete'])->syncRoles([ $admin, $editor]);
+        // routes
+        Permission::create(['name' => 'routes.index'])->syncRoles([$editor, $admin, $author]);
+        Permission::create(['name' => 'routes.create'])->syncRoles([$admin, $editor]);
+        Permission::create(['name' => 'routes.edit'])->syncRoles([$editor, $admin]);
+        Permission::create(['name' => 'routes.show'])->syncRoles([$editor, $admin]);
+        Permission::create(['name' => 'routes.softDelete'])->syncRoles([$admin, $editor]);
+        Permission::create(['name' => 'routes.destroy'])->assignRole($admin);
+        //users
+        Permission::create(['name' => 'user.index'])->syncRoles([$admin, $editor]);
+        Permission::create(['name' => 'user.edit'])->assignRole($admin);
+        Permission::create(['name' => 'user.show'])->assignRole($admin);
+        Permission::create(['name' => 'user.create'])->assignRole($admin);
+        Permission::create(['name' => 'user.softDelete'])->assignRole($admin);
+        Permission::create(['name' => 'user.destroy'])->assignRole($admin);
+        //activities
+        Permission::create(['name' => 'activities.index'])->assignRole($admin);
+       
   
     }
 }

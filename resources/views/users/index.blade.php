@@ -12,7 +12,9 @@
     <div class="card">
         <div class="card-header card-default">
             <div class="float-right mt-10">
+                @role('admin')
                 <a href="{{ route('users.create')}}" class="btn btn-primary box-shadow btn-icon"><i class="fa fa-plus"></i> Nuevo Usuario</a>
+                @endrole
             </div>
             Usuarios
             <p class="text-muted"> Listado de usuarios con acceso al sistema de transporte del  UPTAI</p>
@@ -24,9 +26,11 @@
                         <th>Nombre</th>
                         <th>Correo</th>
                         <th> Rol </th>
+                        @role('admin')
                         <th>auditar</th>
                         <th>acciones</th>  
-                        <th>status</th>                  
+                        <th>status</th>  
+                        @endrole               
                     </tr>
                     </thead>
                 <tbody>

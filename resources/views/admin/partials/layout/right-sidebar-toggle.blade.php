@@ -1,4 +1,4 @@
-<nav class="toggle-sidebar" id="right-sidebar-toggle">
+{{-- <nav class="toggle-sidebar" id="right-sidebar-toggle">
     <div class="nano">
         <div class="nano-content">
             <div>
@@ -69,4 +69,4 @@
             </div>
         </div>
     </div>
-</nav>
+</nav> --}}

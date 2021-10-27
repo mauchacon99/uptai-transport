@@ -9,7 +9,9 @@
     <div class="card">
         <div class="card-header card-default">
             <div class="float-right mt-10">
-                <a href="{{ route('routes.create') }}" class="btn btn-primary box-shadow btn-icon"><i class="fa fa-plus"></i> Nuevas Rutas</a>
+                @hasanyrole('editor|admin')
+                    <a href="{{ route('routes.create') }}" class="btn btn-primary box-shadow btn-icon"><i class="fa fa-plus"></i> Nuevas Rutas</a>
+                @endhasanyrole
             </div>
             Rutas
             <p class="text-muted"> Listado de rutas que cumple el transporte del UPTAI</p>

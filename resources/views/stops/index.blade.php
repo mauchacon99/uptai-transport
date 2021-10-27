@@ -7,9 +7,11 @@
 @section('content')
     <div class="card">
         <div class="card-header card-default">
+          @hasanyrole('editor|admin')
             <div class="float-right mt-10">
                 <a data-toggle="modal" data-target="#ModalCreateStop" class="btn btn-primary box-shadow btn-icon"><i class="fa fa-plus"></i> Nueva Parada</a>
             </div>
+          @endhasanyrole
             Parada Ciuda o direccion  {{ $address->name}}
             <div class="pdf">
             </div>
@@ -22,10 +24,10 @@
                 <thead>
                 <tr>
                     <th data-class-name="priority">Nombre</th>
-                    <th> Accion</th>
-                    {{-- @if(Auth::user()->roleUser->role->id == 1) --}}
-					<th>Estatus</th>
-					{{-- @endif --}}
+                    @hasanyrole('editor|admin')
+                      <th> Accion</th>
+                      <th>Estatus</th>
+                    @endhasanyrole
                 </tr>
                 </thead>
                 <tbody>

@@ -1,23 +1,7 @@
  
 @extends('admin.layout')
 
-
-@section('pageTitle', 'FixedPlus - Laravel Admin Dashboard Template')
-
-
-@section('breadcrumb')
-
-  <div class="row page-header"><div class="col-lg-6 align-self-center ">
-    <h2>Flot Charts</h2>
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="#">Home</a></li>
-      <li class="breadcrumb-item"><a href="#">Charts</a></li>
-      <li class="breadcrumb-item active">Flot Charts</li>   
-    </ol></div></div>
-
-@endsection
-
-
+ 
 @section('content')
             <div class="row w-no-padding margin-b-30">
                 <div class="col-md-3">
@@ -69,54 +53,36 @@
                     </div>
                 </div>
             </div>
-  <div class="row">
-      <div class="col-md-6">
-      <div class="card">
-        <div class="card-header card-default">
-          Condcutores con mas salidas
-        </div>
-        <div class="card-body">
-            <div class="flot-chart">
-                <div class="flot-chart-content" id="flot-bar-chart"></div>
+            <div class="row">
+                <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header card-default">
+                    Conductores  con mas salidas
+                    </div>
+                    <div class="card-body">
+                        <div class="flot-chart">
+                            <div class="flot-chart-content" id="flot-bar-chart"></div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header card-default">
+                    Estadistica de Salida de Vehiculo
+                    </div>
+                    <div class="card-body">
+                    <div class="flot-chart">
+                            <div class="flot-chart-content" id="flot-pie-chart"></div>
+                        </div>
+                    </div>
+                </div>
+                </div>
             </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="card">
-        <div class="card-header card-default">
-          Estadistica de Salida de Vehiculo
-        </div>
-        <div class="card-body">
-          <div class="flot-chart">
-                <div class="flot-chart-content" id="flot-pie-chart"></div>
-            </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-
-
-  
-
-
-</section>
-<!-- ============================================================== -->
-<!--            Content End               -->
-<!-- ============================================================== -->
-
 @endsection
-
-
-@section('head-assets')
-
-@endsection
-
+ 
 
 @section('footer-assets')
-
-
 <!-- Flot Chart-->
  <!-- Radial Chart-->
     <script src="{{ asset( 'admin/lib/radial-charts/jquery.knob.js' ) }}"></script>
@@ -128,6 +94,4 @@
     <script src="{{ asset( 'admin/lib/flot/jquery.flot.time.js' ) }}"></script>
     <script src="{{ asset( 'admin/lib/flot/jquery.flot.tooltip.min.js' ) }}"></script>
     <script src="{{ asset( 'admin/js/flot.custom.js' ) }}"></script>
-
-
 @endsection

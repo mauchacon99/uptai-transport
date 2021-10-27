@@ -11,56 +11,66 @@
                 </p>
                 <p class="text-muted mv-0 toggle-none"> Bienvenido</p>
             </div>
-            <ul class="metisMenu nav flex-column" id="menu">
-                <li class="nav-heading"><span>TRABAJO</span></li>
-                <li class="nav-item"><a class="nav-link" href="/home"><i class="fa fa-home"></i> <span class="toggle-none">Dashboard</span></a></li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('carsexit.index') }}" aria-expanded="false"><i class="fa fa-sign-out-alt"></i> <span class="toggle-none"> Salidas </a>
-                </li>
-                
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('cars.index')}}" aria-expanded="false"><i class="fa fa-bus-alt"></i> <span class="toggle-none"> Autobuses </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('drivers.index')}}" aria-expanded="false"><i class="fa fa-group"></i> <span class="toggle-none"> Conductores </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('routes.index')}}" aria-expanded="false"><i class="fa fa-map"></i> <span class="toggle-none"> Rutas </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('address.index')}}" aria-expanded="false"><i class="fa fa-map-marker"></i> <span class="toggle-none">Ciudades </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('empleados.index')}}" aria-expanded="false"><i class="fa fa-group"></i> <span class="toggle-none"> Empleados </a>
-                </li>
-                
-            
-
-                <li class="nav-heading"><span> SEGURIDAD </span></li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('users.index')}}" aria-expanded="false"><i class="fa fa-user"></i> <span class="toggle-none"> Usuarios </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('bitacoras.index')}}" aria-expanded="false"><i class="fa fa-exchange-alt"></i> <span class="toggle-none"> Actividades </a>
-                </li>
-                <li class="nav-heading"><span> RESPALDO </span></li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('empleados.onlyTrashed')}}" aria-expanded="false"><i class="fa fa-database"></i> <span class="toggle-none"> Empleados   </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('drivers.onlyTrashed')}}" aria-expanded="false"><i class="fa fa-database"></i> <span class="toggle-none"> Conductores   </a>
-                </li>
-                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('drivers.onlyTrashed')}}" aria-expanded="false"><i class="fa fa-database"></i> <span class="toggle-none">  Drivers </a>
-                </li>
-                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('cars.onlyTrashed')}}" aria-expanded="false"><i class="fa fa-database"></i> <span class="toggle-none">  Autobuses </a>
-                </li>
-                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('address.onlyTrashed')}}" aria-expanded="false"><i class="fa fa-database"></i> <span class="toggle-none">  Ciudades </a>
-                </li>
-             
-            </ul>
+          
+                <ul class="metisMenu nav flex-column" id="menu">
+                    <li class="nav-heading">
+                        <span>
+                            TRABAJO
+                            </span>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="/home"><i class="fa fa-home"></i> <span class="toggle-none">Dashboard</span></a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('carsexit.index') }}" aria-expanded="false"><i class="fa fa-sign-out-alt"></i> <span class="toggle-none"> Salidas </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('cars.index')}}" aria-expanded="false"><i class="fa fa-bus-alt"></i> <span class="toggle-none"> Autobuses </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('drivers.index')}}" aria-expanded="false"><i class="fa fa-group"></i> <span class="toggle-none"> Conductores </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('routes.index')}}" aria-expanded="false"><i class="fa fa-map"></i> <span class="toggle-none"> Rutas </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('address.index')}}" aria-expanded="false"><i class="fa fa-map-marker"></i> <span class="toggle-none">Ciudades </a>
+                    </li>
+                    @can('employees.index')
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('empleados.index')}}" aria-expanded="false"><i class="fa fa-group"></i> <span class="toggle-none"> Empleados </a>
+                        </li>
+                    @endcan
+                    @hasanyrole('editor|admin')
+                        <li class="nav-heading"><span> SEGURIDAD </span></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('users.index')}}" aria-expanded="false"><i class="fa fa-user"></i> <span class="toggle-none"> Usuarios </a>
+                        </li>
+                        @can('activities.index')
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('bitacoras.index')}}" aria-expanded="false"><i class="fa fa-exchange-alt"></i> <span class="toggle-none"> Actividades </a>
+                            </li>
+                        @endcan
+                    @endhasanyrole
+                   
+                    @role('admin')
+                    <li class="nav-heading"><span> RESPALDO </span></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('empleados.onlyTrashed')}}" aria-expanded="false"><i class="fa fa-database"></i> <span class="toggle-none"> Empleados   </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('drivers.onlyTrashed')}}" aria-expanded="false"><i class="fa fa-database"></i> <span class="toggle-none"> Conductores   </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('drivers.onlyTrashed')}}" aria-expanded="false"><i class="fa fa-database"></i> <span class="toggle-none">  Drivers </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('cars.onlyTrashed')}}" aria-expanded="false"><i class="fa fa-database"></i> <span class="toggle-none">  Autobuses </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('address.onlyTrashed')}}" aria-expanded="false"><i class="fa fa-database"></i> <span class="toggle-none">  Ciudades </a>
+                    </li>
+                    @endrole
+                </ul>
+               
         </div>
     </div>
 </div>

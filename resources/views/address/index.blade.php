@@ -8,7 +8,9 @@
     <div class="card">
         <div class="card-header card-default">
             <div class="float-right mt-10">
-                <a href="{{ route('address.create') }}" class="btn btn-primary box-shadow btn-icon"><i class="fa fa-plus"></i> Nueva Ciudad</a>
+                @hasanyrole('editor|admin')
+                    <a href="{{ route('address.create') }}" class="btn btn-primary box-shadow btn-icon"><i class="fa fa-plus"></i> Nueva Ciudad</a>
+                @endhasanyrole
             </div>
             Ciudades
             <p class="text-muted"> Listado de ciudades para la creacion de rutas</p>
@@ -22,7 +24,9 @@
                     <th>Municipio</th>
                     <th>Estado</th>
                     <th>Ver Paradas</th>
-                    <th> Acciones </th>
+                    @hasanyrole('editor|admin')
+                     <th> Acciones </th>
+                    @endhasanyrole
                 </tr>
                 </thead>
                 <tbody>

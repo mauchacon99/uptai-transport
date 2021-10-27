@@ -9,7 +9,9 @@
     <div class="card">
         <div class="card-header card-default">
             <div class="float-right mt-10">
-                <a href="{{ route('cars.create') }}" class="btn btn-primary box-shadow btn-icon"><i class="fa fa-plus"></i> Nuevo Autobuses</a>
+                @can('cars.create')
+                    <a href="{{ route('cars.create') }}" class="btn btn-primary box-shadow btn-icon"><i class="fa fa-plus"></i> Nuevo Autobuses</a>
+                @endcan
             </div>
                 Vehiculos
             <p class="text-muted"> Listado de autobuses del departamento de transporte</p>
@@ -24,14 +26,14 @@
                         <th>Año</th>
                         <th>Marca</th>
                         <th>Modelo</th>
-                        <th>Detalles</th>
                         <th>Salidas</th>
-                        <th> Choferes </th>
-                     
-                        <th>Action</th>
-                     
-                             <th>Status</th>
-                       
+                        <th>Choferes </th>
+                        @hasanyrole('editor|admin')
+                            <th>Action</th>
+                        @endhasanyrole
+                        @can('cars.changeStatus')
+                            <th>Status</th>
+                        @endcan
                     </tr>
                     </thead>
                 <tbody>

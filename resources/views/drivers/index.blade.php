@@ -9,7 +9,9 @@
     <div class="card">
         <div class="card-header card-default">
             <div class="float-right mt-10">
-                <a href="{{ route('drivers.create') }}" class="btn btn-primary box-shadow btn-icon"><i class="fa fa-plus"></i> Nuevo Conductor</a>
+                @can('drivers.create' )
+                    <a href="{{ route('drivers.create') }}" class="btn btn-primary box-shadow btn-icon"><i class="fa fa-plus"></i> Nuevo Conductor</a>
+                @endcan
             </div>
             Conductores
             <div class="pdf">
@@ -23,12 +25,12 @@
                 <thead>
                 <tr>
                     <th data-class-name="priority">C.I</th>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>Sexo</th>
-                    <th>Edad</th>
-                    <th>Telefono</th>
-                    <th>Accion</th>
+                    <th> Nombre</th>
+                    <th> Apellido</th>
+                    <th> Sexo</th>
+                    <th> Fecha de Nacimiento </th>
+                    <th> Telefono</th>
+                    <th> Accion</th>
                 </tr>
                 </thead>
                 <tbody>
