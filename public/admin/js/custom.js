@@ -36,6 +36,36 @@
 	//tooltip popover
     $('[data-toggle="tooltip"]').tooltip();
     $('[data-toggle="popover"]').popover();
+
+
+    $('body').on('change', '#addreses_exit_id', function (event) {
+        $('#addreses_intermediate_id').empty();
+        $('#addreses_destination_id').empty();
+        $.ajax({
+            type: "get",
+            url: '/direcciones/'+ $(this).val(),
+            success:function(data) {
+                $.each(data, function() {
+                    $('#addreses_intermediate_id').append("<option value='" + this.id + "'>" + this.name + "</option>");
+                });
+            } 
+        });   
+    });  
+    
+    $('body').on('change', '#addreses_intermediate_id', function (event) {
+        $('#addreses_destination_id').empty();
+        const addreses_exit_id  = $('#addreses_exit_id').val();
+         $.ajax({
+            type: "get",
+            url: '/direcciones/'+ $(this).val(),
+            success:function(data) {
+                let arrayNew  = data.filter(e =>  e.id != addreses_exit_id)
+                $.each(arrayNew, function() {
+                    $('#addreses_destination_id').append("<option value='" + this.id + "'>" + this.name + "</option>");
+                });
+            } 
+        });   
+    }); 
  
     $('body').on('change', '#states_id', function (event) {
            $.ajax({

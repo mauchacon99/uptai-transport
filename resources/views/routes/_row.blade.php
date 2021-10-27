@@ -11,18 +11,17 @@
             <a data-toggle="modal" data-target="#modalreference_{{$route->id}}" class="">
         	   <i class="fas fa-map-marked-alt fa-2x" style="color: green;"></i>
             </a> 
-    	</td>
-    	<td>
+    	  </td>
+    	  <td>
             <a data-toggle="modal" data-target="#modalstop_{{$route->id}}" class="">
                 <i class="fas fa-hand-paper fa-2x" style="color: red;"></i>
             </a>
-     	</td>
+     	  </td>
         <td>
             <a href="{{ route('routes.showCars', $route) }}" style="color:blue">
                     <i class="fas fa-bus fa-2x"></i>
             </a>
         </td>
-     
         <td>
           <a href="{{ route('routes.showDrivers', $route)}}">
             <i class="fas fa-user-circle fa-2x" style="color: #A349A4" ></i>

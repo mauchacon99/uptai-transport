@@ -20,9 +20,9 @@
 
                 <select name="addreses_exit_id" id="addreses_exit_id"class="form-control">
                 <option value=""> Seleccion Direccion de Salida </option>
-                 @foreach($Addreses as $city)
-                  <option value="{{ $city->id }}"{{ old('addreses_exit_id') == $city->id ? ' selected' : ''}}> {{ $city->name }}</option>
-                 @endforeach
+                    @foreach($Addreses as $city)
+                    <option value="{{ $city->id }}"{{ old('addreses_exit_id') == $city->id ? ' selected' : ''}}> {{ $city->name }}</option>
+                    @endforeach
                 </select>
         </div>
             @if($errors->has('addreses_exit_id'))
@@ -34,9 +34,9 @@
         <div class="col-md-6 @if($errors->has('addreses_intermediate_id')) has-error ?? has-success  @endif">
                 <select name="addreses_intermediate_id" id="addreses_intermediate_id"class="form-control">
                 <option value=""> Seleccion Direccion Intermedia</option>
-                 @foreach($Addreses as $city)
+                 {{-- @foreach($Addreses as $city)
                   <option value="{{ $city->id }}"{{ old('addreses_intermediate_id') == $city->id ? ' selected' : ''}}> {{ $city->name }}</option>
-                 @endforeach
+                 @endforeach --}}
                 </select>
         </div>
         @if($errors->has('addreses_intermediate_id'))
@@ -47,9 +47,9 @@
 
                 <select name="addreses_destination_id" id="addreses_destination_id"class="form-control">
                     <option value=""> Seleccion Direccion Destino o Retorno</option>
-                 @foreach($Addreses as $city)
-                  <option value="{{ $city->id }}"{{ old('addreses_destination_id') == $city->id ? ' selected' : ''}}> {{ $city->name }}</option>
-                 @endforeach
+                    {{-- @foreach($Addreses as $city)
+                    <option value="{{ $city->id }}"{{ old('addreses_destination_id') == $city->id ? ' selected' : ''}}> {{ $city->name }}</option>
+                    @endforeach --}}
                 </select>
 
         </div>
