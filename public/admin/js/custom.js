@@ -101,18 +101,18 @@
        dom: '<B>frtipl',
        keys: true,
        buttons: [
-           {
-               extend: 'pdfHtml5',
-               text: '<span class="fas fa-file-pdf fa-2x"></span>',
-               titleAttr: 'Exportar a pdf',
-               className: 'btn btn-primary',
-               "sPdfMessage": "Conductores del Sistema de transporte"
-           },
+        //    {
+        //        extend: 'pdfHtml5',
+        //        text: '<span class="fas fa-file-pdf fa-2x"></span>',
+        //        titleAttr: 'Exportar a pdf',
+        //        className: 'btn btn-primary',
+        //        "sPdfMessage": "Conductores del Sistema de transporte"
+        //    },
            {
                extend: 'excelHtml5',
                text: '<span class="fas fa-file-excel fa-2x"></span>',
                titleAttr: 'Exportar a excel',
-               className: 'btn btn-danger'
+               className: 'btn btn-success'
            }
        ],
        select: true,

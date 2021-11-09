@@ -17,22 +17,22 @@
         </div>
             <div class="card-body">
                 <table class="table">
-                <thead>
-                <tr>
-                    <th>Ciudad</th>
-                    <th>Parroquia</th>
-                    <th>Municipio</th>
-                    <th>Estado</th>
-                    <th>Ver Paradas</th>
-                    @hasanyrole('editor|admin')
-                     <th> Acciones </th>
-                    @endhasanyrole
-                </tr>
-                </thead>
-                <tbody>
-                    @each('address._row', $Addreses, 'address')
-                 </tbody>
-             </table>
+                    <thead>
+                    <tr>
+                        <th>Ciudad</th>
+                        <th>Parroquia</th>
+                        <th>Municipio</th>
+                        <th>Estado</th>
+                        <th>Ver Paradas</th>
+                        @hasanyrole('editor|admin')
+                        <th> Acciones </th>
+                        @endhasanyrole
+                    </tr>
+                    </thead>
+                    <tbody>
+                        @each('address._row', $Addreses, 'address')
+                    </tbody>
+                 </table>
             </div>
     </div>
  @endsection

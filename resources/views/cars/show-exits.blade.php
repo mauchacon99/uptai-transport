@@ -10,7 +10,6 @@
             
             Salida del autobus con numero de control <strong>#{{ $cars->number }} </strong> con placa {{ $cars->plate}}
             <p class="text-muted"> Listado de salidas de vehiculo del departamento de transporte UPTAI</p>
-
     <div>
       
     </div>

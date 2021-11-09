@@ -10,7 +10,7 @@
     <div class="card">
         <div class="card-header card-default">
             Reporte del uso de autobuses del conductor {{$driver->name}} {{$driver->surname}} C.I {{$driver->identity}}
-    <div>
+        <div>
      </div>
         </div>
             <div class="card-body">
