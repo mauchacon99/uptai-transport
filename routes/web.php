@@ -123,10 +123,14 @@ Route::post('/empleados/reciclar', 'EmployeesController@restore')->name('emplead
 Route::post('/empleados/remove', 'EmployeesController@remove')->name('empleados.remove');
 Route::get('/respaldo/empleados', 'EmployeesController@onlyTrashed')->name('empleados.onlyTrashed');
 
+
+Route::get('/salidas-activas', 'CarsExitController@exitsCars');
 // Route::delete('/empleados/{empleado}/destroyForce','EmployeesController@destroyForce')->name('empleados.destroyForce');
  
 
+Route::get('/pdf/{collection}', 'PDFcontroller@index');
 
+Route::get('/pdf/{id}/{action}', 'PDFcontroller@detailsColletions');
 
 
 

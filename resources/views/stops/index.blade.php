@@ -12,7 +12,7 @@
                 <a data-toggle="modal" data-target="#ModalCreateStop" class="btn btn-primary box-shadow btn-icon"><i class="fa fa-plus"></i> Nueva Parada</a>
             </div>
           @endhasanyrole
-            Parada Ciuda o direccion  {{ $address->name}}
+            Parada Ciuda o direccion  {{ $address->name }}
             <div class="pdf">
             </div>
             <p class="text-muted"> Listado de Paradas de la Ciudad</p>
@@ -73,5 +73,4 @@
   </div>
 </div>
 @endsection
- 
  
