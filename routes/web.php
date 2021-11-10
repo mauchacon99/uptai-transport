@@ -124,7 +124,7 @@ Route::post('/empleados/remove', 'EmployeesController@remove')->name('empleados.
 Route::get('/respaldo/empleados', 'EmployeesController@onlyTrashed')->name('empleados.onlyTrashed');
 
 
-Route::get('/salidas-activas', 'CarsExitController@exitsCars');
+Route::get('/salidas-activas', 'CarsExitController@exitscars');
 // Route::delete('/empleados/{empleado}/destroyForce','EmployeesController@destroyForce')->name('empleados.destroyForce');
  
 
@@ -132,6 +132,7 @@ Route::get('/pdf/{collection}', 'PDFcontroller@index')->name('pdf.general');
 
 Route::get('/pdf/{id}/{action}', 'PDFcontroller@detailsColletions');
 
+Route::get('/workletter/{identity}', 'PDFcontroller@workletter');
 
 
 

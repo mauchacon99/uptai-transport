@@ -85,4 +85,17 @@ class PDFcontroller extends Controller
           }
           
      }
+
+     public function workletter($identity){
+       
+
+          $data = Employee::where('identity', $identity )->get();
+          if($data->count()){
+               $pdf = \PDF::loadView('pdf.work-letter', ['employee' => $data->last()]);
+               return $pdf->stream('work-letter.pdf');
+          }else{
+               die('hola');
+          }
+          
+     }
 }
