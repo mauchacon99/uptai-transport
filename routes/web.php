@@ -128,7 +128,7 @@ Route::get('/salidas-activas', 'CarsExitController@exitsCars');
 // Route::delete('/empleados/{empleado}/destroyForce','EmployeesController@destroyForce')->name('empleados.destroyForce');
  
 
-Route::get('/pdf/{collection}', 'PDFcontroller@index');
+Route::get('/pdf/{collection}', 'PDFcontroller@index')->name('pdf.general');
 
 Route::get('/pdf/{id}/{action}', 'PDFcontroller@detailsColletions');
 

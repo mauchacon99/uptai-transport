@@ -13,6 +13,7 @@
         <div class="card-header card-default">
             <div class="float-right mt-10">
                 @role('admin')
+                <a href="" class="btn btn-secondary box-shadow btn-icon"><i class="fas fa-file-download"></i> Imprimir listado en PDF</a>
                 <a href="{{ route('users.create')}}" class="btn btn-primary box-shadow btn-icon"><i class="fa fa-plus"></i> Nuevo Usuario</a>
                 @endrole
             </div>

@@ -10,6 +10,7 @@
         <div class="card-header card-default">
             <div class="float-right mt-10">
                 @can('drivers.create' )
+                    <a href=""  target="_blank"  class="btn btn-secondary box-shadow btn-icon"><i class="fas fa-file-download"></i> Imprimir Listado PDF</a>
                     <a href="{{ route('drivers.create') }}" class="btn btn-primary box-shadow btn-icon"><i class="fa fa-plus"></i> Nuevo Conductor</a>
                 @endcan
             </div>
