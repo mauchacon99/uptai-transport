@@ -23,6 +23,12 @@ class CarsExits extends JsonResource
             'driver'     => $this->drivers->name . ' ' . $this->drivers->surname,
             'number_car' => $this->cars->number ,
             'plate_car'  => $this->cars->plate,
+            'stops'  => [ 
+                $this->routes->addresesExit->name         => $this->routes->addresesExit->stops, 
+                $this->routes->addresesIntermediate->name => $this->routes->addresesIntermediate->stops, 
+                $this->routes->addresesDestination->name  => $this->routes->addresesDestination->stops
+            ],
+
         ];
     }
 
