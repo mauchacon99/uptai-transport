@@ -10,7 +10,16 @@
     <div class="card">
         <div class="card-header card-default">
             Reporte del uso de autobuses del conductor {{$driver->name}} {{$driver->surname}} C.I {{$driver->identity}}
-        <div>
+        
+                <a  
+                    href="{{ route('pdf.details',  ['id' => $driver->id, 'action' => 'route-drivers-cars-file' ])}}" 
+                    target="_blank"      
+                    class="btn btn-secondary box-shadow btn-icon"
+                >
+                    <i class="fas fa-file-download"> </i> 
+                    Imprimir Listado PDF
+                </a>
+       <div>
      </div>
         </div>
             <div class="card-body">

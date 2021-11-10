@@ -6,9 +6,19 @@
       
 @section('content')
     <div class="card">
-        <div class="card-header card-default">
+        <div class="card-header card-default justify-content-between">
             Reporte del uso de autobuses por el conductor {{ $driver->name }} {{ $driver->surname }} C.I {{$driver->identity }}
-    <div>
+            <div class="row justify-content-end">
+                <a  
+                href="{{ route('pdf.details',  ['id' => $driver->id, 'action' => 'route-drivers-file' ])}}" 
+                target="_blank"      
+                class="btn btn-secondary box-shadow btn-icon"
+                >
+                    <i class="fas fa-file-download"> </i> 
+                    Imprimir Listado PDF
+                </a>
+            </div>
+        <div>
      </div>
         </div>
             <div class="card-body">

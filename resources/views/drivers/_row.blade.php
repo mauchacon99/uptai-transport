@@ -12,7 +12,6 @@
 
 	        {{ csrf_field() }}
 	        {{ method_field('DELETE')}}
-        
                 <a href="{{ route('drivers.showRoutes', $driver) }}" class="btn btn-warning btn-circle " style="color:orage" >
                         <i class="fas fa-map-marked"></i>
                 </a>

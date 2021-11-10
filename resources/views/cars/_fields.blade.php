@@ -67,8 +67,9 @@
     <div class="row">
         <div class="col-md-4 @if($errors->has('year')) has-error ?? has-success  @endif">
                 <select name="year" id="year"class="form-control">
-                    <option value="1999"> 1999</option>
-                    <option value="2000"> 2000</option>
+                    @foreach (range(1800, 2021) as $número )
+                        <option value="{{ $número   }}">  {{ $número   }} </option>
+                    @endforeach
                 </select>
         </div>
         @if($errors->has('year'))

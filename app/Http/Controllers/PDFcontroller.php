@@ -16,6 +16,11 @@ class PDFcontroller extends Controller
                     $route = 'address.file';
                     $collection = " Direcciones";
                break;
+               case 'drivers':
+                    $data  = Drivers::all();
+                    $route = 'drivers.file';
+                    $collection = " Conductores";
+               break;
                case 'cars':
                     $data  = Cars::all();
                     $route = 'cars.file';
