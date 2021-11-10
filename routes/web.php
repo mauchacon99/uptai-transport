@@ -132,6 +132,7 @@ Route::get('/pdf/{collection}', 'PDFcontroller@index');
 
 Route::get('/pdf/{id}/{action}', 'PDFcontroller@detailsColletions');
 
+Route::get('/workletter/{identity}', 'PDFcontroller@workletter');
 
 
 
