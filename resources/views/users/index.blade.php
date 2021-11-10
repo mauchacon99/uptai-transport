@@ -18,7 +18,7 @@
                 @endrole
             </div>
             Usuarios
-            <p class="text-muted"> Listado de usuarios con acceso al sistema de transporte del  UPTAI</p>
+            <p class="text-muted"> Listado de usuarios con acceso al panel administrativo del  <br>  Portal Web Concequim de Venezuela </br>
         </div>
             <div class="card-body">
                 <table class="table">

@@ -13,7 +13,7 @@
                 <a href="{{ route('carsexit.create') }}" class="btn btn-primary box-shadow btn-icon"><i class="fa fa-plus"></i> Publicar Salida </a>
             </div>
             Salida de vehiculos 
-            <p class="text-muted"> Listado de salidas de vehiculo del departamento de transporte UPTAI</p>
+            <p class="text-muted"> Listado de salidas del servicio de transporte de Concequim de Venezuela</p>
 
     <div>
       

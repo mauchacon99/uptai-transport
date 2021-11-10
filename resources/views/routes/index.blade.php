@@ -15,7 +15,7 @@
                 @endhasanyrole
             </div>
             Rutas
-            <p class="text-muted"> Listado de rutas que cumple el transporte del UPTAI</p>
+            <p class="text-muted"> Listado de rutas que cumple el servicio de transporte de la empresa</p>
         </div>
             <div class="card-body">
                 <table class="table">
