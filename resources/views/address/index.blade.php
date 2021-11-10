@@ -9,6 +9,7 @@
         <div class="card-header card-default">
             <div class="float-right mt-10">
                 @hasanyrole('editor|admin')
+                    <a href="{{ route('pdf.general', 'address') }}" target="_blank" class="btn btn-secondary box-shadow btn-icon"><i class="fas fa-file-download"></i> Imprimir Listado PDF</a>
                     <a href="{{ route('address.create') }}" class="btn btn-primary box-shadow btn-icon"><i class="fa fa-plus"></i> Nueva Ciudad</a>
                 @endhasanyrole
             </div>

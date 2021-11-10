@@ -9,6 +9,7 @@
         <div class="card-header card-default">
             
             <div class="float-right mt-10">
+                <a href="{{ route('pdf.general', 'carsExits') }}"  target="_blank"  class="btn btn-secondary box-shadow btn-icon"><i class="fas fa-file-download"></i> Imprimir Listado PDF</a>
                 <a href="{{ route('carsexit.create') }}" class="btn btn-primary box-shadow btn-icon"><i class="fa fa-plus"></i> Publicar Salida </a>
             </div>
             Salida de vehiculos 

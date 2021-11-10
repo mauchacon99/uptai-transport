@@ -9,6 +9,7 @@ class PDFcontroller extends Controller
 {
      public function index($collection)
      {
+         
           switch ($collection) {
                case 'address':
                     $data  = Addreses::all();
@@ -41,6 +42,8 @@ class PDFcontroller extends Controller
                     $collection = " Salida de Vehiculos";
                break;
           }
+
+          
           $pdf = \PDF::loadView($route, compact('data', 'collection'));
           return $pdf->stream($collection.'.pdf');
      }
