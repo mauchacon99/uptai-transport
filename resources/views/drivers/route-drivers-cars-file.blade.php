@@ -18,41 +18,34 @@
         </div>
     </div>
     <p>
-        Reporte del uso de autobuses del conductor 
+        Reporte del uso de autobuses del conductor   
         {{ $driver->name }} 
         {{ $driver->surname }} 
-        C.I {{ $driver->identity }}
+        C.I {{ $driver->identity }}  
     </p>
     <table class="table">
         <thead>
             <tr>
-                <th>Km</th>
-                <th>Ciudades</th>
-                <th>Autobus</th>
-                <th>Fecha</th>
-                <th>Hora</th>
+                <tr>
+                    <th>Numero</th>
+                    <th>Placa</th>
+                    <th>Color</th>
+                    <th>Año</th>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                 </tr>
             </tr>
         </thead>
         <tbody>
             @foreach ($exits as $exit)
-                    <tr>
-                    <td> {{ $exit->routes->km   }} Km  </td>
-                    <td> 
-                        {{ $exit->routes->addresesExit->name}} -
-                        {{ $exit->routes->addresesIntermediate->name }}  -       	
-                        {{ $exit->routes->addresesDestination->name}}
-                    </td>
-                    <td>
-                        {{ $exit->cars->plate}}
-                    </td>
-                    <td>
-                        {{$exit->details->date_exit}}
-                    </td>
-                        <td>
-                        {{ $exit->details->time_exit}}
-                    </td>
-                    
-                    </tr>
+                <tr>
+                    <td>{{ $exit->cars->number}}</td>
+                    <td>{{ $exit->cars->plate }}</td>
+                    <td>{{ $exit->cars->color }}</td>
+                    <td>{{ $exit->cars->year }}</td>
+                    <td>{{ $exit->cars->tradeMarks->description}}</td>
+                    <td>{{ $exit->cars->model->description }}</td>
+                </tr>
             @endforeach
         </tbody>
     </table>

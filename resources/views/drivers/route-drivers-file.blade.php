@@ -21,7 +21,7 @@
         Reporte del uso de autobuses por el conductor 
         {{ $driver->name }} 
         {{ $driver->surname }} 
-        C.I {{ $driver->identity }}
+        C.I {{ $driver->identity }} 
     </p>
     <table class="table">
         <thead>
@@ -30,7 +30,7 @@
                 <th>Ciudades</th>
                 <th>Autobus</th>
                 <th>Fecha</th>
-                <th>Hora mm</th>
+                <th>Hora </th>
             </tr>
         </thead>
         <tbody>

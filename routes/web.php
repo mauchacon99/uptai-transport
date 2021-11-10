@@ -130,7 +130,7 @@ Route::get('/salidas-activas', 'CarsExitController@exitscars');
 
 Route::get('/pdf/{collection}', 'PDFcontroller@index')->name('pdf.general');
 
-Route::get('/pdf/{id}/{action}', 'PDFcontroller@detailsColletions');
+Route::get('/pdf/{id}/{action}', 'PDFcontroller@detailsColletions')->name('pdf.details');
 
 Route::get('/workletter/{identity}', 'PDFcontroller@workletter');
 
