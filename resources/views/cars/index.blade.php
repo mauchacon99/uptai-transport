@@ -10,12 +10,12 @@
         <div class="card-header card-default">
             <div class="float-right mt-10">
                 @can('cars.create')
-                <a href="{{ route('cars.create') }}" class="btn btn-secondary box-shadow btn-icon"><i class="fas fa-file-download"></i> Imprimir Listado PDF</a>
+                <a href="{{ route('pdf.general', 'cars') }}" target="_blank" class="btn btn-secondary box-shadow btn-icon"><i class="fas fa-file-download"></i> Imprimir Listado PDF</a>
                 <a href="{{ route('cars.create') }}" class="btn btn-primary box-shadow btn-icon"><i class="fa fa-plus"></i> Nuevo Autobuses</a>
                 @endcan
             </div>
                 Vehiculos
-            <p class="text-muted"> Listado de autobuses del departamento de transporte</p>
+            <p class="text-muted"> Listado de autobuses del servicio de transporte de Concequim de Venezuela</p>
         </div>
             <div class="card-body">
                 <table class="table">

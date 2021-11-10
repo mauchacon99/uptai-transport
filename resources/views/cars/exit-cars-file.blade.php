@@ -18,7 +18,7 @@
         </div>
     </div>
     Salida del autobus con numero de control <strong>#{{ $cars->number }} </strong> con placa {{ $cars->plate}}
-    <p class="text-muted"> Listado de salidas de vehiculo del departamento de transporte UPTAI</p>
+    <p class="text-muted"> Listado de salidas de vehiculo del servicio de Transporte de Concequim de Venezuela</p>
     <table class="table display table-striped table-bordered cellspacing="0" width="100%">
         <thead>
             <tr>

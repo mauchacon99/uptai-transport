@@ -17,7 +17,7 @@
             Empleados
             <div class="pdf">
             </div>
-            <p class="text-muted"> Listado de Empleados del departamento de transporte</p>
+            <p class="text-muted"> Listado de empleados beneficiados del servicio de transporte de la empresa</p>
     <div>
      </div>
         </div>

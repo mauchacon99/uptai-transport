@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title> PDF </title>
+    <title> PDF - CONCEQUIM DE VENEZUELA </title>
    <!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
 
 </head>
@@ -75,8 +75,8 @@ tr:nth-child(even) {
                     <td>{{ $employee->sex }}</td>
                     <td>{{ $employee->birthdate }}</td>
                     <td>{{ $employee->phone }}</td>
-                    <td> <strong> {{ $employee->occupation }} </strong> </td>
-                    <td> <strong> {{ $employee->address }} </strong> </td>
+                    <td> {{ $employee->occupation }} </td>
+                    <td> {{ $employee->address }}  </td>
                 </tr>  
             @endforeach
         </tbody>

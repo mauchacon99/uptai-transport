@@ -8,7 +8,7 @@
     <div class="card">
         <div class="card-header card-default">
             Actividades de Usuarios
-            <p class="text-muted"> Listado de actividades ejecutada por usuarios en el Sistema de Transporte UPTAI</p>
+            <p class="text-muted"> Listado de actividades ejecutada por usuarios en el Portal Web para Concequim de Venezuela</p>
     <div>
        
     </div>

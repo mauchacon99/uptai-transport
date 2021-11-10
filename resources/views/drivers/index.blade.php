@@ -15,16 +15,17 @@
                 @endcan
             </div>
             Conductores
-            <div class="pdf">
+            <div class="PDF">
             </div>
-            <p class="text-muted"> Listado de conductores del departamento de transporte</p>
-    <div>
-     </div>
-        </div>
-            <div class="card-body">
-                <table class="table datatables" data-page-length='5' >
-                <thead>
-                <tr>
+            <p class="text-muted">
+                Listado de conductores del departamento de transporte de Concequim de Venezuela</p>
+                <div>
+                </div>
+                </div>
+                    <div class="card-body">
+                        <table class="table datatables" data-page-length='5' >
+                        <thead>
+                        <tr>
                     <th data-class-name="priority">C.I</th>
                     <th> Nombre</th>
                     <th> Apellido</th>
