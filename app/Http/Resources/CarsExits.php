@@ -18,7 +18,8 @@ class CarsExits extends JsonResource
         return [
             'id' => $this->id,
             'route'      => ucwords($this->routes->addresesExit->name  . ' ' . $this->routes->addresesIntermediate->name . ' ' . $this->routes->addresesDestination->name),
-            'date_exit'  => $this->details->date_exit. ' '. $this->details->time_exit,
+            'date_exit'  => $this->details->date_exit,
+            'time_exit'  => $this->details->time_exit,
             'driver'     => $this->drivers->name . '' . $this->drivers->surname,
             'number_car' => $this->cars->number ,
             'plate_car'  => $this->cars->plate,

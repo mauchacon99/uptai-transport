@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Exits\StoreRequest;
+use App\Http\Resources\CarsExits as ResourcesCarsExits;
 use Illuminate\Http\Request;
 use App\Models\{CarsExits, Routes, Drivers,Cars};
  
@@ -16,6 +17,11 @@ class CarsExitController extends Controller
     		'exits'   => CarsExits::all(),
     	]);
     }
+
+	public function exitscars()
+	{
+		return  ResourcesCarsExits::collection(CarsExits::all());
+	}
 
     public function create()
     {

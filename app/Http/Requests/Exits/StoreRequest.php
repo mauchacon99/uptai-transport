@@ -34,7 +34,7 @@ class StoreRequest extends FormRequest
             'time_public'  => ['present'],
             'date_exit'    => ['required'],
             'date_public'  => ['present'],       
-            'drivers_id' => ['present','required']
+            'drivers_id'   => ['present','required']
          ];
          
     }
@@ -60,7 +60,6 @@ class StoreRequest extends FormRequest
             'date_public'   => $this->date_public,      
             'status_public' => $this->date_public && $this->time_public ?  1 : 0
         ]); 
-
         
         //cars
         $car =  Cars::find($this->cars_id);
@@ -68,7 +67,7 @@ class StoreRequest extends FormRequest
         $car->update();
         
         //driver
-        $driver = Drivers::find($this->cars_id);
+        $driver = Drivers::find($this->drivers_id);
         $driver->status = 0;
         $car->update();
 
